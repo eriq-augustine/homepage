@@ -2,27 +2,24 @@
 <?php $thisPage = "tutoring"; ?>
 
 <body>
+   <div id='page'>
+      <?php include("header.php"); ?>
 
-<?php include("header.php"); ?>
+      <div id='content' class='center'>
+         <?php include("sidebar.php"); ?>
 
-<div id="wrap">      
-   <?php include("sidebar.php"); ?>
-
-   <div id="content">
-      <div class="post">
-         <h2>Tutoring</h2>
-         <p>I have been a tutor for over seven years and am currently co-head tutor for the Computer Science Department at Cal Poly.</p>
-         <p>This quarter (Winter 2011) I tutor Sunday nights from 7pm - 9pm.</p>
-         <p>I will stay late for anyone with good questions or hard problems.</p>
-         <p>Check out the <a href="http://www.csc.calpoly.edu/resources/tutoring/">CSC Tutoring Center.</a> 
-         <p><a href="imgs/tutoring_flyer.jpg">
-            <img src="imgs/tutoring_flyer.jpg" width=80% align=middle />
-         </a>
+         <div id="main">
+            <div class="main-content">
+               <h2>Tutoring</h2>
+               <p>I have been a tutor for over a decade and was recently head tutor for the Computer Science Department at Cal Poly.</p>
+               <p>Check out the <a href="http://www.csc.calpoly.edu/resources/tutoring/">CSC Tutoring Center.</a> 
+               <p><img src="imgs/tutoring_flyer.jpg" width='500px' align=middle /></p>
+            </div>
+         </div>
       </div>
-   </div>
-</div>
 
-<?php include("footer.php"); ?>
+      <?php include("footer.php"); ?>
+   </div>
 
 </body>
 </html>

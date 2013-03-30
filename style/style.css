@@ -102,6 +102,10 @@ h3 {
    padding: 2px 0;
    font-size: 1.2em;
 }
+
+p {
+   padding-bottom: 5px;
+}
 /*** END General Styling ***/
 
 html {
@@ -144,6 +148,7 @@ html {
    display: inline-block;
    width: 890px;
    padding: 20px;
+   padding-top: 0;
    vertical-align: top;
 }
 
