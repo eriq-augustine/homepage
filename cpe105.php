@@ -1,5 +1,5 @@
 <?php include("meta.php"); ?>
-<?php $thisPage = "cpe105"; ?>
+<?php $this_page = "cpe105"; ?>
 <?php $lab_dir = "105Labs"; ?>
 <?php $misc_dir = "105Misc"; ?>
 
@@ -22,23 +22,14 @@
             <h2>Labs</h2>
             <ul>
                <?php
-                  $files = ls($lab_dir);
-                  sort($files);
-
-                  foreach ($files as $file) {
-                     echo "<li><a href=\"$lab_dir/$file\">$file</a></li>";
-                  }
+                  linkFilesInDir($lab_dir);
                ?>
             </ul>
 
             <h2>Other Materials</h2>
             <ul>
                <?php
-                  $files = ls($misc_dir);
-
-                  foreach ($files as $file) {
-                     echo "<li><a href=\"$misc_dir/$file\">$file</a></li>";
-                  }
+                  linkFilesInDir($misc_dir);
                ?>
             </ul>
          </div>

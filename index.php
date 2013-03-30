@@ -1,4 +1,4 @@
-<?php $thisPage = "main"; ?>
+<?php $this_page = "main"; ?>
 <?php include("meta.php"); ?>
 
 <body>

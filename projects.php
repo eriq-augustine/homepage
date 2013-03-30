@@ -1,5 +1,5 @@
 <?php include("meta.php"); ?>
-<?php $thisPage = "projects"; ?>
+<?php $this_page = "projects"; ?>
 <?php $projectDir = "sampleProjects"; ?>
 
 <body>

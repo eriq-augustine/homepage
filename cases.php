@@ -1,5 +1,5 @@
 <?php include("meta.php"); ?>
-<?php $thisPage = "cases"; ?>
+<?php $this_page = "cases"; ?>
 
 <body>
    <div id='page'>
