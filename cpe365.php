@@ -1,9 +1,15 @@
-<?php include("meta.php"); ?>
-<?php $this_page = "cpe365"; ?>
-<?php $lab_dir = "365-files/labs"; ?>
-<?php $lecture_dir = "365-files/lectures"; ?>
-<?php $misc_dir = "365-files/misc"; ?>
-<?php $log_dir = "365-files/logs"; ?>
+<?php
+   $this_page = "cpe365";
+   $lab_dir = "365-files/labs";
+   $lecture_dir = "365-files/lectures";
+   $misc_dir = "365-files/misc";
+   $log_dir = "365-files/logs";
+   $csv_dir = "365-files/datasets/csv";
+
+   $extraCSS = array('cpe365.css');
+
+   include("meta.php");
+?>
 
 <body>
    <div id='page'>
@@ -27,6 +33,9 @@
                <hr />
 
                <h3>Datasets</h3>
+               <?php
+                  compileDatasets($csv_dir);
+               ?>
                <hr />
             </div>
          </div>

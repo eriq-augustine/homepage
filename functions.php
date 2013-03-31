@@ -28,4 +28,17 @@
          echo "<li><a href=\"$dir/$file\">$file</a></li>";
       }
    }
+
+   function compileDatasets($dir) {
+      $datasets = ls($dir);
+
+      foreach ($datasets as $dataset) {
+         echo "<div class='dataset'>";
+
+         echo "<h3>" . $dataset . "</h3><ul>";
+         linkFilesInDir($dir . "/" . $dataset);
+
+         echo "</ul></div>";
+      }
+   }
 ?>
