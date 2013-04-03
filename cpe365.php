@@ -25,9 +25,9 @@
                <hr />
 
                <h3>Logistics</h3>
-               <p>Class Time: MWF 12 - 2</p>
+               <p>Class Time: MWF 1 - 3</p>
                <p>Room: 14-250, 14-303</p>
-               <p>Office Hours: MWF 3 - 4</a>
+               <p>Office Hours: 14-250 -- MWF 3 - 4</a>
                <p>Schedule:</p>
                <iframe width='575' height='300' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AiBx3hjzTSnjdHNfY25SSkR6dEgxNUg5WEJLUGwxV3c&single=true&gid=2&output=html&widget=true'></iframe>
                <hr />
