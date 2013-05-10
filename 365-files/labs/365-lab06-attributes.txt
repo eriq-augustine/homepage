@@ -1,0 +1,53 @@
+AIRLINES:
+   1: code, name
+   2: COUNT(DISTINCT f1.source)
+   3: source, reachable
+   4: COUNT(DISTINCT f1.source)
+   5: name, Operational Airports
+
+BAKERY:
+   1: flavor, avgPrice, COUNT(*)
+   2: SUM(price)
+   3: rNumber, saleDate, COUNT(*), paid
+   4: saleDate, purchases, items, revenue
+   5: saleDate
+
+CARS:
+   1: maker, bestMpg, avgAcc
+   2: maker, fast
+   3: year, best, average, worst
+   4: year, smallest, largest
+
+CSU:
+   1: campus, sumFee
+   2: campus, minimum, average, maximum
+   3: campus, Total Degrees
+   4: campus, COUNT(*)
+   5: year, best, average, worst
+
+INN:
+   1: roomName, revenue, average
+   2: stays, revenue
+   3: day, stays, revenue
+   4: roomName, markup, discount
+
+MARATHON:
+   1: ageGroup, sex, total, bestPlace, worstPlace
+   2: COUNT(*)
+   3: paceMins, COUNT(*)
+   4: state, numTop10
+   5: town, avgTimeInSec
+
+STUDENTS:
+   1: first, last
+   2: grade, numClasses, COUNT(*)
+   3: classRoom, count
+   4: classRoom, MIN(lastName)
+
+WINE:
+   1: score, averagePrice, cheapest, mostExpensive, numWines, cases
+   2: vintage, goodSB
+   3: appellation, county, numWines, avgPrice, bottles
+   4: appellation, sales
+   5: county, bestScore
+
