@@ -55,18 +55,15 @@ CSU:
         Attributes: campus, totalEnrollment, enrollmentFTE, facultyFTE, facultyToStudent, studentToFaculty
 
    4 -- COUNT: 1
-        Attributes: campus, totalEnrollment, enrollmentFTE, facultyFTE, facultyToStudent, studentToFaculty
-
-   5 -- COUNT: 1
         Attributes: campus, maxEngPercentage
 
-   6 -- COUNT: 5
+   5 -- COUNT: 5
         Attributes: year, campus, increase, increaseInPercent, percentIncrease
 
-   7 -- COUNT: 7
+   6 -- COUNT: 7
         Attributes: year, campus, dpe
 
-   8 -- COUNT: 15
+   7 -- COUNT: 15
         Attributes: campus, year, ratio
 
 
@@ -105,10 +102,6 @@ MARATHON:
 
    4 -- COUNT: 3
         Attributes: town
-
-   5 -- COUNT: 5
-        Attributes: town
-
 
 STUDENTS:
    1 -- COUNT: 2
