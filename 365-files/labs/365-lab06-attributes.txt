@@ -1,53 +1,130 @@
 AIRLINES:
-   1: code, name
-   2: COUNT(DISTINCT f1.source)
-   3: source, reachable
-   4: COUNT(DISTINCT f1.source)
-   5: name, Operational Airports
+   1 -- COUNT: 4
+        Attributes: code, name
+
+   2 -- COUNT: 1
+        Attributes: COUNT(DISTINCT f1.source)
+
+   3 -- COUNT: 4
+        Attributes: source, reachable
+
+   4 -- COUNT: 1
+        Attributes: COUNT(DISTINCT f1.source)
+
+   5 -- COUNT: 12
+        Attributes: name, Operational Airports
+
 
 BAKERY:
-   1: flavor, avgPrice, COUNT(*)
-   2: SUM(price)
-   3: rNumber, saleDate, COUNT(*), paid
-   4: saleDate, purchases, items, revenue
-   5: saleDate
+   1 -- COUNT: 3
+        Attributes: flavor, avgPrice, COUNT(*)
+
+   2 -- COUNT: 1
+        Attributes: SUM(price)
+
+   3 -- COUNT: 7
+        Attributes: rNumber, saleDate, COUNT(*), paid
+
+   4 -- COUNT: 7
+        Attributes: saleDate, purchases, items, revenue
+
+   5 -- COUNT: 3
+        Attributes: saleDate
+
 
 CARS:
-   1: maker, bestMpg, avgAcc
-   2: maker, fast
-   3: year, best, average, worst
-   4: year, smallest, largest
+   1 -- COUNT: 5
+        Attributes: maker, bestMpg, avgAcc
+
+   2 -- COUNT: 3
+        Attributes: maker, fast
+
+   3 -- COUNT: 1
+        Attributes: year, best, average, worst
+
+   4 -- COUNT: 3
+        Attributes: year, smallest, largest
+
 
 CSU:
-   1: campus, sumFee
-   2: campus, minimum, average, maximum
-   3: campus, Total Degrees
-   4: campus, COUNT(*)
-   5: year, best, average, worst
+   1 -- COUNT: 4
+        Attributes: campus, sumFee
+
+   2 -- COUNT: 6
+        Attributes: campus, minimum, average, maximum
+
+   3 -- COUNT: 6
+        Attributes: campus, Total Degrees
+
+   4 -- COUNT: 7
+        Attributes: campus, COUNT(*)
+
+   5 -- COUNT: 3
+        Attributes: year, best, average, worst
+
 
 INN:
-   1: roomName, revenue, average
-   2: stays, revenue
-   3: day, stays, revenue
-   4: roomName, markup, discount
+   1 -- COUNT: 10
+        Attributes: roomName, revenue, average
+
+   2 -- COUNT: 1
+        Attributes: stays, revenue
+
+   3 -- COUNT: 7
+        Attributes: day, stays, revenue
+
+   4 -- COUNT: 10
+        Attributes: roomName, markup, discount
+
 
 MARATHON:
-   1: ageGroup, sex, total, bestPlace, worstPlace
-   2: COUNT(*)
-   3: paceMins, COUNT(*)
-   4: state, numTop10
-   5: town, avgTimeInSec
+   1 -- COUNT: 11
+        Attributes: ageGroup, sex, total, bestPlace, worstPlace
+
+   2 -- COUNT: 1
+        Attributes: COUNT(*)
+
+   3 -- COUNT: 8
+        Attributes: paceMins, COUNT(*)
+
+   4 -- COUNT: 7
+        Attributes: state, numTop10
+
+   5 -- COUNT: 6
+        Attributes: town, avgTimeInSec
+
 
 STUDENTS:
-   1: first, last
-   2: grade, numClasses, COUNT(*)
-   3: classRoom, count
-   4: classRoom, MIN(lastName)
+   1 -- COUNT: 6
+        Attributes: first, last
+
+   2 -- COUNT: 7
+        Attributes: grade, numClasses, COUNT(*)
+
+   3 -- COUNT: 3
+        Attributes: classRoom, count
+
+   4 -- COUNT: 3
+        Attributes: classRoom, MIN(lastName)
+
 
 WINE:
-   1: score, averagePrice, cheapest, mostExpensive, numWines, cases
-   2: vintage, goodSB
-   3: appellation, county, numWines, avgPrice, bottles
-   4: appellation, sales
-   5: county, bestScore
+   1 -- COUNT: 11
+        Attributes: score, averagePrice, cheapest, mostExpensive, numWines, cases
+
+   2 -- COUNT: 6
+        Attributes: vintage, goodSB
+
+   3 -- COUNT: 2
+        Attributes: appellation, county, numWines, avgPrice, bottles
+
+   4 -- COUNT: 7
+        Attributes: appellation, sales
+
+   5 -- COUNT: 7
+        Attributes: appellation, sales
+
+   6 -- COUNT: 5
+        Attributes: county, bestScore
+
 
