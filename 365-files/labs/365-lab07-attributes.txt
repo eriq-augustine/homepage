@@ -100,7 +100,7 @@ MARATHON:
    3 -- COUNT: 5
         Attributes: firstName, lastName, town, state, place
 
-   4 -- COUNT: 3
+   4 -- COUNT: 3 (or 5)
         Attributes: town
 
 STUDENTS:
