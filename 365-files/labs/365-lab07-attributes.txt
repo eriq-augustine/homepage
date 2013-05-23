@@ -15,7 +15,7 @@ BAKERY:
         Attributes: firstName, lastName, numPurchase, moneySpent
 
    6 -- COUNT: 24
-        Attributes: firstName, lastName, flavor, food, total, quantity
+        Attributes: firstName, lastName, flavor, food, total
 
    7 -- COUNT: 4
         Attributes: lastName, firstName, saleDate
@@ -87,7 +87,7 @@ INN:
         Attributes: roomName, room, status
 
    7 -- COUNT: 10
-        Attributes: roomName, onePercent
+        Attributes: roomName, countMostExpensive
 
 
 MARATHON:
