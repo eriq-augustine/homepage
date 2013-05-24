@@ -58,7 +58,7 @@ CSU:
         Attributes: campus, maxEngPercentage
 
    5 -- COUNT: 5
-        Attributes: year, campus, increase, increaseInPercent, percentIncrease
+        Attributes: year, campus
 
    6 -- COUNT: 7
         Attributes: year, campus, dpe
