@@ -5,11 +5,11 @@
 <body>
    <?php
       // Connecting, selecting database
-      //$link = mysql_connect('csc-db0.csc.calpoly.edu', 'eaugusti', 'funfun') or die('Could not connect: ' . mysql_error());
-      $link = mysql_connect('localhost', '', '') or die('Could not connect: ' . mysql_error());
+      $link = mysql_connect('csc-db0.csc.calpoly.edu', 'eaugusti', 'funfun') or die('Could not connect: ' . mysql_error());
+      // $link = mysql_connect('localhost', '', '') or die('Could not connect: ' . mysql_error());
 
-      //mysql_select_db('eaugusti') or die('Could not select database');
-      mysql_select_db('test') or die('Could not select database');
+      mysql_select_db('eaugusti') or die('Could not select database');
+      // mysql_select_db('test') or die('Could not select database');
 
       // Performing SQL query
       $query = "SELECT " . $_GET['attrs'] . " FROM Users WHERE username = '" . $_GET['user'] . "'";
