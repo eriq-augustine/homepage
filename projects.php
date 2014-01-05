@@ -11,7 +11,7 @@
 
          <div id="main">
             <div class="main-content">
-               <h2>Projects</h2>
+               <h2 class='page-title'>Projects</h2>
                <p>Edit: I always fall horribly behind updating this page. If you want a good idea of some things that I am working, check out <a href="https://github.com/eriq-augustine">my github</a>.</p>
                <p>Here is a list of some of the computer science projects that I have done or am currently working on.</p>
                <p>Here is a list of some of the computer science projects that I have done or am currently working on.</p>

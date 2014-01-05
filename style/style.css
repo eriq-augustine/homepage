@@ -125,7 +125,7 @@ html {
 }
 
 .center {
-   width: 1000px;
+   width: 1200px;
    margin-left: auto;
    margin-right: auto;
 }
@@ -158,7 +158,7 @@ html {
 
 #main {
    display: inline-block;
-   width: 890px;
+   width: 1090px;
    padding: 20px;
    padding-top: 0;
    vertical-align: top;
@@ -166,7 +166,7 @@ html {
 
 /* If an #extra is present, then make the #main smaller. */
 #main:nth-last-child(2) {
-   width: 660px;
+   width: 860px;
 }
 
 .main-content {
@@ -246,3 +246,7 @@ html {
    margin-bottom: 10px;
 }
 /*** END Extras ***/
+
+.page-title {
+   text-align: center;
+}

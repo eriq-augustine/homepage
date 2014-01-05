@@ -20,7 +20,7 @@
 
          <div id="main">
             <div class="main-content">
-               <h2>CPE 365</h2>
+               <h2 class='page-title'>CPE 365</h2>
                <p>This is the official page for CPE 365 Spring 2013.</p>
                <hr />
 

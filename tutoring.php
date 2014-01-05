@@ -1,5 +1,9 @@
-<?php include("meta.php"); ?>
-<?php $this_page = "tutoring"; ?>
+<?php
+   $this_page = "tutoring";
+   $extraCSS = array('tutoring.css');
+
+   include("meta.php");
+?>
 
 <body>
    <div id='page'>
@@ -9,10 +13,10 @@
          <?php include("sidebar.php"); ?>
 
          <div id="main">
-            <div class="main-content">
-               <h2>Tutoring</h2>
+            <div class="main-content tutoring-content">
+               <h2 class='page-title'>Tutoring</h2>
                <p>I have been a tutor for over a decade and was recently head tutor for the Computer Science Department at Cal Poly.</p>
-               <p>Check out the <a href="http://www.csc.calpoly.edu/resources/tutoring/">CSC Tutoring Center.</a> 
+               <p>Check out the <a href="http://tutoring.csc.calpoly.edu">CSC Tutoring Center.</a> 
                <p><img src="imgs/tutoring_flyer.jpg" width='500px' align=middle /></p>
             </div>
          </div>

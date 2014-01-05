@@ -10,7 +10,7 @@
 
          <div id="main">
             <div class="main-content">
-               <h2>Cases</h2>
+               <h2 class='page-title'>Cases</h2>
                <p>I am quite fond of building and modding computer cases. Here are a few of the cases that I have done.</p>
                <h3>Built</h3>
                <a name="mineralOil"><h4>Mineral Oil</h4></a>

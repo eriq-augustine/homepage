@@ -29,6 +29,20 @@
       }
    }
 
+   // Read a file and parse out all the links.
+   function linksInFile($filename, $sort = true) {
+      $lines = file($filename);
+
+      if ($sort) {
+         sort($lines);
+      }
+
+      foreach ($lines as $line) {
+         list($name, $link) = split(';', $line);
+         echo "<li><a href='" . $link . "'>" . $name . "</a></li>";
+      }
+   }
+
    function compileDatasets($dir) {
       $datasets = ls($dir);
 

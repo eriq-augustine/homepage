@@ -1,0 +1,433 @@
+<html>
+   <head>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            var codeNodes = document.getElementsByTagName('code');
+            for (var i = 0; i < codeNodes.length; ++i) {
+               console.log('TEST');
+               codeNodes[i].textContent = codeNodes[i].textContent.trim();
+            }
+
+            // Load prettify after text edit.
+            // Auto-load doesn't seem to work properly.
+            var prettify_script = document.createElement('script');
+            prettify_script.setAttribute('src','https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js');
+            document.head.appendChild(prettify_script);
+         });
+      </script>
+
+      <style>
+         body,
+         h1, h2, h3, h4,
+         ul {
+            margin: 0;
+         }
+
+         h2 {
+            margin-bottom: 10px;
+         }
+
+         h3 {
+            margin-bottom: 5px;
+            margin-top: 5px;
+         }
+
+         .keyword {
+            color: #008;
+         }
+
+         .page {
+            padding: 10px;
+            padding-left: 20px;
+         }
+
+         .info-block {
+            margin-top: 20px;
+         }
+
+         .info-block p {
+            margin-left: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
+         }
+
+         .small-text {
+            font-size: 12px;
+         }
+
+         .no-margin {
+            margin: 0;
+         }
+
+         table {
+            outline: solid 1px black;
+            margin-left: 25px;
+         }
+
+         th {
+            border-bottom: solid 2px black;
+         }
+
+         td, th {
+            padding: 5px;
+         }
+
+         td:nth-child(2),
+         td:nth-child(3) {
+            text-align: center;
+         }
+
+         li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
+            list-style: decimal !important;
+            }
+      </style>
+
+      <script>
+      </script>
+   </head>
+   <body>
+      <div class='page'>
+         <h1>CPE 101 Coding Style</h1>
+
+         <div class='info-block'>
+            <h2>Why style?</h2>
+            <p>
+               <strong>Uniformity.</strong>
+               When you work for a software development company, your code is read and worked with by many other people.
+               Because of this, you want to make your code <strong>readable.</strong>
+               Because there is usually more than one person writing code, you want all code written to be <strong>consistent.</strong>
+               Style rules set up the guidelines for how the code should look.
+               Knowing what they are and following them allows others read and understand your code with more ease, and, in turn, allows you to work with other people's code and not be afraid of surprises.
+            </p>
+            &nbsp;
+            <p>
+               <strong>Convenience.</strong>
+               Uniformity, in many cases, just means picking some style, any style, and following it.
+               However, there are some rules that make sense even in the absence of the need for uniformity.
+               Certain ways to write code are a <strong>bad practice</strong> and needs to be prevented regardless of anything else.
+            </p>
+         </div>
+
+         <div class='info-block'>
+            <h2>Spacing</h2>
+            <h3>Braces</h3>
+               <p>Opening braces belong on their own line directly after a function name or the <span class='keyword'>if</span>, <span class='keyword'>else</span>, <span class='keyword'>switch</span>, <span class='keyword'>while</span>, <span class='keyword'>do</span>, and <span class='keyword'>for</span> keywords.</p>
+               <p>Closing braces also belong on their own line.</p>
+
+               <h4>Orphans</h4>
+                  <p><strong>ALWAYS</strong> use braces with control flow statements (<span class='keyword'>if</span>, <span class='keyword'>else</span>, <span class='keyword'>switch</span>, <span class='keyword'>while</span>, <span class='keyword'>do</span>, and <span class='keyword'>for</span>).</p>
+                  <p>Although allowed by the syntax, I always see some unfortunate student make the following mistake.</p>
+                  <pre class="prettyprint linenums"><code class='language-c'>
+if (some_number != 1)
+   do_something();
+                  </code></pre>
+
+                  <p>Then when they are trying to debug their code, they do the following:</p>
+                  <pre class="prettyprint linenums"><code class='language-c'>
+if (some_number == 1)
+   printf("Debugging print: %d\n", some_number);
+   do_something();
+                  </code></pre>
+
+                  <p>Now, the do_something() function will always be called. Further breaking the code.</p>
+
+            <h3>Indentation</h3>
+               <p>Horizontal whitespace (indentation) helps make code much more readable by making the different blocks (think of them as paragraphs in a paper) immediately apparent.</p>
+               <p><strong>NEVER</strong> use tabs.</p>
+               <p>Instead of tabs, use <strong>3</strong> spaces.</p>
+               <p>All reasonable text editors can be automatically configured to use spaces instead of tabs.</p>
+               <p>After each open brace, you should increase the indentation level by one. The closing brace should be on the same level as the opening brace.
+
+               <p>Compare the following code segment with and without proper indentation.</p>
+               <pre class="prettyprint linenums"><code class='language-c'>
+if (num >= 0)
+{
+printf("Print 0\n");
+if (num % 2 == 0)
+{
+printf("Print 1\n");
+}
+else
+{
+printf("Print 2\n");
+if (num == 3)
+{
+printf("Print 3\n");
+}
+else
+{
+if (num == 5)
+{
+printf("Print 4\n");
+}
+else
+{
+printf("Print 5\n");
+}
+}
+}
+}
+
+printf("Print 6\n");
+
+if (num == 0)
+{
+printf("Print 7\n");
+}
+               </code></pre>
+
+               <pre class="prettyprint linenums"><code class='language-c'>
+if (num >= 0)
+{
+printf("Print 0\n");
+if (num % 2 == 0)
+{
+   printf("Print 1\n");
+}
+else
+{
+   printf("Print 2\n");
+   if (num == 3)
+   {
+      printf("Print 3\n");
+   }
+   else
+   {
+      if (num == 5)
+      {
+         printf("Print 4\n");
+      }
+      else
+      {
+         printf("Print 5\n");
+      }
+   }
+}
+}
+
+printf("Print 6\n");
+
+if (num == 0)
+{
+printf("Print 7\n");
+}
+               </code></pre>
+
+            <h3>Vertical Whitespace</h3>
+               <p>Use vertical whitespace to make your code more readable.</p>
+               <p>Use it to break apart pieces of code that are logically different.</p>
+               <p>Only use a single newline in a row. Too much whitespace can make a file too long and hard to read.</p>
+               <pre class="prettyprint linenums"><code class='language-c'>
+int a;
+int b;
+// Do some math with a.
+a = someFunction();
+a -= 5;
+printf("a is %d\n", a);
+// Do some different math on b.
+b = someOtherFunction();
+b += 5;
+printf("b is %d\n", b);
+               </code></pre>
+
+               <pre class="prettyprint linenums"><code class='language-c'>
+int a;
+int b;
+
+// Do some math with a.
+a = someFunction();
+a -= 5;
+printf("a is %d\n", a);
+
+// Do some different math on b.
+b = someOtherFunction();
+b += 5;
+printf("b is %d\n", b);
+               </code></pre>
+
+            <h3>Operator Spacing</h3>
+               <p>All binary and tertiary operators should be surrounded by a single space.<p>
+               <p>Unary operators (such as '++' and '--') do not need a space between the operator and its operand.</p>
+
+               <p>Bad</p>
+               <pre class="prettyprint linenums"><code class='language-c'>
+int val=a+b-c*d+5;
+val ++;
+               </code></pre>
+
+               <p>Good</p>
+               <pre class="prettyprint linenums"><code class='language-c'>
+int val = a + b - c * d + 5;
+val++;
+               </code></pre>
+
+            <h3>Guard Spacing</h3>
+               <p>The expression in parenthesis after an <span class='keyword'>if</span> is called a boolean guard.</p>
+               <p>There should always be a space between the <span class='keyword'>if</span> and the guard.</p>
+               <p>The same rule applies for <span class='keyword'>for</span>, <span class='keyword'>while</span>, and <span class='keyword'>switch</span>.</p>
+         </div>
+
+            <div class='info-block'>
+               <h2>else if</h2>
+               <p>C does not syntacticly support an 'else-if' operator.</p>
+               <p>However, this can be simulated by placing an <span class='keyword'>if</span> directly after an <span class='keyword'>else</span>.</p>
+
+               <pre class="prettyprint linenums"><code class='language-c'>
+if (number < 0)
+{
+   printf("Positive\n");
+}
+else if (number > 0)
+{
+   printf("Negative\n");
+}
+else
+{
+   printf("Zero\n");
+}
+               </code></pre>
+            </div>
+
+            <div class='info-block'>
+               <h2>Naming</h2>
+               <h3>Meaningful Names and Abbreviations</h3>
+                  <p>You should always strive to use meaningful variable names and abbreviations.</p>
+                  <p>The name of a variable can be very useful in figuring out what a piece of code does.</p>
+
+               <h3>Variable Names</h3>
+                  <p>All variables names should be in all <strong>lowercase letter</strong>. All subsequent words should be separated with an underscore.</p>
+
+                  <pre class="prettyprint linenums"><code class='language-c'>
+int num;
+int some_number;
+int some_other_number_whose_name_is_a_bit_too_long;
+                  </code></pre>
+
+               <h3>Struct Names</h3>
+                  <p>All struct names should be named the same as variables.</p>
+
+                  <pre class="prettyprint linenums"><code class='language-c'>
+struct poiont
+{
+   int x;
+   int y;
+};
+
+struct some_really_cool_struct
+{
+   float value;
+   int dogs;
+   int cats;
+}
+                  </code></pre>
+
+               <h3>Function Names</h3>
+                  <p>Functions names should be the same as variable names.</p>
+
+               <h3>Constant Names</h3>
+                  <p>Constants (#define's) should be named in ALL_CAPS with an underscore between words.</p>
+
+            </div>
+
+            <div class='info-block'>
+               <h2>Line Length</h2>
+               <p>Lines should be no longer than <strong>80</strong> characters.</p>
+            </div>
+
+            <div class='info-block'>
+               <h2>Magic Numbers</h2>
+               <p>A 'Magic Number' is any number whose meaning is not <strong>immediately</strong> apparent.</p>
+               <p>Pretty much, any number <strong>but</strong> 0, 1, -1, and 2 is a magic number.</p>
+               <p>Magic numbers are not allowed.</p>
+               <p>If you need an arbitrary number, it should be #define it as a constant.</p>
+
+               <p>For example, what does the following code calculate?</p>
+               <pre class="prettyprint linenums"><code class='language-c'>
+int val = 3 * 10 - 2
+               </code></pre>
+
+               <p>val will be 28, but what does that mean? Alone, the value 28 means nothing.</p>
+               <p>Constants give the code some context:</p>
+               <pre class="prettyprint linenums"><code class='language-c'>
+#define LECTURES_PER_WEEK 3
+#define WEEKS_PER_TERM 10
+#define HOLIDAYS_PER_QUARTER 2
+
+int val = LECTURES_PER_WEEK * WEEKS_PER_TERM - HOLIDAYS_PER_QUARTER
+               </code></pre>
+
+               <p>Now we can see that this code is calculating the number of lectures in a academic term.</p>
+               <p>If we switch to the longer terms (like a semester system) or change the number of lectures per week, we can do it in a single place.</p>
+            </div>
+
+            <div class='info-block'>
+               <h2>Global Variables</h2>
+               <p><strong>NEVER</strong> use global variables.</p>
+            </div>
+
+            <div class='info-block'>
+               <h2>Circular-Inclusion</h2>
+               <p>All header files (.h) must actively prevent circular-inclusion.</p>
+               <p>This is done by #define'ing a unique constant in the header file and checking if it exists.</p>
+               <p>By convention, the constant is named the same as with file in all uppercase with an underscore instead of a period before the extension.</p>
+
+               <p>For example, the file <strong>point.h</strong> will have a header that looks something like:</p>
+               <pre class="prettyprint linenums"><code class='language-c'>
+#ifndef POINT_H
+#define POINT_H
+
+// The actual header content.
+.
+.
+.
+
+#endif POINT_H
+               </code></pre>
+
+               <p>
+                  his code checks to see if the constant POINT_H is defined.
+                  If it is, then it ignores all the code up until #endif.
+                  If it is not defined, then it will execute all the code up until #endif.
+                  Which includes defining the POINT_H constant.
+               </p>
+            </div>
+
+            <div class='info-block'>
+               <h2>Function Length</h2>
+               <p>Write short functions. Keep the short and simple.</p>
+               <p>Functions should be doing a single, clearly identifiable action.</p>
+               <p>Function should rarely be long. You should be prepared to justify any long functions.</p>
+            </div>
+
+            <div class='info-block'>
+               <h2>Comments</h2>
+               <h3>Helpful Comments</h3>
+                  <p>Your code should be peppered with comments that explain all complex logic.</p>
+
+               <h3>Header</h3>
+                  <p>Each .c and .h file you submit must contain a header comment at the top. The comment shall contain, at the very least, the following information:</p>
+                     <ul>
+                        <li>Assignment this file relates to</li>
+                        <li>Course</li>
+                        <li>Your name</li>
+                     </ul>
+                  <p>If the file is part of a team submission, put team name and names of all students of the team on the header comment, regardless of who actually created the file. You can use a separate comment to identify the specific author/authors.</p>
+
+                  <pre class="prettyprint linenums"><code class='language-c'>
+/*
+ * Assignment: Assignment 1
+ * Course: CPE 101
+ * Author: Eriq Augustine (eaugusti)
+ *
+ * Does all the code and things.
+ */
+                  </code></pre>
+            </div>
+
+            <hr />
+            <div class='info-block small-text'>
+               <p>Some information take from <a href='http://users.csc.calpoly.edu/~kmammen/101/documents/programmingGuidelines.html'>Professor Mammen's</a> and <a href='http://users.csc.calpoly.edu/~dekhtyar/CStyle.html'>Professor Dekhtyar's</a> 101 styles guides.</p>
+            </div>
+      </div>
+   </body>
+</html>
