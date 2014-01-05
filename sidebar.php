@@ -3,7 +3,7 @@
       <?php
          $menuItems = array(
             array('/', 'main', 'Main'),
-            array('/cpe101-winter14.php', 'cpe101', 'CPE 101'),
+            array('/cpe101-winter14', 'cpe101', 'CPE 101'),
             array('/cpe105', 'cpe105', 'CPE 105'),
             array('/cpe365', 'cpe365', 'CPE 365'),
             array('/tutoring', 'tutoring', 'Tutoring'),
