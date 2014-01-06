@@ -14,7 +14,6 @@
                <h2 class='page-title'>Projects</h2>
                <p>Edit: I always fall horribly behind updating this page. If you want a good idea of some things that I am working, check out <a href="https://github.com/eriq-augustine">my github</a>.</p>
                <p>Here is a list of some of the computer science projects that I have done or am currently working on.</p>
-               <p>Here is a list of some of the computer science projects that I have done or am currently working on.</p>
                <h3>Ongoing</h3>
                <a name="thesis"><h4>Master's Thesis</h4></a>
                   <p>My Master's thesis is a project for Netflix that involves Data Mining and Natural Language Processing. I cannot talk much more about it :(</p>
