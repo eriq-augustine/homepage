@@ -29,7 +29,7 @@
                   <h3>Logistics</h3>
                   <p>Class Time: MW 6 - 9</p>
                   <p>Room: 20-129, 14-303</p>
-                  <p>Office Hours: 14-250 -- T 6 - 9</a>
+                  <p>Office Hours: 14-240 -- T 6 - 9</a>
                   <p><a href='<?php echo $webBase; ?>/cpe101-winter14-files/syllabus.html'>Syllabus</a></p>
                   <p>Schedule:</p>
                   <iframe width='775' height='300' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AiBx3hjzTSnjdGhzRERHeVhRZVJDM1BlTzQzVWpNS0E&single=true&gid=0&output=html&widget=true'></iframe>
