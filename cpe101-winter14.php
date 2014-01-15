@@ -157,6 +157,13 @@
                ?>
             </ul>
 
+            <h2>Lectures</h2>
+            <ul>
+               <?php
+                  linkFilesInDir($lecture_dir);
+               ?>
+            </ul>
+
             <h2>Other Materials</h2>
             <ul>
                <?php
