@@ -136,13 +136,6 @@
          </div>
 
          <div id="extras">
-            <h2>Lectures</h2>
-            <ul>
-               <?php
-                  linkFilesInDir($lecture_dir);
-               ?>
-            </ul>
-
             <h2>Labs</h2>
             <ul>
                <?php
