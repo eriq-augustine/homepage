@@ -1,3 +1,4 @@
 Assignment 01;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/assignment1.html
 Assignment 02;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/assignment2.html
 Assignment 03;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/assignment3.html
+Assignment 04;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/assignment4.html
