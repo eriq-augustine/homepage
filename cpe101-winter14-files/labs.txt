@@ -3,3 +3,4 @@ Lab 02;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/labs/lab2.htm
 Lab 03;http://www.csc.calpoly.edu/~akeen/courses/csc101/handouts/labs/lab3.html
 Lab 04;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/labs/lab4.html
 Lab 05;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/labs/lab5.html
+Lab 06;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/labs/lab6.html
