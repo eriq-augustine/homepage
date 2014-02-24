@@ -3,3 +3,4 @@ Assignment 02;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assign
 Assignment 03;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/assignment3.html
 Assignment 03 (Test Cases);http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/test.c
 Assignment 04;http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/assignment4.html
+Assignment 05;http://www.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/assignment5.html
