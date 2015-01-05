@@ -164,6 +164,10 @@ html {
    vertical-align: top;
 }
 
+#main.wide {
+   width: 1090px !important;
+}
+
 /* If an #extra is present, then make the #main smaller. */
 #main:nth-last-child(2) {
    width: 860px;
