@@ -34,6 +34,10 @@
                <div>
                   <h3>Reference Materials</h3>
                   <div class='info-area'>
+                     <p><a href='<?php echo $webBase; ?>/csc141-winter15-files/141w2015_midterm2_key.pdf'>Midterm 2 Key</a></p>
+                  </div>
+
+                  <div class='info-area'>
                      <h4>Textbook Materials</h4>
                      <p><a href='<?php echo $webBase; ?>/csc141-winter15-files/LogicalEquivalenciesToKnow.pdf'>Logical Equivalencies To Know</a></p>
                      <p><a href='<?php echo $webBase; ?>/csc141-winter15-files/Chapter8_7th_Edition_Rosen.pdf'>Chaper 8 from 7th Edition</a></p>
