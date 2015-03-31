@@ -34,7 +34,6 @@
                <div>
                   <h3>Reference Materials</h3>
                   <div class='info-area'>
-                     <p><a href='<?php echo $webBase; ?>/csc141-spring15-files/141w2015_midterm2_key.pdf'>Midterm 2 Key</a></p>
                   </div>
 
                   <div class='info-area'>
