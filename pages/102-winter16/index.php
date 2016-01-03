@@ -28,11 +28,9 @@
       </div>
       <hr />
 
+
       <div>
          <h3>Reference Materials</h3>
-         <div class='info-area'>
-         </div>
-
          <div class='info-area'>
             <h4>Getting Help</h4>
             <p>There are many resources for you to get help with any Computer Science related thing.</p>
@@ -49,6 +47,52 @@
                Here is their site again, because it is an amazing resource:
             </p>
             <p><a href='<?php echo absLink('pages/tutoring'); ?>'>Tutoring Center Resource</a></p>
+         </div>
+
+         <div class='info-area'>
+            <h4>SSH Clients</h4>
+            <p>Getting into the school machine from home requires an SSH client.
+               (Only on Windows. Linux and Mac users can use the 'ssh' command.)
+               Although I have not used it, I have heard great things about a client hosted on Professor Mammen's site.
+               I have personally used Putty and find it pretty good.
+               <ul class='bullet-list'>
+                  <li><a href='http://users.csc.calpoly.edu/~kmammen/documents/misc/SSHSecureShellClient329.zip'>Mammen's One</a></li>
+                  <li><a href='http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html'>Putty</a></li>
+               </ul>
+            </p>
+         </div>
+
+         <div class='info-area'>
+            <h4>UNIX Tutorials</h4>
+            <p>
+               Starting to learn UNIX/Linux can be a daunting task.
+               There are many things to learn and it may feel very different from what you are used to.
+               There are many tutorials on the internet to help you learn UNIX.
+               Here are two simple ones:
+
+               <ul class='bullet-list'>
+                  <li><a href='http://www.ee.surrey.ac.uk/Teaching/Unix/'>UNIX Tutorial for Beginners</a></li>
+                  <li><a href='http://people.ischool.berkeley.edu/~kevin/unix-tutorial/toc.html'>UNIX Tutorial</a></li>
+               </ul>
+            </p>
+         </div>
+
+         <div class='info-area'>
+            <h4>Editors</h4>
+            <p>
+               Being familiar with a powerful text editor can make a surprising difference.
+               In the programming world, there are two text editors that have stayed on the top for over 30 years.
+               Vi (Vim) and Emacs are two very powerful terminal-based text editors (although both have GUI versions).
+               The arguments about which one is better have been going on for decades and will never be resolved.
+               In truth, they are both amazing editors and will greatly increase your productivity once you learn how to use them.
+               I personally use Vim, and can help you learn if you are interested.
+               There are many CS faculty who use Emacs and can help you.
+               There are also many online resources for each:
+            </p>
+            <ul class='bullet-list'>
+               <li><a href='http://www.unix-manuals.com/tutorials/vi/vi-in-10-1.html'>Vi (Vim)</a></li>
+               <li><a href='http://ergoemacs.org/emacs/emacs.html'>Emacs</a></li>
+            </ul>
          </div>
 
       </div>

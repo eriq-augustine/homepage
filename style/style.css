@@ -254,3 +254,18 @@ html {
 .page-title {
    text-align: center;
 }
+
+.bullet-list {
+   list-style: disc outside none;
+   margin-left: 30px;
+}
+
+.info-area {
+   margin-top: 15px;
+}
+
+h4 {
+   font-weight: bold;
+   font-size: 14px;
+   text-decoration: underline;
+}
