@@ -5,6 +5,8 @@
 
    preContent();
 
+   $labs_file = "labs/labs.txt";
+   $programs_file = "programs/programs.txt";
    $misc_dir = "misc";
 ?>
 
@@ -100,6 +102,20 @@
 </div>
 
 <div id="extras">
+   <h2>Labs</h2>
+   <ul>
+      <?php
+         linksInFile($labs_file, false);
+      ?>
+   </ul>
+
+   <h2>Programs</h2>
+   <ul>
+      <?php
+         linksInFile($programs_file, false);
+      ?>
+   </ul>
+
    <h2>Other Materials</h2>
    <ul>
       <?php
