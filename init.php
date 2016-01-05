@@ -16,13 +16,13 @@
       $pageDirURL = preg_replace('/\/index\.php$/', '', $requestURL);
 
       if ($pageId == '__main__') {
-         preg_match('/^(.*)\/index\.php$/', $_SERVER['DOCUMENT_URI'], $matches);
+         preg_match('/^(.*)\/index\.php$/', $_SERVER['SCRIPT_NAME'], $matches);
          $webBase = siteURL() . ($matches[1] == '' ? '/' : $matches[1]);
       } elseif ($pageId == '__archive__') {
-         preg_match('/^(.*)\/archive\/index\.php$/', $_SERVER['DOCUMENT_URI'], $matches);
+         preg_match('/^(.*)\/archive\/index\.php$/', $_SERVER['SCRIPT_NAME'], $matches);
          $webBase = siteURL() . ($matches[1] == '' ? '/' : $matches[1]);
       } else {
-         preg_match('/^(.*)\/(pages|archive)\/([^\/]+)\/index\.php$/', $_SERVER['DOCUMENT_URI'], $matches);
+         preg_match('/^(.*)\/(pages|archive)\/([^\/]+)\/index\.php$/', $_SERVER['SCRIPT_NAME'], $matches);
 
          $webBase = siteURL() . ($matches[1] == '' ? '/' : $matches[1]);
 
