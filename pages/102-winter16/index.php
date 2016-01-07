@@ -7,6 +7,7 @@
 
    $labs_file = "labs/labs.txt";
    $programs_file = "programs/programs.txt";
+   $lecs_dir = "lectures";
    $misc_dir = "misc";
 ?>
 
@@ -92,7 +93,7 @@
                There are also many online resources for each:
             </p>
             <ul class='bullet-list'>
-               <li><a href='http://www.unix-manuals.com/tutorials/vi/vi-in-10-1.html'>Vi (Vim)</a></li>
+               <li><a href='http://www.labnol.org/internet/learning-vim-for-beginners/28820/'>Vi (Vim)</a></li>
                <li><a href='http://ergoemacs.org/emacs/emacs.html'>Emacs</a></li>
             </ul>
          </div>
@@ -113,6 +114,13 @@
    <ul>
       <?php
          linksInFile($programs_file, false);
+      ?>
+   </ul>
+
+   <h2>Lectures</h2>
+   <ul>
+      <?php
+         linkFilesInDir($lecs_dir);
       ?>
    </ul>
 
