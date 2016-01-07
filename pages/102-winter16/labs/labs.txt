@@ -1,1 +1,2 @@
 Lab 00;labs/00/lab00.html
+Lab 01;labs/01/lab01.html
