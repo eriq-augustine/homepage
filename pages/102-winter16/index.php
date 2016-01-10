@@ -23,6 +23,7 @@
          <p>Room: 186-C103</p>
          <p>Office Hours: 14-240 -- R 1:30 - 4:30</a>
          <p><a href='<?php echo pageLink('misc/syllabus.html'); ?>'>Syllabus</a></p>
+         <p><a href='<?php echo pageLink('misc/codingStyle.html'); ?>'>Coding Style</a></p>
          <p>Schedule:</p>
          <?php
             // https://docs.google.com/spreadsheets/d/1kvWE6yQ16EUGBJBLiC4-yMT0mNxadIBnqKp31JWyssI/pubhtml?gid=0&single=true
