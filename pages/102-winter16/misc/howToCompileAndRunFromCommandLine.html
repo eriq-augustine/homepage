@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+  
+  <title>How to compile and run a Java Program from the command line</title></head>
+
+<body>
+
+<span style="font-weight: bold;">IMPORTANT</span><br>
+
+<ul>
+
+  <li>All of the following commands assumes the Java compiler (javac)
+and Java Virtual Machine (java) locations are known to the
+shell/Operating System.</li>
+
+</ul>
+
+<span style="font-weight: bold; text-decoration: underline;">Compiling Java Source From the Command Line</span>
+<ul>
+
+  <li><span style="font-weight: bold;">How to</span> compile a single source file:</li>
+
+</ul>
+
+<ol>
+
+  
+  <ol>
+
+    <li>Open a shell on the machine you wish to compile on.</li>
+
+    <li>Change directory (cd) to the directory that contains the source file(s) (.java) that you want to compile.</li>
+
+    <li>Enter the following command (modifying the source file name as appropriate):</li>
+
+  
+  </ol>
+
+</ol>
+
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<small><span style="font-weight: bold; font-family: Courier New,Courier,monospace;">javac YourSourceFile.java</span></small> &nbsp; &nbsp;&nbsp;&nbsp; 
+<ul>
+
+  <li><span style="font-weight: bold;">How to</span> compile multiple source files by name:</li>
+
+</ul>
+
+<ol>
+
+  
+  <ol>
+
+    <li>Open a shell on the machine you wish to compile on.</li>
+
+    <li>Change directory (cd) to the directory that contains the source file(s) (.java) that you want to compile.</li>
+
+    <li>Enter the following command (modifying the source names as appropriate)</li>
+
+  
+  </ol>
+
+</ol>
+
+&nbsp;&nbsp; <small><span style="font-weight: bold; font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; javac FileOne.java FileTwo.java FileThree.java<br>
+
+</span></small>
+<ul>
+
+  <li><span style="font-weight: bold;">How to</span> compile multiple
+source files using wildcards - if you have all of the source files for
+a single program in the same directory&nbsp;you can compile them all
+with a single command without having to specify all of their names, to
+do so:</li>
+
+</ul>
+
+<ol>
+
+  
+  <ol>
+
+    <li>Open a shell on the machine you wish to compile on.</li>
+
+    <li>Change directory (cd) to the directory that contains the source file(s) (.java) that you want to compile.</li>
+
+    <li>Enter the following command:<span style="font-family: Courier New,Courier,monospace;"><span style="font-weight: bold;"></span></span></li>
+
+  
+  </ol>
+
+</ol>
+
+<small><span style="font-weight: bold; font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;javac *.java</span></small>
+<ul>
+
+  <li><span style="font-weight: bold;">How to</span> compile using compiler flags:</li>
+
+</ul>
+
+<ol style="margin-left: 40px;">
+
+  <li>Open a shell on the machine you wish to compile on.</li>
+
+  <li>Change directory (cd) to the directory that contains the source file(s) (.java) that you want to compile.</li>
+
+  <li>Enter the following command (note that you can compile single or multiple files by name or wildcards):</li>
+
+</ol>
+
+<small><span style="font-weight: bold; font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;javac -Xlint:unchecked SourceFile.java<br>
+<br>
+
+</span></small><span style="font-weight: bold; text-decoration: underline;">Running Java Programs From the Command Line<br>
+
+</span>
+<ul>
+
+  <li><span style="font-weight: bold;">How to</span> run normally (without assertion statements enabled):</li>
+
+</ul>
+
+<ol>
+
+  
+  <ol>
+
+    <li>Open a shell on the machine you wish to run on.</li>
+
+    <li>Change directory (cd) to the directory that contains the program you want to run.</li>
+
+    <li>Make sure the program has been compiled</li>
+
+    <li>Enter the following command (note that the file name specified must be a .class file that contains a main method):</li>
+
+  
+  </ol>
+
+</ol>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;">java YourClassName</span></small>
+<ul>
+
+  <li><span style="font-weight: bold;">How to</span> run with assertion statements enabled:</li>
+
+</ul>
+
+<ul>
+
+  
+  <ol>
+
+    <li>Open a shell on the machine you wish to run on.</li>
+
+    <li>Change directory (cd) to the directory that contains the program you want to run.</li>
+
+    <li>Make sure the program has been compiled</li>
+
+    <li>Enter the following command (note that the file name specified must be a .class file that contains a main method):</li>
+
+  
+  </ol>
+
+</ul>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp; java -ea YourClassName</span></small>
+</body></html>
