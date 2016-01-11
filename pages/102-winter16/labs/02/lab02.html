@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+   <HEAD>
+      <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+      <TITLE>CPE 102 - Lab 02</TITLE>
+      <META NAME="GENERATOR" CONTENT="OpenOffice.org 2.2  (Linux)">
+      <META NAME="CREATED" CONTENT="20080407;11350100">
+      <META NAME="CHANGEDBY" CONTENT="Julie Workman">
+      <META NAME="CHANGED" CONTENT="20080407;11513200">
+      <META NAME="ProgId" CONTENT="FrontPage.Editor.Document">
+      <META NAME="Originator" CONTENT="Microsoft Word 11">
+      <!--[if gte mso 9]>
+      <xml>
+         <w:WordDocument>
+            <w:Zoom>95</w:Zoom>
+            <w:ValidateAgainstSchemas/>
+            <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+            <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+            <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+            <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+         </w:WordDocument>
+      </xml>
+      <![endif]-->
+      <!--[if gte mso 9]>
+      <xml>
+         <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+         </w:LatentStyles>
+      </xml>
+      <![endif]-->
+      <!--[if gte mso 10]>
+      <style>
+         /* Style Definitions */
+         table.MsoNormalTable
+         {mso-style-name:"Table Normal";
+         mso-tstyle-rowband-size:0;
+         mso-tstyle-colband-size:0;
+         mso-style-noshow:yes;
+         mso-style-parent:"";
+         mso-padding-alt:0in 5.4pt 0in 5.4pt;
+         mso-para-margin:0in;
+         mso-para-margin-bottom:.0001pt;
+         mso-pagination:widow-orphan;
+         font-size:10.0pt;
+         font-family:"Times New Roman";
+         mso-ansi-language:#0400;
+         mso-fareast-language:#0400;
+         mso-bidi-language:#0400;}
+      </style>
+      <![endif]-->
+      <STYLE TYPE="text/css">
+         <!--
+            P { color: #000000 }
+            A:link { color: #0000ff }
+            A:visited { color: #800080 }
+            -->
+      </STYLE>
+   </HEAD>
+   <BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
+      <P CLASS="msonormal"><FONT FACE="Verdana"><FONT SIZE=2><B>CPE 102</B></FONT></FONT></P>
+      <P CLASS="msonormal"><FONT FACE="Verdana"><FONT SIZE=2><B>Winter 2016</B></FONT></FONT></P>
+      <P CLASS="msonormal"><FONT FACE="Verdana"><FONT SIZE=2><B>Lab 2</B><FONT FACE="Verdana"><FONT SIZE=2><B></B></FONT></FONT></FONT></FONT></P>
+      <P CLASS="msonormal"><FONT FACE="Verdana"><FONT SIZE=2><B>Objectives</B></FONT></FONT></P>
+      <UL TYPE=DISC>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>More practice reading and
+               interpreting specifications for a programs and classes.</FONT></FONT>
+            </P>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>More practice writing
+               classes in Java from a specification.</FONT></FONT> 
+            </P>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>Practice reading
+               documentation for classes in the Java Standard API.</FONT></FONT> 
+            </P>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>To learn about and use
+               classes from the Java Standard API.</FONT></FONT> 
+            </P>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>More practice using static
+               methods and member variables.</FONT></FONT> 
+            </P>
+      </UL>
+      <P CLASS="msonormal"><FONT FACE="Verdana"><B><FONT SIZE=2>Resources</FONT></B></FONT></P>
+      <UL TYPE=DISC>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>The <A HREF="http://docs.oracle.com/javase/7/docs/api/index.html?java/util/Random.html">Random</A>
+               class from the Java Standard API.</FONT></FONT> 
+            </P>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>The <A HREF="docs/Rochambeau.html">Rochambeau</A>
+               class specification (not part of the Java Standard API).</FONT></FONT>
+            </P>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>The <A HREF="docs/RochambeauPlayer.html">RochambeauPlayer</A>
+               class specification (not part of the Java Standard API).</FONT></FONT>
+            </P>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>A description of the game
+               Rochambeau (<A HREF="http://en.wikipedia.org/wiki/Rock,_Paper,_Scissors">Rock,
+               Paper, Scissors</A>).</FONT></FONT> 
+            </P>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>Provided
+               <A HREF="code/RochambeauGame.java">RochambeauGame.java</A> (game driver).</FONT></FONT>
+            </P>
+      </UL>
+      <P CLASS="msonormal"><B><FONT SIZE=2><FONT FACE="Verdana">Ground
+         Rules</FONT></FONT></B>
+      </P>
+      <UL TYPE=DISC>
+         <LI>
+            <P><FONT FACE="Verdana"><FONT SIZE=2>None</FONT></FONT> 
+            </P>
+      </UL>
+      <P CLASS="msonormal"><FONT FACE="Verdana"><B><FONT SIZE=2>Orientation</FONT></B></FONT></P>
+      <P CLASS="msonormal" STYLE="margin-left: 0.25in"><FONT FACE="Verdana"><FONT SIZE=2>You
+         will be developing two classes to support the game of Rochambeau and
+         that work with the provided <A HREF="code/RochambeauGame.java">RochambeauGame.java</A></FONT></FONT>&nbsp;<FONT FACE="Verdana"><FONT SIZE=2>driver.&nbsp;
+         Note that the provided game driver expects mostly correct input from
+         the user – no guarantees if you respond to its prompts with
+         unexpected values!&nbsp; The <A HREF="docs/RochambeauPlayer.html">RochambeauPlayer</A>
+         class will make use of the <A HREF="http://docs.oracle.com/javase/7/docs/api/index.html?java/util/Random.html">Random</A>
+         class from the Java Standard API to simulate random behavior of
+         picking a Rochambeau &quot;throw&quot;.&nbsp; The <A HREF="docs/Rochambeau.html">Rochambeau</A></FONT></FONT>
+         <FONT FACE="Verdana"><FONT SIZE=2>class will provide the
+         functionality to determine the winner between two &quot;throws&quot;.</FONT></FONT>
+      </P>
+      <P CLASS="msonormal" STYLE="margin-left: 0.25in"><FONT SIZE=2><FONT FACE="Verdana"><B>Note:
+         </B>The word <I>throw</I> is a keyword in Java.&nbsp; Be careful when
+         picking variable names.</FONT></FONT>
+      </P>
+      <P CLASS="msonormal"><FONT SIZE=2><B><FONT FACE="Verdana">Part 1</FONT></B></FONT></P>
+      <P CLASS="msonormal" STYLE="margin-left: 0.25in"><FONT FACE="Verdana"><FONT SIZE=2>Develop
+         the <A HREF="docs/Rochambeau.html">Rochambeau</A> class</FONT></FONT> <FONT FACE="Verdana"><FONT SIZE=2>to
+         meet the specification.</FONT></FONT>
+      </P>
+      <P CLASS="msonormal"><FONT SIZE=2><B><FONT FACE="Verdana">Part 2</FONT></B></FONT></P>
+      <P CLASS="msonormal" STYLE="margin-left: 0.25in"><FONT FACE="Verdana"><FONT SIZE=2>Develop
+         the <A HREF="docs/RochambeauPlayer.html">RochambeauPlayer</A></FONT></FONT>
+         <FONT FACE="Verdana"><FONT SIZE=2>to meet the specification.&nbsp; Be
+         sure to perform sufficient unit testing as you go to be sure the
+         constructors and methods of this class perform as specified.&nbsp;
+         You must use the Random class to choose a &quot;throw&quot; for one
+         of the makeThrow() methods.&nbsp; Note that this method is
+         </FONT></FONT><FONT FACE="Verdana"><FONT SIZE=2><I>overloaded, </I></FONT></FONT><FONT FACE="Verdana"><FONT SIZE=2>you
+         only need use the Random class for one of the makeThrow() methods.&nbsp;
+         (Please see me if you do not know what that term means.)&nbsp; You
+         Use the nextInt() method of the Random class that accepts an integer
+         parameter.&nbsp; Be sure to update lastThrow in both of the
+         makeThrow() methods.</FONT></FONT>
+      </P>
+      <P CLASS="msonormal"><FONT SIZE=2><FONT FACE="Verdana"><B>Part 3</B></FONT></FONT></P>
+      <P CLASS="msonormal" STYLE="margin-left: 0.25in"><FONT FACE="Verdana"><FONT SIZE=2>Download
+         the provided copy of <A HREF="code/RochambeauGame.java">RochambeauGame.java</A>,
+         add it to your project, compile, and test. Be sure you understand
+         everything that is happening in this class, except for the Scanner class.  We
+         will cover that next week.</FONT></FONT>
+      </P>
+      <p><em>Lab courtesy of Julie Workman.</em></p>
+   </BODY>
+</HTML>
