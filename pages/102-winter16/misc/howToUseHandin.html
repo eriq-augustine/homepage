@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>howToUseHandin.html</title>
+   </head>
+   <body>
+      How to use the <span style="font-weight: bold; font-style: italic;">handin</span> command to submit your work.<br>
+      <br>
+      The <span style="font-weight: bold; font-style: italic;">handin</span>
+      command it a tool installed on the <a href="CSLServers.html">CSL servers</a> that allows you have submit electronic copies
+      of your work to a grading account. There are a few important
+      preconditions that must be met for you to use handin, they are:<br>
+      <ol>
+         <li>You must be logged in your account on one of the <a href="CSLServers.html">CSL servers</a>.</li>
+         <li>The files you wish to submit must be on the <a href="CSLServers.html">CSL servers</a>.</li>
+         <li>You must know the name of the account you are submitting to.</li>
+         <li>You must know the name of the assignment you are submitting to.</li>
+      </ol>
+      The <span style="font-weight: bold; font-style: italic;">handin</span>
+      command, itself, is fairly straight forward. &nbsp;If you forget how to
+      use it simply enter the command at the prompt and some basic
+      instructions will appear that should help you to remember how to use
+      it. &nbsp;If you do so, you should see something very similar to this
+      (the prompt may vary depending on your account settings):<br>
+      <br>
+      <small><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp; 12:01pm unix1 ~$ handin</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+      <span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp; Usage: handin touser [subdirectory [file...]]</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+      <span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp; 12:01pm unix1 ~$<br>
+      <br>
+      </span></small>Lets examine the <span style="font-weight: bold; font-style: italic;">Usage:</span> instructions, above, in detail. &nbsp;The <span style="font-weight: bold; font-style: italic;">touser</span>
+      is the name of the user-account you are handing in to. Your
+      instructor will provide this account name to you. For Mammen's
+      classes use <span style="font-weight: bold; font-style: italic;">kmammen-grader</span>
+      as the touser account name. &nbsp;The use of the sqaure-braces, '[' and
+      ']' typically, and in this case, indicate optional parts of a command.
+      This means you may or may not provide a <span style="font-weight: bold; font-style: italic;">subdirectory</span> name and/or files. The <span style="font-weight: bold; font-style: italic;">subdirectory</span> is also known as the assignment name. The <span style="font-weight: bold; font-style: italic;">file...</span>
+      indicates you may specify from zero-to-N files to be handed in.
+      That's all there is to it. Now let's look at each form of
+      the command and examine its behavior in more detail.<br>
+      <br>
+      If you type in the <span style="font-weight: bold; font-style: italic;">handin</span> command with a valid <span style="font-weight: bold; font-style: italic;">touser</span>
+      (a user-account name) you'll see a list of available subdirectories
+      (assignments). &nbsp;Take a look at the following handing command.
+      &nbsp;Notice that there is a single subdirectory/assignment called <span style="font-weight: bold; font-style: italic;">102Lab01</span> available. <span style="font-weight: bold; font-style: italic;"></span>During the quarter you'll see the various lab, lab quiz, and program assignment names appear as they become due.<br>
+      <br>
+      <small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 12:01pm unix1 ~$ handin kmammen-grader</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; Existing subdirectories (comments in parentheses):</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 102Lab01</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 12:01pm unix1 ~$</span></small><br>
+      <br>
+      Use this form of the command (above) to see what assignments, if any, may be
+      available for handing in to. &nbsp;This is handy if you can't remember
+      an assignments name or are having trouble with handin - you may just be
+      specifying an assignment name incorrectly. &nbsp;Note that assignment
+      names are case-sensitive and that just because you see an assignment
+      name listed does not mean it is available for handin since it may be
+      after the assignment's due date.<br>
+      <br>
+      Next, lets see how <span style="font-weight: bold; font-style: italic;">handin</span> behaves when you specify both a <span style="font-weight: bold; font-style: italic;">touser</span> (user-account) and a <span style="font-weight: bold; font-style: italic;">subdirectory</span> (assignment name). &nbsp;Here's what you'll see if you haven't handed anything in yet:<br>
+      <br>
+      <small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 10:25am unix1 ~$ handin kmammen-grader 102Lab01</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; The following input files have been received:</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 10:25am unix1 ~$</span></small><br>
+      <br>
+      Now lets see how <span style="font-weight: bold; font-style: italic;">handin</span> behaves when you specify a <span style="font-weight: bold; font-style: italic;">touser</span> (user-account name), <span style="font-weight: bold; font-style: italic;">subdirectory</span> (assignment name), and one or more <span style="font-weight: bold; font-style: italic;">files</span> for submission. Note that you must first change directory to the
+      directory containing the file(s) you wish to handin. See the <a href="http://freeengineer.org/learnUNIXin10minutes.html">Unix Tutorial</a> if you don't know how to do this. Here's what you'll see:<br>
+      <br>
+      <small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 10:41am unix1 ~$ handin kmammen-grader 102PLab01 Driver.java Lab01.java</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; Submitting Driver.java... ok</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; Submitting Lab01.java... ok</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 10:41am unix1 ~$<br>
+      <br>
+      </span></small>
+      Notice what happens when you specify a file that does nto exist in the current directory.
+      &nbsp;If you misspell a file name or specify a file that does not exist
+      you'll see something like the following:<br>
+      <br>
+      <small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 10:46am unix1 ~$ handin kmammen-grader 102Lab01 SomeNonExistantFile.java</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; Skipping SomeNonExistantFile.java: file non-existant or irregular</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 10:46am unix1 ~$ </span></small><br>
+      <small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;"><span style="font-weight: bold;"></span></span></small><br>
+      You can verify what you have handed in using the following command. Notice that you can see the
+      size of each
+      file and the time/date stamp for when it was handed in. This can
+      help you verify that you have handed in the correct versions of all of
+      the necessary files for an assignment.<br>
+      <br>
+      <small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 10:42am unix1 ~$ handin kmammen-grader 102Lab01</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; The following input files have been received:<br>
+      &nbsp;&nbsp;&nbsp; Sun Sep 21 10:41:50
+      2008&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 523
+      bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Driver.java<br>
+      &nbsp;&nbsp;&nbsp; Sun Sep 21 10:41:50
+      2008&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6488
+      bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lab01.java<br style="font-family: Courier New,Courier,monospace;">
+      </span><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; 10:42am unix1 ~$</span></small><small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;"></span></small><small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;"></span></small><br>
+      <br>
+      It is important to note that as long as it is before an assignment's
+      due date you can handin in the same file(s) as many times as necessary.
+      &nbsp;For example, suppose you've handed in a program and you discover
+      a bug afterwards. &nbsp;You may fix the bug and resubmit the corrected
+      version anytime prior to the due date. &nbsp;The version of the file
+      you handed in earlier will be replaced by the more recent submission.
+      &nbsp;Note that if you want to keep a copy of your earlier
+      submission(s) you must make your own backups - handin simply overwrites
+      the previous submission.<br>
+      <br>
+      That's all there is to it! &nbsp;Be sure you are comfortable with
+      handin as soon as possible to avoid late submissions of your work.
+      &nbsp;Ask your instructor, peers, and/or tutors for assistance as
+      necessary!
+   </body>
+</html>
