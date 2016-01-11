@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>CPE 102 Program 1b</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102 Program 1b - Tests for the
+      Fraction class</span><br>
+      <br>
+      <span style="font-weight: bold;">Ground Rules</span><br>
+      <p style="margin-left: 22px;">No
+         collaboration is allowed on this program assignment. Your program must
+         be an individual and original effort. Except for any situations
+         explicitly identified in this assignment, if any, you may only receive
+         help from your instructor or the <a href="https://www.csc.calpoly.edu/current/free-tutoring/">tutors</a>
+         provided by the Computer Science Department. See the <a href="../../../misc/syllabus.html">Syllabus</a>
+         for the significant consequences for disallowed collaboration and/or
+         plagiarism.
+      </p>
+      <span style="font-weight: bold;">
+      Errata</span><br>
+      <p style="margin-left: 22px;">None so far -
+         updates and corrections, if any, will show up here (be sure to refresh
+         this page as necessary).
+      </p>
+      <span style="font-weight: bold;">
+      Due Date and Submission
+      Instructions<span style="text-decoration: underline;"></span></span><br>
+      <p style="margin-left: 22px;">Submit the following file(s) on one of
+         the <a href="../../../misc/CSLServers.html">CSL servers</a>
+         using <a href="../../../misc/howToUseHandin.html">handin</a>
+         as
+         follows:
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">file(s):</span> FractionTest.java</p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">
+         touser:</span> eaugusti<br>
+      </p>
+      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp; <span style="font-size: 12pt;"><b>assignment/subdirectory:</b> 102-program01b</span><br>
+      <span style="font-weight: bold;">Objectives</span><br>
+      <ul>
+         <li>To learn how to practice <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> (TDD).</li>
+      </ul>
+      <span style="font-weight: bold;">
+      Specifications</span><br>
+      <ol>
+         <li>
+            <p>Your source code must meet the <a href="../../../misc/codingStyle.html">Programming
+               Guidelines</a>.
+            </p>
+         </li>
+         <li>Read about <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> (TDD) to orient yourself to the process you are about to embark on.<br></li>
+         <li>
+            <p><span style="font-weight: bold; font-style: italic; text-decoration: underline;">Minimally</span> implement a class called <span style="font-weight: bold; font-style: italic;">Fraction</span> to <a href="../c/docs/Fraction.html">this
+               specification</a>. This will allow you to compile and test your tests as you develop them. Recall that a minimally implemented class has <span style="font-weight: bold; font-style: italic;">no instance variables</span> and <span style="font-weight: bold; font-style: italic;">no logic</span>
+               except for the return statements necessary to satisfy the compiler.
+               Where possible, choose return values that are always wrong (would <span style="font-style: italic;">never</span> be returned by a correct version of the method) so that tests checking for correct behavior will always fail. When no <span style="font-style: italic;">always-wrong</span> value is then choose something clearly recognizable and
+               remember to <span style="font-style: italic;">not</span> write tests expecting that value to be returned as the correct result.<br>
+            </p>
+         </li>
+         <li>
+            <p>In a class called <span style="font-weight: bold; font-style: italic;">FractionTest</span> write <span style="font-style: italic; font-weight: bold; text-decoration: underline;">SUnit</span> tests (the class you wrote in Program 1a) for each of the public methods of the <span style="font-style: italic; font-weight: bold;">Fraction</span> class <span style="font-weight: bold; font-style: italic;">including</span> the constructors.<br>
+            </p>
+         </li>
+         <ol>
+            <li>Testing in any Object Oriented language has the
+               special challenge that the instance variables of an object are often
+               private. Private instance variables are inaccessable to code outside
+               the class which means the testing code cannot access them directly.The
+               testing code must, instead, use the public methods of the class to
+               perform the testing. The best practice is to use the same small set of
+               methods to verify the results of all tests that result in a Fraction
+               object. The equals method is not sufficient because it only tells you
+               if two Fraction objects are equal, not if they have specific expected
+               values for the numerator and denominator. To that end, you <span style="font-weight: bold; font-style: italic;">must</span> use the
+               following two methods when checking Fraction objects returned by the
+               methods you are testing:
+            </li>
+         </ol>
+      </ol>
+      <ol>
+         <ol start="2">
+            <ol>
+               <li>getNumerator()<br>
+               </li>
+               <li>getDenominator()<br>
+               </li>
+            </ol>
+            <li>
+               <p>You <span style="font-style: italic; font-weight: bold;">must</span> use <a href="SampleTest.java">SampleTest.java</a> as the starting point for your FractionTest class. Use the <span style="font-weight: bold; font-style: italic;">save-as
+                  </span><span style="font-weight: bold;"></span>feature of your browser (or wget/curl if you are a cool kid),<span style="font-weight: bold; font-style: italic;"> <span style="text-decoration: underline;">not</span>
+                  cut-and-paste,</span><span style="font-weight: bold;"></span> to obtain a copy of SampleTest.java<span style="font-weight: bold; font-style: italic;"><br>
+                  </span>
+               </p>
+            </li>
+            <ol>
+               <li>You <span style="font-style: italic;">must</span> to rename SampleTest.java as FractionTest.java</li>
+               <li>You <span style="font-style: italic;">must</span> change the name of the class from SampleTest to FractionTest.</li>
+               <li><span style="font-style: italic;">Do not</span> write or use constructors - they will not be called when grading your tests.</li>
+               <li><span style="font-style: italic;">Do not</span> use any instance variables - they can not be accessed by the static test methods you will be writting.<br>
+               </li>
+               <li><span style="font-style: italic;">Do not</span> modify the main - it will not be called when I grade your tests.<br>
+               </li>
+               <li>You <span style="font-style: italic;">should</span> write separate test methods for each Fraction method you are testing.</li>
+               <li>You <span style="font-style: italic;">must</span> call your test methods in the testAll method or they will not be called when grading your tests.</li>
+            </ol>
+            <li>
+               <p>At
+                  a <span style="font-weight: bold; font-style: italic;">minimum</span> you <span style="font-style: italic;">must</span> write the following number of tests (you may write
+                  more). Think about negative fractions (is the sign always carried in
+                  the numerator as required by the Fraction class specification?),
+                  positive fractions, and fractions that should be reduced, i.e., a
+                  result that should be 1/2 is not something like 2/4 (Fraction objects
+                  are always supposed to be stored in reduced form).<br>
+               </p>
+            </li>
+            <ol>
+               <li>Fraction(): 1 test (2 calls to SUnit methods, one for the numerator and one for the denominator).<br></li>
+               <li>Fraction(int numerator): 2 tests (4 calls to SUnit methods).<br></li>
+               <li>Fraction(int numerator, int denominator): 5 tests (9
+                  calls to SUnit methods) One of the 9 test should verify this
+                  constructor throws the expecte exception when the denominator is 0.
+                  Your instructor will lecture on how to do this - don't miss it!<br>
+               </li>
+               <li>getNumerator(): 2 tests (2 calls to SUnit methods - just checking the numerator).<br></li>
+               <li>getDenominator(): 2 tests (2 calls to SUnit methods - just checking the denominator).
+               </li>
+               <li>add(Fraction other): 4 tests (8 calls to SUnit methods, checking both numerator and denominator of result).<br></li>
+               <li>sub(Fraction other): 4 tests (8 calls to SUnit methods, checking both numerator and denominator of result).</li>
+               <li>mul(Fraction other): 4 tests (8 calls to SUnit methods, checking both numerator and denominator of result).</li>
+               <li>div(Fraction other): 4 tests (8 calls to SUnit methods, checking both numerator and denominator of result).</li>
+               <li>value(): 2 tests (2 calls to SUnit methods)<br></li>
+               <li>equals(): 2 tests (2 calls to SUnit methods)<br></li>
+               <li>toString(): 3 tests (3 calls to SUnit methods)<br></li>
+            </ol>
+         </ol>
+      </ol>
+      <span style="font-weight: bold;"></span>
+      <ol></ol>
+      <span style="font-weight: bold;">Grading<br>
+      </span>
+      <ol>
+         <li>
+            <p><span style="font-weight: bold; font-style: italic;"> </span><span style="font-weight: bold; font-style: italic;">All</span><span style="font-weight: bold; font-style: italic;"> </span><span style="font-style: italic;">of your </span><span style="font-weight: bold; font-style: italic;">non-boolean</span> tests <span style="font-weight: bold; font-style: italic;">must report an error</span> when compiled and run with a
+               minimal implementation of the Fraction class.
+            </p>
+         </li>
+         <li>
+            <p><span style="font-weight: bold; font-style: italic;">Some</span> of your <span style="font-weight: bold; font-style: italic;"></span><span style="font-weight: bold; font-style: italic; text-decoration: underline;"></span> <span style="font-style: italic;"><span style="font-weight: bold;">boolean</span> </span>tests must report an error (<span style="font-weight: bold; font-style: italic;">all</span> of your true-tests <span style="font-weight: bold; font-style: italic;">or</span> <span style="font-weight: bold; font-style: italic;">all</span> of your false-tests for a method depending on what the minimal implementation returns).</p>
+         </li>
+         <li>
+            <p><span style="font-weight: bold; font-style: italic;">All of your tests must not report</span>
+               an error when compiled and run with a
+               correct implementation of the Fraction class. You may not have a
+               correct implementation when this is due so develop them carefully!<br>
+            </p>
+         </li>
+      </ol>
+
+      <em>Program courtesy of Kurt Mammen.</em>
+   </body>
+</html>

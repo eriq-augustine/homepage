@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>CPE 102 Program 1c</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102 Program 1c - A
+      Fraction class</span><br>
+      <br>
+      <span style="font-weight: bold;">Ground Rules</span><br>
+      <p style="margin-left: 22px;">No
+         collaboration is allowed on this program assignment. Your program must
+         be an individual and original effort. Except for any situations
+         explicitly identified in this assignment, if any, you may only receive
+         help from your instructor or the <a href="https://www.csc.calpoly.edu/current/free-tutoring/">tutors</a>
+         provided by the Computer Science Department. See the <a href="../../../misc/syllabus.html">Syllabus</a>
+         for the significant consequences for disallowed collaboration and/or
+         plagiarism.
+      </p>
+      <span style="font-weight: bold;">
+      Errata</span><br>
+      <p style="margin-left: 22px;">None so far -
+         updates and corrections, if any, will show up here (be sure to refresh
+         this page as necessary).
+      </p>
+      <span style="font-weight: bold;">
+      Due Date and Submission
+      Instructions<span style="text-decoration: underline;"></span></span><br>
+      <p style="margin-left: 22px;">Submit the following file(s) on one of
+         the <a href="../../../misc/CSLServers.html">CSL servers</a>
+         using <a href="../../../misc/howToUseHandin.html">handin</a>
+         as
+         follows:
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">file(s):</span> Fraction.java</p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">
+         touser:</span> eaugusti<br>
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;
+         <span style="font-size: 12pt;"><b>assignment/subdirectory:</b> 102-program01c</span>
+      </p>
+      <span style="font-weight: bold;">
+      Objectives</span><br>
+      <ul>
+         <li>To learn how to&nbsp;develop a simple Java class to a
+            specification.
+         </li>
+         <li>To learn how to use Java objects.</li>
+      </ul>
+      <span style="font-weight: bold;">
+      Specifications</span><br>
+      <ol>
+         <li>
+            <p>Your source code must meet the <a href="../../../misc/codingStyle.html">Programming
+               Guidelines</a>.
+            </p>
+         </li>
+         <li>
+            <p>Your solution must pass all test of&nbsp;the provided
+               test driver (link and instruction provided below) when compiled and run
+               on any the <a href="../../../misc/CSLServers.html">CSL servers</a>.
+            </p>
+         </li>
+         <li>
+            <p>Implement a class called <span style="font-weight: bold; font-style: italic;">Fraction</span> to <a href="docs/Fraction.html">this
+               specification</a>. Your solution must only have the public methods
+               specified here but
+               you<span style="font-weight: bold; font-style: italic;"> may write addtional private methods </span><span style="font-weight: bold;"></span>if you wish.
+            </p>
+         </li>
+         <li>
+            <p>Use the minimally necessary number of instance variables
+               of the appropriate type and maintaining encapsulation (private).
+            </p>
+         </li>
+         <li>
+            <p>You must throw an <span style="font-style: italic;">IllegalArgumentException</span>
+               in certain situations (see <a href="docs/Fraction.html">specifications</a>
+               for when and where). Exceptions will be covered in greater detail later
+               in the
+               quarter, but for now, here is the Java code necessary to throw the
+               specified exception:
+            </p>
+         </li>
+      </ol>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <small><span style="font-family: Courier New,Courier,monospace;">throw
+      new IllegalArgumentException();</span></small><br>
+      <p style="margin-left: 40px;">Note that you must write
+         the
+         conditional logic
+         that determines when to throw or not throw the exception.<br>
+      </p>
+      <span style="font-weight: bold;">
+      Suggestions</span><br>
+      <ol>
+         <li>Start early, read the entire assignment and ask your
+            instructor for any necessary clarifications <span style="font-style: italic; text-decoration: underline;">before</span>
+            writing any code!
+         </li>
+         <li>
+            <p>Develop incrementally, one method at a time, and use the tests
+               you developed in <a href="../b/program-01b.html">Program 1b</a> to ensure
+               your work is correct. If you determine your tests are insufficient
+               write more tests! Write a little
+               code, compile, test, debug, fix, repeat until done.<span style="font-weight: bold;"></span>
+            </p>
+         </li>
+         <li>Euclid's Algorithm for finding the greatest common divisor (GCD)
+            is the perferred way to reduce your fraction when necessary. You may
+            use versions of the algorithm that you find on the web <span style="font-weight: bold; font-style: italic; text-decoration: underline;">but
+            you must
+            provide the URL</span> to the website in a comment block in your code just above the method using the algorithm
+            so I know where you
+            found it.<span style="font-weight: bold;"><br>
+            </span>
+         </li>
+      </ol>
+      <span style="font-weight: bold;">
+      Testing With the Provided Test Driver<br>
+      </span>
+      <ol>
+         <li>Use your own tests that you developed for <a href="../b/program-01b.html">Program 1b</a> prior to using
+            the provided test driver.
+         </li>
+         <li>
+            <p>Do not use the provided test driver (provided on the first due
+               date for the assignment, not before) until your solution is
+               complete and you believe it is correct.
+            </p>
+         </li>
+         <li>
+            <p>Using the <span style="font-weight: bold; font-style: italic;">save-as
+               feature of your browser (or wget/curl if you are a cool kid), <span style="text-decoration: underline;">not</span>
+               cut-and-paste,</span> save <span style="text-decoration: underline;"></span><a href="P1cTestDriver.java">P1cTestDriver.java</a> - <span style="font-weight: bold; font-style: italic;">to be published on the <span style="text-decoration: underline;">first</span> due date</span> - in
+               the same directory as your
+               Fraction.java file.
+            </p>
+         </li>
+         <li>
+            <p>Compile both P1cTestDriver.java and Fraction.java and run
+               P1cTestDriver (see <a href="../../../misc/howToCompileAndRunFromCommandLine.html">How
+               to Compile and Run From the Command Line</a>,
+               as necessary). Remeber that your code will be graded on one of the <a href="../../../misc/CSLServers.html">CSL servers</a> so, to
+               avoid unpleasant grading surprises, be sure to test on any one of those
+               machines at least
+               once <span style="font-style: italic;">after</span> all changes and <span style="font-style: italic;">just before</span> handing in!
+            </p>
+         </li>
+      </ol>
+
+      <em>Program courtesy of Kurt Mammen.</em>
+   </body>
+</html>

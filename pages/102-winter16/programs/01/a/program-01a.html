@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>CPE 102 Program 1a</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102 Program 1a - SUnit, A Simple
+      Unit Testing Class</span><br>
+      <br>
+      <span style="font-weight: bold;">Ground Rules</span><br>
+      <p style="margin-left: 22px;">No
+         collaboration is allowed on this program assignment. Your program must
+         be an individual and original effort. Except for any situations
+         explicitly identified in this assignment, if any, you may only receive
+         help from your instructor or the <a href="https://www.csc.calpoly.edu/current/free-tutoring/">tutors</a>
+         provided by the Computer Science Department. See the <a href="../../../misc/syllabus.html">Syllabus</a>
+         for the significant consequences for disallowed collaboration and/or
+         plagiarism.
+      </p>
+      <span style="font-weight: bold;">
+      Errata</span><br>
+      <p style="margin-left: 22px;">None so far -
+         updates and corrections, if any, will show up here (be sure to refresh
+         this page as necessary).
+      </p>
+      <span style="font-weight: bold;">
+      Due Date and Submission
+      Instructions<span style="text-decoration: underline;"></span></span><br>
+      <p style="margin-left: 22px;">Submit the following file(s) on one of the <a href="../../../misc/CSLServers.html">CSL servers</a> using <a href="../../../misc/howToUseHandin.html">handin</a> as
+         follows:
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">file(s):</span> SUnit.java<br></p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">
+         touser:</span> eaugusti<br>
+      </p>
+      <p style="margin-left: 22px;"><span style="font-size: 12pt;"><b>&nbsp;&nbsp;&nbsp; assignment/subdirectory:</b><span style="text-decoration: underline;"></span><b><span style="font-style: italic;"></span></b> 102-program01a</span><br>
+      </p>
+      <span style="font-weight: bold;">
+      Objectives</span><br>
+      <ul>
+         <li>To learn how to&nbsp;develop a simple Java class to a
+            specification.
+         </li>
+         <li>To learn about unit testing.</li>
+         <li>To develop useful unit testing tools for use throughout the
+            quarter.
+         </li>
+      </ul>
+      <span style="font-weight: bold;">
+      Orientation and Sample Code</span><br>
+      <p style="margin-left: 22px; width: 1133px;"><a href="http://en.wikipedia.org/wiki/Unit_testing">Unit testing</a> and <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a>
+         are widely used techniques to help ensure code quality. They can be
+         especially helpful to beginning programmers because their use
+         encourages and facilitates incremental development. <a href="http://en.wikipedia.org/wiki/Incremental_build_model">Incremental development</a>
+         helps you learn-as-you-go and can minimize confusion, bugs, and the
+         amount of code that needs to be rewritten. While these techniques may
+         not save time, they have been shown to improve code quality
+         when employed by experienced professionals. It is my belief, when used
+         9:00pm Wednesday 10/1/2014 for 100% credit)<br>
+         102P1a-85 (by 9:00pm Thursday 10/2/2014 for 85% credit)<br>
+         102P1a-70 (by 9:00pm Friday 10/3/2014 for 70% credit)</span>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+         correctly, their use will save most beginning programmers much time and
+         frustration, and contribute to a deeper understanding of the process of
+         software development.
+      </p>
+      <p style="margin-left: 22px; width: 1133px;">There are many unit
+         testing frameworks already in existence. They tend to be rich,
+         complicated environments that can easily overwhelm beginning
+         programmers and distract attention away from the more fundamental
+         skills that need to be mastered first. This assignment attempts to
+         solve that conundrum by having you write a small, but useful, subset of
+         unit testing functions. By writing them yourself you will have a deeper
+         understanding of what they are doing and how they work. Also, because
+         they are relatively simple, they are serve as excellent place to start
+         learning Object Oriented Programming techniques! This assignment is modeled after a small subset of methods found in the <a href="http://en.wikipedia.org/wiki/JUnit">JUnit</a> framework.<br>
+      </p>
+      <p style="margin-left: 22px; width: 1133px;">Unit testing is not really
+         an "object oriented" problem but, since this class is an OOP class and
+         we are using Java, we'll have to make it fit. Normally I'd would avoid
+         problems using the <span style="font-weight: bold; font-style: italic;">static</span> key word as long as possible but, due to the nature of the problem, we are going to dive in head first!
+         In Java methods (a.k.a. functions) can be static. The nice thing about
+         static methods is they can be called without having to construct an
+         object. The only restriction on static
+         methods is that can only use static data and local variables (not instance variables). This is
+         not a problem for us since we don't need any other type of data for our
+         unit testing methods. When writing static methods you simply include
+         the static keyword in the method declaration as follows:
+      </p>
+      <p style="margin-left: 22px; width: 1133px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; public class SUnit</span><br style="font-family: Courier New,Courier,monospace;">
+         <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; {</span><span style="font-family: Courier New,Courier,monospace;"><br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Class variables here - syntax shown below.<br>
+         </span></small>
+      </p>
+      <p style="margin-left: 22px; width: 1133px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void assertEquals(long expect, long actual)<br>
+         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; {<br>
+         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Stuff not shown...<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><br style="font-family: Courier New,Courier,monospace;">
+         <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+         &nbsp;&nbsp;&nbsp; }</span></small>
+      </p>
+      <p style="margin-left: 22px; width: 1133px;"><br>
+         The SUnit class will keep track of how many tests have been run and how
+         many of them detected errors. This means it will need some variables
+         that live for the life of the program and not just during a single
+         method call. This means local variables will not sufficient. Normally
+         we would declare <a href="http://en.wikipedia.org/wiki/Instance_variable"><span style="font-weight: bold; font-style: italic;">instance</span> <span style="font-weight: bold; font-style: italic;">variables</span></a>
+         (variables declared in a class and outside of a method. However, static
+         methods can't access instance variables because no instance (object)
+         was created and, therefore, they don't exist! The solution is to
+         declare <a href="http://en.wikipedia.org/wiki/Class_variable"><span style="font-weight: bold; font-style: italic;">class variables</span></a>. A <span style="font-style: italic;">class variable</span>
+         belongs to the class and is shared by all instances of the class and it
+         exists for the life of the program. It is very much like a global
+         variable in C (if you know what that is). Fortunately, class variables
+         can be accessed by static methods - perfect for out needs. Class
+         variables are declared in a class and outside of a method and include
+         the static keyword in the declaration. Here is an example of how you
+         would declare a class variable in SUnit:<br>
+      </p>
+      <small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp; &nbsp; public class SUnit</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><span style="font-family: Courier New,Courier,monospace;"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private static int testCount;<br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Methods here...</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></small><br>
+      <p style="margin-left: 22px; width: 1133px;"><br>
+         Calling static methods is straightforward in Java. Since a static method belongs to the class you simple call it as follows:
+      </p>
+      <small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUnit.assertEquals(x, y);</span></small><br>
+      <p style="margin-left: 22px; width: 1133px;"><br>
+         Finally, you will be making use of the Java Standard Library's <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html">Throwable</a> class, specifically it's <span style="font-style: italic;">printStackTrace</span>
+         method when reporting errors. To use the method you must first
+         construct a Throwable object and then call it on the object instance
+         you just created.&nbsp; The Throwable class has a constructor that
+         accepts a message - this is how you will provide the exact message
+         specified later in this assignment. Here is an example of how you could
+         construct a Throwable object and call the printStackTrace method:
+      </p>
+      <span style="font-family: Courier New,Courier,monospace;"><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Throwable throwable = new Throwable("Your error message here");<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throwable.printStackTrace();</small><br>
+      </span><br>
+      <span style="font-weight: bold;">
+      Specifications</span><br>
+      <ol>
+         <li>
+            <p>To receive full credit your source code must meet the <a href="../../../misc/codingStyle.html">Programming Guidelines</a>.
+            </p>
+         </li>
+         <li>
+            <p>To
+               receive any credit your solution must pass all test of&nbsp;the
+               provided
+               test driver (link and instruction provided below) when compiled and run
+               on any of the CSL servers.<br>
+            </p>
+         </li>
+         <li>
+            <p>Implement a class called SUnit to <a href="docs/SUnit.html">this
+               specification</a>. Your solution must only have the public methods
+               specified in the specification. Note that there is <span style="font-weight: bold; font-style: italic;"><span style="text-decoration: underline;">no</span> main</span> and <span style="font-weight: bold; font-style: italic;"><span style="text-decoration: underline;">no</span> explicit (written) constructor</span>.<br>
+            </p>
+         </li>
+         <li>
+            <p>You
+               may only use two private static int class variables, one to keep track
+               of how many assert methods are called and the other to keep track of
+               how many assert methods reported a failure. <span style="font-style: italic;"><span style="text-decoration: underline;">No other data fields</span> are allowed in the class</span>. You may use as many local variables as you deem necessary.<br>
+            </p>
+         </li>
+      </ol>
+      <span style="font-weight: bold;">Suggestions</span><br>
+      <ol>
+         <li>Start early, read the entire assignment, and ask your
+            instructor for any necessary clarifications <span style="font-style: italic; text-decoration: underline;">before</span>
+            writing any code!
+         </li>
+         <li>
+            <p>Develop
+               incrementally, one method at a time, testing as you go.&nbsp; The
+               methods are very similar so developing and testing one well and then
+               using it as a model for the others will be both more efficient and more
+               pleasant.<span style="font-weight: bold;"></span>
+            </p>
+         </li>
+      </ol>
+      <span style="font-weight: bold;">
+      Testing With the Provided Test Driver<br>
+      </span>
+      <ol>
+         <li>You should develop and use your own tests prior to using
+            the provided test driver.
+         </li>
+         <li>
+            <p>Do not use the provided test driver (provided on the first due
+               date for the assignment, not before) until your solution is
+               complete and you believe it is correct.
+            </p>
+         </li>
+         <li>
+            <p>Using the <span style="font-weight: bold; font-style: italic;">save-as
+               feature of your browser, <span style="text-decoration: underline;">not</span>
+               cut-and-paste,</span> save <span style="text-decoration: underline;"></span><a href="SUnitTest.java">SUnitTest.java</a> in
+               the same directory as your SUnit.java file. Note that SUnitTest.java will be published on the morning of the first due date -<span style="font-weight: bold; font-style: italic;"> it is not published earlier to encourage you to develop your own tests!</span><br>
+            </p>
+         </li>
+         <li>
+            <p>Compile both SUnitTest.java and SUnit.java and run SUnitTest (see <a href="../../../misc/howToCompileAndRunFromCommandLine.html">How
+               to Compile and Run From the Command Line</a>,
+               as necessary). Remember that your code will be graded on one of the <a href="../../../misc/CSLServers.html">CSL servers</a> so, to
+               avoid unpleasant grading surprises, be sure to test on any one of those
+               machines at least
+               once after all changes and just before handing in!
+            </p>
+         </li>
+      </ol>
+
+      <em>Program courtesy of Kurt Mammen.</em>
+   </body>
+</html>
