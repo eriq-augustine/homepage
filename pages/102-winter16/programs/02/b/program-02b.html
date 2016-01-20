@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>CPE 102 Program 2b</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102&nbsp;Program
+      2b - A Basic
+      array-based List</span><br>
+      <br style="font-weight: bold;">
+      <span style="font-weight: bold;"></span><span style="font-weight: bold;">Ground
+      Rules</span><br>
+      <p style="margin-left: 22px;">No
+         collaboration is allowed on this program assignment. Your program must
+         be an individual and original effort. Except for any situations
+         explicitly identified in this assignment, if any, you may only receive
+         help from your instructor or the <a href="https://www.csc.calpoly.edu/current/free-tutoring/">tutors</a>
+         provided by the Computer Science Department. See the <a href="../../../misc/syllabus.html">Syllabus</a>
+         for the significant consequences for disallowed collaboration and/or
+         plagiarism.
+      </p>
+      <span style="font-weight: bold;">
+      Errata</span><br>
+      <br>
+      &nbsp;&nbsp; None so far -
+      updates and corrections, if any, will show up here (be sure to refresh
+      this page as necessary).<br>
+      <br>
+      <span style="font-weight: bold;">Due Date and Submission
+      Instructions<span style="text-decoration: underline;"></span></span><br>
+      <p style="margin-left: 22px;">Submit the following file(s) on one of
+         the <a href="../../../misc/CSLServers.html">CSL servers</a>
+         using <a href="../../../misc/howToUseHandin.html">handin</a>
+         as
+         follows:
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;
+         <span style="font-weight: bold;">File(s): </span>BasicList.java BasicArrayList.java<br>
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;
+         <span style="font-weight: bold;">touser:</span> eaugusti
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp; <span style="font-size: 12pt;"><b>assignment/subdirectory:</b></span> 102-program02b</span>
+      </p>
+      <span style="font-weight: bold;">
+      </span><span style="font-weight: bold;">Objectives</span><br>
+      <ol>
+         <li>To gain&nbsp;experience working with arrays.</li>
+         <li>To gain experience working with Interfaces.</li>
+         <li>To gain&nbsp;experience working with exceptions.</li>
+         <li>To begin understanding the concept of an Abstract Data Type
+            (ADT).
+         </li>
+         <li>To gain insight into the internal workings of the
+            Java Standard Library java.util.ArrayList&lt;E&gt; class.<br>
+         </li>
+      </ol>
+      <span style="font-weight: bold;">Orientation</span><br>
+      <p style="margin-left: 21px;">You will
+         be implementing a class that represents a simple list like, for
+         instance, a list of numbers, a shopping list, or a todo list. Common
+         things one does with a list include adding stuff, removing stuff,
+         seeing if somthing is on a list. In programming lingo, a list is an
+         example of an Abstract Data Type (ADT). An ADT is a data type whose
+         logical operations are defined independently of the physical (concrete)
+         implementation. As you know, a Java interface specfies method
+         signatures but no method logic - an excellent choice for defining an
+         ADT! You will implement the methods specified by the interface (plus a
+         few more) using an array of Object references to support the list
+         operations. Later in the quarter you will implement that same ADT a
+         completely different physical implementation to experience, once again,
+         how the logic associated with a methods can be achieved in different
+         ways.<br>
+      </p>
+      <span style="font-weight: bold;">
+      Specification</span><br>
+      <ol>
+         <li>
+            <p>Your source code must meet the <a href="../../../misc/codingStyle.html">Coding Style
+               Guidelines</a>.
+            </p>
+         </li>
+         <li>Your solution must pass all tests of&nbsp;the provided
+            test driver (link and instruction provided below) when compiled and run
+            on vogon.
+         </li>
+         <li>
+            <p>Do
+               not suppress any compiler warnings. If you do, your submission may be
+               rejected for grading or your grade marked down at your instructor's
+               descretion.
+            </p>
+         </li>
+         <li>
+            <p>You may implement any private methods you wish to make
+               your implementation easier and/or better.&nbsp;
+            </p>
+         </li>
+         <li>
+            <p>Write a Java interface called <span style="font-weight: bold; font-style: italic;">BasicList</span>
+               to <a href="docs/BasicList.html">this specification</a>.
+            </p>
+         </li>
+      </ol>
+      <ol start="6">
+         <ol>
+            <li>
+               <p>Be sure to read the detailed method descriptions as
+                  there is
+                  often addtional and necessary information there.
+               </p>
+            </li>
+         </ol>
+      </ol>
+      <ol start="6">
+         <li>
+            <p>Write a Java class called <span style="font-weight: bold; font-style: italic;">BasicArrayList</span>
+               to <a href="docs/BasicArrayList.html">this specification</a>.
+               This class is not
+               a generic class like the Java Standard Library's ArrayList class.
+               Instead, it will be <span style="font-weight: bold; font-style: italic;">built upon a
+               array of
+               Object references</span>. Remember, due to polymorphism, a
+               reference to
+               any object of any type is also an <span style="font-weight: bold; font-style: italic;">instanceof</span>
+               Object. This means your BasicArrayList class can store a reference to
+               any and all Java class types - even ones that have not even been
+               written yet!
+            </p>
+         </li>
+         <ol>
+            <li>
+               <p>Be sure to read the detailed method descriptions as
+                  there is
+                  often addtional and necessary information there.
+               </p>
+            </li>
+            <li>Notice that this class in not generic.<br>
+            </li>
+            <li>
+               <p>This class must be written using an array of Object
+                  references
+                  to store and retrieve values.
+               </p>
+            </li>
+            <li><span style="font-weight: bold; font-style: italic;">This
+               class
+               distinguishes</span> between the <span style="font-weight: bold; font-style: italic;">size</span>
+               of the list
+               and the <span style="font-weight: bold; font-style: italic;">capacity</span>
+               of the list. The "size" of the list is the number of elements in
+               the list (stuff added but not removed) at a specific point in time. The
+               "capacity" of the list is the current length of the private array of
+               Object references. For example, a newly consructed BasicArrayList has a
+               size of zero and a capacity of ten. <span style="font-weight: bold; font-style: italic;">In Java you can use the
+               <span style="text-decoration: underline;">.length</span> property</span>
+               (not a method) on any array reference to find out is length/capacity at
+               runtime - useful!
+            </li>
+            <li>
+               <p>In the spirit of minimal necessary instance variables,
+                  your
+                  class is
+                  limited to two instance variables, an <span style="font-weight: bold; font-style: italic;">Object[] </span>to
+                  hold references to the items added to the list and an <span style="font-weight: bold; font-style: italic;">int</span> to keep
+                  track of the number of items in the list (its size). Be sure you don't
+                  confuse the size of a list with its capacity.
+               </p>
+            </li>
+            <li>Note that a list never has any gaps (holes) between the values
+               in contains. This means all indexes between zero and size-1 contains
+               things added (and not removed) from the list by the user of the list.
+            </li>
+            <li>
+               <p>You must only allocate a new array when it is necessary to
+                  grow or shrink the capacity of the array.
+               </p>
+            </li>
+            <li>
+               <p><span style="font-weight: bold; font-style: italic;">Recall
+                  that arrays are fixed in size.</span> For any method that
+                  increases the
+                  size of the array (adds stuff) you must grow the private array, as and
+                  when necessary, to support the operation. When attempting to add to an
+                  array that is full you must make a new, larger array, copy all the old
+                  arrays stuff into it, and add the new element. <span style="font-weight: bold; font-style: italic;">You must use
+                  this
+                  algorithm when growing the array</span> - the new larger array
+                  must
+                  always be exactly twice as large as the old (full) array.
+               </p>
+            </li>
+            <li>
+               <p>Several
+                  of the methods in this class throw exception when certain errors occur.
+                  Be sure to read the detailed method descriptions to see which methods
+                  and what specific exceptions. You will have to write the conditional
+                  logic to determine when to throw the exceptions. Exceptions are Java
+                  classes - just contstruct the type you want to throw and throw it. Here
+                  is an example of how to throw an IndexOutOfBoundsException (don't
+                  forget that you may need to import the exception if it is not in
+                  java.lang):
+               </p>
+            </li>
+         </ol>
+      </ol>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; throw new IndexOutOfBoundsException();
+      <ol>
+      </ol>
+      <span style="font-weight: bold;"></span><span style="font-weight: bold;">Testing
+      With the Provided Test Driver<br>
+      </span>
+      <ol>
+         <li>You should develop and use your own tests prior to using
+            the provided test driver.
+         </li>
+         <li>
+            <p>Do not use the provided test driver until your solution is
+               complete and you believe it is correct.
+            </p>
+         </li>
+         <li>
+            <p>Using the <span style="font-weight: bold; font-style: italic;">save-as
+               feature of your browser, <span style="text-decoration: underline;">not</span>
+               cut-and-paste,</span> save <a href="P2bTestDriver.java">P2bTestDriver.java</a>
+               (to be published on the first due date) in the same directory as all of
+               the source files (.java files).<br>
+            </p>
+         </li>
+         <li>
+            <p>Compile the <span style="font-style: italic;">P2bTestDriver.java</span>, all of your source files
+               (.java
+               files), and run
+               <span style="font-style: italic;">P2bTestDriver</span> (see <a href="../../../misc/howToCompileAndRunFromCommandLine.html">How
+               to Compile and Run From the Command Line</a>,
+               as necessary). Remember that your code will be graded on one of the <a href="../../../misc/CSLServers.html">CSL servers</a> so, to
+               avoid unpleasant grading surprises, be sure to test on any one of those
+               machines at least
+               once <span style="font-style: italic;">after</span> all changes and <span style="font-style: italic;">just before</span> handing in!
+            </p>
+         </li>
+      </ol>
+
+      <em>Program courtesy of Kurt Mammen.</em>
+   </body>
+</html>
