@@ -2,3 +2,4 @@ Lab 00;labs/00/lab00.html
 Lab 01;labs/01/lab01.html
 Lab 02;labs/02/lab02.html
 Lab 03;labs/03/lab03.html
+Lab 04;labs/04/lab04.html

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>CPE 102 Lab 4</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102 Lab 4 - Interfaces,
+      polymorphism, compile-time vs. run-time behavior, and run-time binding</span><br>
+      <br>
+      <span style="font-weight: bold;">Goals:</span><br>
+      <ul>
+         <li>To gain a better understanding of compile-time versus run-time
+            issues in Java.
+         </li>
+         <li>To gain a better understanding of run-time binding in Java.<br>
+         </li>
+         <li>To gain a better understanding of interfaces and polymorphism<br>
+         </li>
+      </ul>
+      <span style="font-weight: bold;">Orientation:</span><br>
+      <p style="margin-left: 26px;">You are going to read about some code
+         that is fully described but not fully shown and determine if various
+         code fragments would result in a compiler error, a run-time error
+         (sometimes), or always compile and run correctly. Ideally, you will
+         attempt to determine the correct answer simply by looking at the giving
+         code then, after answering the questions you will implement the
+         specified interfaces, classes, and develop tests for each of the
+         fragments to determine the correct answer.
+      </p>
+      <p style="margin-left: 26px;">You are encouraged to use the specified
+         code as a platform to explore more code fragments of your own design to
+         increase your awareness of the issues and concepts explored by this lab.<br>
+      </p>
+      <ol>
+      </ol>
+      <span style="font-weight: bold;">What to Do:</span><br>
+      <ol>
+         <li>Read, carefully, this <a href="lab04_worksheet.pdf">handout</a> (you don't actually need to print it)</li>
+         <li>
+            <p>After filling out (or just writing down) the table in the <a href="lab04_worksheet.pdf">handout</a>
+               with your best answers:
+            </p>
+         </li>
+         <ol>
+            <li>Write interfaces and classes that meet the descriptions found
+               in the <a href="lab04_worksheet.pdf">handout</a> (<span style="font-weight: bold;">A, B, C, D, </span>and<span style="font-weight: bold;"> E</span>). Be sure to include any
+               specified methods in the correct interface or class.<br>
+            </li>
+            <li>
+               <p>In a file called <span style="font-weight: bold; font-style: italic;">Tests.java</span>,
+                  write tests for each code fragment to see if you answers were correct.
+               </p>
+            </li>
+            <ol>
+               <li>Remember: You must determine how many different types of
+                  object references can be assigned to each reference type. When a
+                  reference can be assigned more that one type of object you will have to
+                  develop multiple tests for any code fragment that uses that reference
+                  to see if it compiles, always works, or only sometimes works.
+                  For example in the second row in the table, variable <strong>a</strong> could be referencing an object of type <strong>C</strong> (a = new C()) or <strong>D</strong> (a = new D()).
+                  <br>
+               </li>
+
+               <li>
+                  <p>Remember: Some will not compile. You will have to comment
+                     them out to continue your testing.
+                  </p>
+               </li>
+               <li>
+                  <p>Remember:
+                     Some will compile but fail at run-time. You will have to comment out
+                     the ones that fail at run-time to continue your testing.
+                  </p>
+               </li>
+               <li>Remember: Some will always compile and run without error.<br>
+               </li>
+            </ol>
+         </ol>
+      </ol>
+      <p><em>Lab courtesy of Kurt Mammen.</em></p>
+   </body>
+</html>
