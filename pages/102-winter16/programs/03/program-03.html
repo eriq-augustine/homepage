@@ -1,0 +1,857 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+      <meta name="ProgId" content="Word.Document">
+      <meta name="Generator" content="Microsoft Word 11">
+      <meta name="Originator" content="Microsoft Word 11">
+      <link rel="File-List" href="program2_files/filelist.xml">
+      <title>CPE 102 Program 3 - Interfaces</title>
+      <!--[if gte mso 9]>
+      <xml>
+         <w:WordDocument>
+            <w:Zoom>95</w:Zoom>
+            <w:ValidateAgainstSchemas/>
+            <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+            <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+            <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+            <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+         </w:WordDocument>
+      </xml>
+      <![endif]--><!--[if gte mso 9]>
+      <xml>
+         <w:LatentStyles DefLockedState="false" LatentStyleCount="156"> </w:LatentStyles>
+      </xml>
+      <![endif]-->
+      <style>
+         <!--
+            /* Style Definitions */
+            p.MsoNormal, li.MsoNormal, div.MsoNormal
+            {mso-style-parent:"";
+            margin:0in;
+            margin-bottom:.0001pt;
+            mso-pagination:widow-orphan;
+            font-size:12.0pt;
+            font-family:"Times New Roman";
+            mso-fareast-font-family:"Times New Roman";}
+            a:link, span.MsoHyperlink
+            {color:blue;
+            text-decoration:underline;
+            text-underline:single;}
+            a:visited, span.MsoHyperlinkFollowed
+            {color:purple;
+            text-decoration:underline;
+            text-underline:single;}
+            @page Section1
+            {size:8.5in 11.0in;
+            margin:1.0in 1.25in 1.0in 1.25in;
+            mso-header-margin:.5in;
+            mso-footer-margin:.5in;
+            mso-paper-source:0;}
+            div.Section1
+            {page:Section1;}
+            /* List Definitions */
+            @list l0
+            {mso-list-id:157623198;
+            mso-list-template-ids:355250940;}
+            @list l0:level1
+            {mso-level-start-at:4;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l1
+            {mso-list-id:285699403;
+            mso-list-template-ids:822483360;}
+            @list l1:level1
+            {mso-level-start-at:5;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l2
+            {mso-list-id:381297333;
+            mso-list-template-ids:1972026862;}
+            @list l3
+            {mso-list-id:419182748;
+            mso-list-template-ids:186566532;}
+            @list l3:level1
+            {mso-level-start-at:4;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l4
+            {mso-list-id:479927687;
+            mso-list-template-ids:-444436888;}
+            @list l4:level1
+            {mso-level-start-at:7;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l5
+            {mso-list-id:494881158;
+            mso-list-template-ids:963788134;}
+            @list l6
+            {mso-list-id:576981460;
+            mso-list-template-ids:1952753058;}
+            @list l7
+            {mso-list-id:666519821;
+            mso-list-template-ids:-1971413322;}
+            @list l7:level1
+            {mso-level-start-at:6;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l8
+            {mso-list-id:710424087;
+            mso-list-template-ids:-1926175344;}
+            @list l8:level1
+            {mso-level-start-at:11;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l9
+            {mso-list-id:773482709;
+            mso-list-template-ids:621585228;}
+            @list l9:level1
+            {mso-level-start-at:3;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l10
+            {mso-list-id:785153086;
+            mso-list-template-ids:1895471816;}
+            @list l10:level1
+            {mso-level-start-at:5;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l11
+            {mso-list-id:820392577;
+            mso-list-template-ids:-1866421454;}
+            @list l11:level1
+            {mso-level-start-at:3;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l12
+            {mso-list-id:893614835;
+            mso-list-template-ids:1139935220;}
+            @list l13
+            {mso-list-id:940143118;
+            mso-list-template-ids:-967799806;}
+            @list l14
+            {mso-list-id:962074163;
+            mso-list-template-ids:-979208612;}
+            @list l14:level1
+            {mso-level-start-at:3;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l15
+            {mso-list-id:1000618455;
+            mso-list-template-ids:1651412830;}
+            @list l15:level1
+            {mso-level-start-at:5;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l15:level2
+            {mso-level-start-at:2;
+            mso-level-tab-stop:1.0in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l16
+            {mso-list-id:1076512037;
+            mso-list-template-ids:-643260864;}
+            @list l16:level1
+            {mso-level-start-at:2;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l17
+            {mso-list-id:1079134250;
+            mso-list-template-ids:1777910850;}
+            @list l18
+            {mso-list-id:1173102504;
+            mso-list-template-ids:1213238278;}
+            @list l19
+            {mso-list-id:1221596179;
+            mso-list-template-ids:-1016293492;}
+            @list l19:level1
+            {mso-level-start-at:2;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l20
+            {mso-list-id:1281842288;
+            mso-list-template-ids:280634888;}
+            @list l20:level1
+            {mso-level-start-at:10;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l21
+            {mso-list-id:1369331929;
+            mso-list-template-ids:1903485410;}
+            @list l21:level1
+            {mso-level-start-at:5;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l22
+            {mso-list-id:1533105603;
+            mso-list-template-ids:-653348796;}
+            @list l22:level1
+            {mso-level-start-at:9;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l23
+            {mso-list-id:1582909654;
+            mso-list-template-ids:-575796146;}
+            @list l24
+            {mso-list-id:1739475738;
+            mso-list-template-ids:-618742748;}
+            @list l24:level1
+            {mso-level-start-at:2;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l25
+            {mso-list-id:1745376840;
+            mso-list-template-ids:-1392721992;}
+            @list l25:level1
+            {mso-level-start-at:8;
+            mso-level-tab-stop:.5in;
+            mso-level-number-position:left;
+            text-indent:-.25in;}
+            @list l26
+            {mso-list-id:1837721510;
+            mso-list-template-ids:316459676;}
+            ol
+            {margin-bottom:0in;}
+            ul
+            {margin-bottom:0in;}
+            -->
+      </style>
+      <!--[if gte mso 10]>
+      <style> /* Style Definitions */ table.MsoNormalTable {mso-style-name:"Table Normal"; mso-tstyle-rowband-size:0; mso-tstyle-colband-size:0; mso-style-noshow:yes; mso-style-parent:""; mso-padding-alt:0in 5.4pt 0in 5.4pt; mso-para-margin:0in; mso-para-margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:10.0pt; font-family:"Times New Roman"; mso-ansi-language:#0400; mso-fareast-language:#0400; mso-bidi-language:#0400;} </style>
+      <![endif]-->
+   </head>
+   <body lang="EN-US" link="blue" vlink="purple">
+      <div style="font-family: Times New Roman,Times,serif;" class="Section1">
+         <p style="font-weight: bold;" class="MsoNormal">CPE
+            102 Program 3 - Interfaces
+         </p>
+         <p class="MsoNormal" style="text-align: center; font-weight: bold;" align="center">&nbsp;</p>
+         <span style="font-weight: bold;">Ground Rules</span><br>
+         <p style="margin-left: 22px;">No
+            collaboration is allowed on this program assignment. Your program must
+            be an individual and original effort. Except for any situations
+            explicitly identified in this assignment, if any, you may only receive
+            help from your instructor or the <a href="https://www.csc.calpoly.edu/current/free-tutoring/">tutors</a>
+            provided by the Computer Science Department. See the <a href="../../misc/syllabus.html">Syllabus</a>
+            for the significant consequences for disallowed collaboration and/or
+            plagiarism.
+         </p>
+         <p class="MsoNormal" style="margin-left: 0.25in;">&nbsp;</p>
+         <p style="font-weight: bold;" class="MsoNormal">
+            Due Date and Submission
+            Instructions<br>
+         </p>
+         <p style="margin-left: 22px;">Notice that no tests are required to be
+            handed in for this assignment. You are, however, strongly encouraged to
+            test - especially any methods whose correctness that you are less than
+            sure about.<br>
+         </p>
+         <p style="margin-left: 22px;"><span style="font-weight: bold;"><span style="text-decoration: underline;"></span></span>Submit the following file(s) on one of
+            the <a href="../../misc/CSLServers.html">CSL servers</a>
+            using <a href="../../misc/howToUseHandin.html">handin</a>
+            as
+            follows:
+         </p>
+         <p style="margin-left: 22px;"></p>
+         <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;
+            <span style="font-weight: bold;">File(s):</span>&nbsp;Canvas.java, Circle.java,
+            ConvexPolygon.java, Rectangle.java, Shape.java, and
+            Triangle.java&nbsp;
+         </p>
+         <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;
+            <span style="font-weight: bold;">touser:</span> eaugusti<br>
+            <br>
+            <span style="font-size: 12pt;"><b>&nbsp;&nbsp;&nbsp; assignment/subdirectory:</b> 102-program03</span>
+         </p>
+         <br>
+         <span style="font-weight: bold;">Testing With the Provided
+         Test Driver</span><br>
+         <ol>
+            <li>The test driver will be published <span style="font-weight: bold; font-style: italic;">on the first due date for the assignment, usually by 10:00am</span>.<br></li>
+            <li>
+               <p>You should develop and use your own tests prior to using
+                  the provided test driver. Do
+                  not use the provided test driver until your solution is
+                  complete and you believe it is correct or you are likely to be
+                  overwhelmed with error messages and will spend unnecessary time just
+                  trying to understand the test driver - a frustrating and inefficient
+                  way to approach problem solving with computers!<br>
+               </p>
+            </li>
+            <li>
+               <p>Using the <span style="font-weight: bold; font-style: italic;">save-as
+                  feature of your browser (or wget/curl if you are a cool kid), not
+                  cut-and-paste</span>, save <a href="P3TestDriver.java">P3TestDriver.java</a>
+                  (to be published on the due date) in the same directory as all of
+                  the source files (.java files)
+               </p>
+            </li>
+            <li>
+               <p>Compile the P3TestDriver.java, all of your source files
+                  (.java
+                  files) and run
+                  P3TestDriver (see <a href="../../misc/howToCompileAndRunFromCommandLine.html">How
+                  to Compile and Run From the Command Line</a>,
+                  as necessary). Remember that your code will be graded on unix1 (2, 3, or 4) so, to
+                  avoid unpleasant grading surprises be sure to test on one of those machines just before handing it in!
+               </p>
+            </li>
+         </ol>
+         <p style="font-weight: bold;" class="MsoNormal"><br></p>
+         <p style="font-weight: bold;" class="MsoNormal">Objectives</p>
+         <ul>
+            <li class="MsoNormal" style="">To develop and
+               demonstrate basic object-oriented development skills.
+            </li>
+            <ul>
+               <li class="MsoNormal">
+                  <p>Much of the
+                     structure of the solution is given - use good judgment to "fill in
+                     the blanks".
+                  </p>
+               </li>
+            </ul>
+            <li class="MsoNormal" style="">
+               <p>To become familiar
+                  with and/or have more practice with:
+               </p>
+            </li>
+            <ul>
+               <li class="MsoNormal" style="">Java interfaces</li>
+               <li class="MsoNormal" style="">The concept of
+                  polymorphism
+               </li>
+               <li class="MsoNormal" style="">Use of the
+                  instanceof operator
+               </li>
+               <li class="MsoNormal" style="">Using the
+                  ArrayList collection class from the Java Standard Library
+               </li>
+            </ul>
+         </ul>
+         <ol style="margin-top: 0in;" start="1" type="1"></ol>
+         <ol style="margin-top: 0in;" start="2" type="1"></ol>
+         <p class="MsoNormal">&nbsp;</p>
+         <ol start="1" type="1"></ol>
+         <p style="font-weight: bold;" class="MsoNormal">Orientation</p>
+         <p style="height: 20px;" class="MsoNormal"> </p>
+         <p style="margin-left: 24px;" class="MsoNormal">You
+            will be creating a virtual drawing canvas on which you can place
+            various geometric shapes.&nbsp;You will not actually be drawing the
+            shapes in this program, rather, you will simply be representing
+            geometric shapes as objects and providing the ability to place them in
+            space.&nbsp;The canvas will make use of an ArrayList from the Java
+            Standard Library to collect shapes and will have methods that allow you
+            to add, remove, and inspect the shapes it contains.&nbsp;All of the
+            shapes share a common set of methods defined by a Java
+            interface.&nbsp; The behavior of these common methods varies, as
+            appropriate, by shape.&nbsp;In addition, each shape has one or more
+            methods unique to it.&nbsp; The following shapes will be supported:
+            circle, rectangle, triangle, and convex polygon.<br>
+         </p>
+         <br>
+         <p style="margin-left: 24px;" class="MsoNormal"><br></p>
+         <p style="font-weight: bold;" class="MsoNormal">Suggestions</p>
+         <ol start="1" type="1">
+            <li class="MsoNormal" style="">
+               <p>Remember and use -
+                  where necessary <span style="font-style: italic;">and</span> appropriate - the <span style="font-weight: bold; font-style: italic;">instanceof</span> operator in the appropriate places of
+                  your solution.&nbsp;
+               </p>
+            </li>
+            <li class="MsoNormal" style="">
+               <p>Implement the
+                  <span style="font-style: italic;">Shape</span> interface and document each of the method declarations.&nbsp;
+                  Write the comments in a generic fashion that reads well for any shape
+                  you might implement.&nbsp; The javadoc utility will use the javadoc
+                  comments from the interface to generate the html documentation for any
+                  class that implements the interface.&nbsp; This saves you the
+                  trouble of documenting the same methods multiple times in Circle,
+                  Rectangle, Triangle, ConvexPolygon, or any other class that my
+                  implement the Shape interface in the future.
+               </p>
+            </li>
+            <li class="MsoNormal" style="">
+               <p>Implement one
+                  shape at a time.&nbsp; Test and debug the shape until you are
+                  satisfied with its design, implementation, and functionality then
+                  implement the remaining shapes.
+               </p>
+            </li>
+            <li class="MsoNormal" style="">
+               <p>Implement the
+                  <span style="font-style: italic;">Canvas</span> class incrementally.&nbsp; Notice that many of the methods
+                  are very similar and differ only by the shape-type they work
+                  with.&nbsp; Implement one of methods that works with a single shape-type,
+                  test this code until you are satisfied it is working correctly - you'll
+                  then be able to cut and paste it, with minor modification, as the solution for the other similar methods.<br>
+               </p>
+            </li>
+            <li class="MsoNormal" style="">
+               <p>Remember that you
+                  may import classes from the Java Standard API used in your
+                  implementation and do not need to use the fully qualified package names
+                  as done in this specification (done here to reduce potential
+                  ambiguities).
+               </p>
+            </li>
+            <li class="MsoNormal" style="">
+               <p>
+                  For funsies I made you a driver that can draw your canvas for you: <a href="Draw.java">Draw.java</a>.
+                  Read the source code to figure out how to use it.
+                  This driver is in no way an exhaustive test, but it can be a good graphical check to see if you are on the right path.
+                  I recomend modifying the driver to use one shape at a time.
+                  Warning: this driver needs ConvexPolygon to be complete before it can draw any shape except a Circle.
+               </p>
+            </li>
+         </ol>
+         <p style="font-weight: bold;" class="MsoNormal"><br></p>
+         <p style="font-weight: bold;" class="MsoNormal">Specification</p>
+         <ol>
+            <li>
+               <p>Your source code must meet the <a href="../../misc/codingStyle.html">Programming
+                  Guidelines</a>.
+               </p>
+            </li>
+            <li>Your solution must pass all test of&nbsp;the provided
+               test driver (link and instruction provided below) when compiled and run
+               on unix1, (2, 3 or 4).
+            </li>
+            <li>
+               <p>All
+                  classes must use the minimally necessary number of instance variables
+                  of appropriate types and that maintain encapsulation (private). In most
+                  cases the specific&nbsp;instance variables are not
+                  specified.&nbsp;You
+                  are
+                  required to make well-reasoned choices as to the data types and number
+                  of instance variables used.&nbsp; Remember, each instance variable
+                  makes every object of the class require more memory.&nbsp; All
+                  instance variables should be essential to defining the state of an
+                  object and/or provide a significant computational efficiency and/or
+                  allow for a significant reduction in code complexity. &nbsp;All
+                  other
+                  variables should be declared as local variables in the method where
+                  they are used. Be ready to justify your choices.
+               </p>
+            </li>
+            <li>Note
+               that all class in this specification that are from the Java Standard
+               Library use their full package specification for clarity only. You may
+               import these classes in your code and then are not required to use the
+               full package specification. For example, if you see java.awt.Color as a
+               return type or parameter you may import java.awt.Color and simple use
+               Color as the return type or parameter.
+            </li>
+            <li>
+               <p>Document all
+                  methods in the Shape interface using the javadoc-style of
+                  documentation. See&nbsp;<a href="../../misc/howToWriteJavaDocs.html">How
+                  to
+                  write Javadoc comments</a> for assistance. You are not required
+                  to write javadoc-style comments for any other methods in any other
+                  files.
+               </p>
+            </li>
+            <li>
+               <p>Write a Java interface called Shape with the following
+                  methods:
+               </p>
+            </li>
+            <ol>
+               <li>
+                  <p>public double getArea() - Calculates and returns the
+                     area of
+                     the shape.
+                  </p>
+               </li>
+               <li>
+                  <p>public java.awt.Color getColor() - Returns the color of
+                     the
+                     shape.
+                  </p>
+               </li>
+               <li>
+                  <p>public void setColor(java.awt.Color color) - Sets the
+                     color of
+                     the shape.
+                  </p>
+               </li>
+               <li>
+                  <p>public boolean getFilled() - Returns true if the shape
+                     is
+                     filled with color, otherwise false (shape is wire-framed).
+                  </p>
+               </li>
+               <li>
+                  <p>public void setFilled(boolean filled) - Sets the filled
+                     state
+                     of the shape to the specified value.
+                  </p>
+               </li>
+               <li>
+                  <p>public java.awt.Point getPosition() - Returns the
+                     currrent
+                     position of the shape.
+                  </p>
+               </li>
+               <li>
+                  <p>public void setPosition(java.awt.Point position) -
+                     Changes the
+                     position of the shape <span style="font-weight: bold; font-style: italic; text-decoration: underline;">to</span>
+                     the specfied Point.
+                  </p>
+               </li>
+               <li>
+                  <p>public void move(java.awt.Point delta) - Moves the shape
+                     <span style="font-weight: bold; font-style: italic; text-decoration: underline;">by</span>
+                     the x and y amounts specified (in the Point delta).
+                  </p>
+               </li>
+            </ol>
+            <li>Write a class called Circle as follows:</li>
+            <ol>
+               <li>
+                  <p>Implements the Shape interface.</p>
+               </li>
+               <li>
+                  <p>Implements the following additional public methods:</p>
+               </li>
+               <ol>
+                  <li>
+                     <p>Circle(double
+                        radius, java.awt.Point position, java.awt.Color color, boolean filled)
+                        - Constructor.&nbsp; This specification should give you a large
+                        clue as
+                        to what
+                        the instance variables of the class should be!&nbsp; Note that the
+                        java.awt.Point specifies the location of the center of the
+                        circle.
+                     </p>
+                  </li>
+                  <li>double
+                     getRadius() - Returns the radius of the Circle object.
+                  </li>
+                  <li>
+                     <p>void
+                        setRadius(double radius) - Sets the radius of the Circle object.
+                     </p>
+                  </li>
+                  <li>
+                     <p>Override the
+                        equals-method (inherited from Object) so that it returns true for two
+                        Circle objects that are logically equivalent based on the state of all
+                        of their instance variables. See <a href="../../misc/howToOverrideEquals.html">How
+                        to
+                        override the equals method</a> for assistance.
+                     </p>
+                  </li>
+               </ol>
+               <li>
+                  <p>Note: Be sure to
+                     use the constant Math.PI (a constant defined in the Math class found in
+                     the Java Standard Library) when performing any calculations involving
+                     PI.
+                  </p>
+               </li>
+            </ol>
+            <li>Write a class called Rectangle as follows:</li>
+            <ol>
+               <li>
+                  <p>Implements the Shape interface.</p>
+               </li>
+               <li>
+                  <p>Implements the following additional public methods:</p>
+               </li>
+               <ol>
+                  <li>
+                     <p>Rectangle(int
+                        width, int height, java.awt.Point position, java.awt.Color color,
+                        boolean filled) - Constructor.&nbsp; This should give you a large
+                        clue as to what the instance variables of the class should
+                        be!&nbsp; Note that the java.awt.Point specifies the location of
+                        the
+                        lower-left corner of the rectangle.
+                     </p>
+                  </li>
+                  <li>int getWidth() - Returns the width of the Rectangle
+                     object.
+                  </li>
+                  <li>
+                     <p>void
+                        setWidth(int width) - Sets the width of the Rectangle object.
+                     </p>
+                  </li>
+                  <li>
+                     <p>int getHeight() - Returns the height of the Rectangle
+                        object.
+                     </p>
+                  </li>
+                  <li>
+                     <p>void
+                        setHeight(int height) - Sets the height of the Rectangle object.
+                     </p>
+                  </li>
+                  <li>
+                     <p>Override the
+                        equals-method (inherited from Object) so that it returns true for two
+                        Rectangle objects that are logically equivalent based on the state of
+                        all of their instance variables. See <a href="../../misc/howToOverrideEquals.html">How
+                        to
+                        override the equals method</a> for assistance.
+                     </p>
+                  </li>
+               </ol>
+            </ol>
+            <li>Write a class
+               called Triangle as follows:
+            </li>
+            <ol>
+               <li>
+                  <p>Implements the Shape interface. Here is a link to a
+                     description of how to calculate the area of a&nbsp;<a href="http://www.mathwords.com/a/area_triangle.htm">general
+                     triangle</a>.
+                  </p>
+               </li>
+               <li>
+                  <p>Implements the following additional public methods:</p>
+               </li>
+               <ol>
+                  <li>Triangle(java.awt.Point
+                     a, java.awt.Point b, java.awt.Point c, java.awt.Color color, boolean
+                     filled) - Constructor.&nbsp; This should give you a large clue as
+                     to what the instance variables of the class should be!&nbsp; Note
+                     that
+                     the
+                     java.awt.Point objects represent the three vertices of the triangle in
+                     the specified order, i.e., <span style="font-weight: bold; font-style: italic;"><span style="text-decoration: underline;">a</span>, <span style="text-decoration: underline;">b</span>, <span style="text-decoration: underline;">c</span></span>, and that the point represented by the parameter <span style="font-weight: bold; font-style: italic; text-decoration: underline;">a</span> represents&nbsp;the
+                     position of the triangle.
+                  </li>
+                  <li>
+                     <p>java.awt.Point
+                        getVertexA() - Returns a specific vertex of the triangle.
+                     </p>
+                  </li>
+                  <li>void
+                     setVertexA(java.awt.Point point) - Sets a specific vertex of the
+                     triangle.
+                  </li>
+                  <li value="4" class="MsoNormal" style="">
+                     <p>java.awt.Point
+                        getVertexB() - Returns a specific vertex of the triangle.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>void
+                        setVertexB(java.awt.Point point) - Sets a specific vertex of the
+                        triangle.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>java.awt.Point
+                        getVertexC() - Returns a specific vertex of the triangle.
+                     </p>
+                  </li>
+                  <li class="MsoNormal">
+                     <p>void
+                        setVertexC(java.awt.Point point) - Sets a specific vertex of the
+                        triangle.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>Override the
+                        equals-method (inherited from Object) so that it returns true for two
+                        Triangle objects that are logically equivalent based on the state of
+                        all of their instance variables.&nbsp;See&nbsp;<a href="../../misc/howToOverrideEquals.html">How
+                        to
+                        override the equals method</a>
+                        for assistance.
+                     </p>
+                  </li>
+               </ol>
+            </ol>
+            <li class="MsoNormal" style="">Write a class
+               called ConvexPolygon as
+               follows:
+            </li>
+            <ol>
+               <li>
+                  <p>Implements the Shape interface. Here is a link to a
+                     description of how to calculate the area of a&nbsp;<a href="http://www.mathwords.com/a/area_convex_polygon.htm">convex
+                     polygon</a>.&nbsp;
+                  </p>
+               </li>
+               <li>
+                  <p>Implements the following additional public methods:</p>
+               </li>
+               <ol>
+                  <li class="MsoNormal" style="">ConvexPolygon(java.awt.Point[]
+                     vertices, java.awt.Color color, boolean filled) - Constructor.&nbsp; This
+                     should give you a large clue as to what the instance variables of the
+                     class should be!&nbsp; Note that the array of java.awt.Point
+                     objects
+                     represents each vertex of the polygon and that the vertex at index zero
+                     represents the position of the convex polygon.
+                  </li>
+                  <ol>
+                     <li class="MsoNormal" style="">
+                        <p>A precondition is a condition that the caller of a method
+                           must meet. If the caller meets the precondition(s) of a method then the
+                           method should always produce the correct result. If the caller of a
+                           method does not meet the precondition(s) then the method is under no
+                           obligation to work correctly. In other words, you can assume the
+                           parameters meet the preconditions and do not need to verify them - a
+                           simplification of the problem and code! Note, however, that the caller
+                           does have a responsibility to meet the preconditions - you will be the
+                           caller when you test the method (you are following TDD aren't you?!?)
+                           so be sure to meet them in you test code!<br>
+                        </p>
+                     </li>
+                     <li class="MsoNormal" style="">This constructor has a
+                        precondition that the array of vertices passed in will be full, i.e.,
+                        there will be Point references in every location from index zero up to
+                        its length-1.<br>
+                     </li>
+                     <li class="MsoNormal" style="">
+                        <p>This
+                           constructor has a precondition that the vertices be provided in
+                           counter-clockwise order. This precondition simplifies the calculation of area.
+                        </p>
+                     </li>
+                     <li class="MsoNormal" style="">
+                        <p>This
+                           constructor has a precondition that the polygon is not closed. This mean that
+                           the first and last point are not the same point (no duplicate points).
+                        </p>
+                     </li>
+                  </ol>
+                  <li class="MsoNormal" style="">
+                     <p>java.awt.Point
+                        getVertex(int index) - Returns the specified vertex.
+                     </p>
+                  </li>
+                  <li class="MsoNormal">
+                     <p>void
+                        setVertex(int index, java.awt.Point vertex) - Sets the specified vertex
+                        of the polygon.
+                     </p>
+                  </li>
+                  <li class="MsoNormal">
+                     <p>int
+                        numVertices() - Gets the number of vertices in this polygon.
+                     </p>
+                  </li>
+                  <li class="MsoNormal">
+                     <p>Override the
+                        equals-method (inherited from Object) so that it returns true for two
+                        ConvexPolygon objects that are logically equivalent based on the state
+                        of all of their instance variables.&nbsp; When considering the
+                        vertices, consider two polygons equal only when the have the same
+                        vertices in the same order. See&nbsp;<a href="../../misc/howToOverrideEquals.html">How
+                        to
+                        override the equals method</a> for assistance.
+                     </p>
+                  </li>
+               </ol>
+            </ol>
+            <li class="MsoNormal" style="">Write a class
+               called Canvas as follows:
+            </li>
+            <ol>
+               <li class="MsoNormal" style="">
+                  <p>Has one (and only one) instance variable of type
+                     java.util.ArrayList&lt;Shape&gt;.
+                  </p>
+               </li>
+               <li class="MsoNormal" style="">
+                  <p>Implements the following public methods:</p>
+               </li>
+               <ol>
+                  <li class="MsoNormal" style="">
+                     <p>Canvas() -
+                        Default Constructor.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">void add(Shape
+                     shape) - Adds objects which implement the Shape interface to the end of
+                     the Canvas's java.util.ArrayList&lt;Shape&gt;&nbsp;
+                     instance variable.
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>Shape remove(int
+                        index) - Removes the Shape at the specified index and returns a
+                        reference to it or null if the index is out-of-bounds.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>Shape get(int
+                        index) - Return the ith Shape object from Canvas.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>int size() -
+                        Returns the number of Shapes contained by the Canvas.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>java.util.ArrayList&lt;Circle&gt;
+                        getCircles() - Returns a java.util.ArrayList of all of the Circle
+                        objects contained in the Canvas.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>java.util.ArrayList&lt;Rectangle&gt;
+                        getRectangles() - Returns a java.util.ArrayList of all of the Rectangle
+                        objects contained in the Canvas.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>java.util.ArrayList&lt;Triangle&gt;
+                        getTriangles() - Returns a java.util.ArrayList of all of the Triangle
+                        objects contained in the Canvas.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>java.util.ArrayList&lt;ConvexPolygon&gt;
+                        getConvexPolygons() - Returns a java.util.ArrayList of all of the
+                        ConvexPolygon objects contained in the Canvas.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>java.util.ArrayList&lt;Shape&gt;
+                        getShapesByColor(java.awt.Color color) - Returns a java.util.ArrayList
+                        of all Shape objects in the Canvas that match the specified
+                        java.awt.Color.
+                     </p>
+                  </li>
+                  <li class="MsoNormal" style="">
+                     <p>double
+                        getAreaOfAllShapes() - Returns the sum of the area of all Shape objects
+                        in the Canvas.
+                     </p>
+                  </li>
+               </ol>
+            </ol>
+         </ol>
+      </div>
+
+      <em>Program courtesy of Kurt Mammen.</em>
+   </body>
+</html>
