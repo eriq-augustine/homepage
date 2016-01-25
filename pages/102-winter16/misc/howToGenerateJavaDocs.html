@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>How to Generate Java Documentation HTML Files</title>
+</head>
+<body>
+CPE102 - How to generate Java Documentation HTML files<br>
+<br>
+Many Integrated Development Environments (IDEs) support generating
+javadoc HTML files at the "push of a button". &nbsp;It is not much more
+difficult to do it from the command-line. &nbsp;Assuming the utility is
+installed on the machine you are running on you can simply follow the
+steps below. &nbsp;You will need to modify your operating system to
+include the location of the javadoc utility for these instructions to
+work or, alternatively, you can specifiy the complete path to the
+javadoc utility to invoke it.<br>
+<ol>
+  <li>Open a terminal on the machine where the Java source files you would like to generate javadocs for exist.</li>
+  <li>Change directory (cd) to the directory contain the Java source files.</li>
+  <li>Invoke the javadoc tool as follows:</li>
+</ol>
+<div style="margin-left: 80px;"><small><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">12:01pm vogon $ javadoc YourSourceFileName.java</span></small><br>
+</div>
+<br>
+<div style="margin-left: 40px;">You will see several lines of output
+from the javadoc tool indicating its progress and any warnings or
+errors that occur during its execution - be sure to fix all warnings
+and errors regererate the HTML files, as necessary.<br>
+</div>
+<ol start="4">
+  <li>Now you can open the generalted HTML files using your favorite browser to see if you like the results.</li>
+  <li>Notice that if you want to generate HTML files for all the Java
+source files in the current directory you can use the following
+shell-supported syntax:</li>
+</ol>
+<div style="margin-left: 80px;"><small><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">12:01pm vogon $ javadoc *.java</span></small></div>
+</body>
+</html>

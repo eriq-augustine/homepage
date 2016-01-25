@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+
+
+  
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>How and Why to Override the equals Method in Java</title></head><body>
+
+<span style="font-weight: bold;"></span><span style="font-weight: bold;">How and why to override the equals method in Java...<br>
+Kurt Mammen<br>
+</span>
+
+
+<br>
+
+<span style="font-weight: bold;">Two kinds of object equality...<br>
+
+<br>
+
+</span>
+<div style="margin-left: 40px;">Often in Java programs you need to
+compare two objects to determine if they are equal or not. &nbsp;It
+turns out there are two different kinds of equality one can determine
+about objects in Java, <span style="font-weight: bold; font-style: italic;">reference equality</span> or <span style="font-weight: bold; font-style: italic;">logical equality</span>. &nbsp;To explore the differences between these two kinds of equality examine the following code fragment:<br>
+
+<br style="font-family: Courier New,Courier,monospace;">
+
+</div>
+
+<div style="margin-left: 80px;"><small><span style="font-family: Courier New,Courier,monospace;">// Create three&nbsp;String objects.</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;">String strA = new String("APPLES");</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;">String strB = new String("APPLES");</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">String strC = new String("ORANGES");</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">// Create a String reference and assign an existing String's reference to it</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">// so that both references point to the same String object in memory.</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;"></span><span style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">String strD = strA;</span></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;"></span></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">// Print out the results of various&nbsp;equality checks</span></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">System.out.println(strA == strB);</span></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">System.out.println(strA == strC);</span></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">System.out.println(strA == strD);</span></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;"></span></span></small></div>
+
+<div style="margin-left: 40px;"><br>
+
+The output of the code fragment above is:<br>
+
+<br>
+
+</div>
+
+<div style="margin-left: 80px;">false<br>
+
+false<br>
+
+true<br>
+
+</div>
+
+<div style="margin-left: 40px;"><br>
+
+Look carefully at the output of the first comparison - the result of
+comparing strA to strB (both of whose values are "APPLES") is false!
+&nbsp;This is because the equality operator (==) compares the
+references (addresses in memory) of the two Strings as two different
+numbers - this is known as <span style="font-weight: bold; font-style: italic;">reference equality</span>.
+&nbsp;In this case both String objects have the exact same value, i.e.,
+"APPLES" but they are in different physical memory locations so their
+references (addresses in memory) are different and the result is false.<br>
+
+<br>
+
+The second comparison between strA and strC also returns false as one
+would expect when comparing "APPLES" and "ORANGES" but not because the
+characters in the two String objects are different. &nbsp;Rather, it is
+because the references of the two different String objects are
+different addresses and, therefore, not numerically equal. &nbsp;Very
+subtle - depending on the quality of your tests you may or may not
+notice this kind of logical error in your own code.<br>
+
+<br>
+
+The third comparison compares the reference value strA to strD.
+&nbsp;In this case strD was assigned the reference (memory address) of
+strA so both strA and strD are the same reference (memory location)
+value and&nbsp;the comparsion returns true.<br>
+
+<br>
+
+<span style="font-weight: bold; font-style: italic;">Logical equality</span>
+compares the data of the objects instead of the value of the
+references. &nbsp;Examine the following logical equality checks using
+the same String object references from the example above:<br>
+
+<br>
+
+</div>
+
+<div style="margin-left: 80px;"><small><span style="font-family: Courier New,Courier,monospace;">System.out.println(strA.equals(strB));</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">System.out.println(strA.equals(strC));</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">System.out.println(strA.equals(strD));</span></small><br>
+
+</div>
+
+<div style="margin-left: 40px;"><br>
+
+The output from these comparisons is:<br>
+
+<br>
+
+</div>
+
+<div style="margin-left: 80px;">true<br>
+
+false<br>
+
+true<br>
+
+</div>
+
+<div style="margin-left: 40px;"><br>
+
+These are the outcomes&nbsp;one would typically expect and want. &nbsp;Notice the use of the <span style="font-weight: bold; font-style: italic;">equals method</span> <span style="font-weight: bold; font-style: italic;">instead of the == operator</span>.
+&nbsp;The String class overrides the equals method it inherited from
+the Object class and implemented logic to compare the two String
+objects character by character.<br>
+
+<br>
+
+Why, you might ask, did the String class override the equals method
+inherited from the Object class? &nbsp;Because the equals method
+inherited from Object performs <span style="font-weight: bold; font-style: italic;">reference equality</span>! &nbsp;Here is what the implementation of the equals method in Object looks like:<br>
+
+<br>
+
+</div>
+
+<div style="margin-left: 80px;"><small><span style="font-family: Courier New,Courier,monospace;">public boolean equals(Object other)</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">{</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;return this == other;</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">}</span></small><br>
+
+</div>
+
+<div style="margin-left: 40px;"><br>
+
+The reason the equals method in the Object class does reference
+equality is because it does not know how to do anything else. &nbsp;
+Remember, every class in Java is an Object (via inheritance). &nbsp;For
+the Object class's equals method to work correctly for every class
+(already written or every to be written in the future) it would need
+knowledge of the future and need to be infinitely large since there are
+an infinite number of Java classes that can be written - clearly an
+impossible task! &nbsp;So, Object's equals method does the best it can
+without trying too hard - strict reference equality.<br>
+
+<br>
+
+<span style="font-weight: bold; font-style: italic;">IMPORTANT: So, if you want a class that you write to be able to perform logical equality you <span style="text-decoration: underline;">must</span> override the equals method</span><br>
+
+<span style="font-weight: bold; font-style: italic;"></span></div>
+
+<span style="font-weight: bold; font-style: italic;"><br>
+
+<br>
+
+</span><span style="font-weight: bold;">How To Override the equals method inherited from the Object class...</span><span style="font-weight: bold; font-style: italic;"><br>
+
+</span>
+<div style="margin-left: 40px;"><br>
+
+When you override any method you must match the method name, return type, and parameter types <span style="font-weight: bold; font-style: italic;">exactly</span>. &nbsp;For the equals method, it must be this:<br>
+
+<br>
+
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public boolean equals(Object other)</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">{</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// Logic here to be discuss below...</span><br style="font-family: Courier New,Courier,monospace;">
+
+<span style="font-family: Courier New,Courier,monospace;">}<br>
+
+<br>
+
+</span></small></div>
+
+Notice that the parameter type is Object - <span style="font-weight: bold; font-style: italic;">it must be Object </span>or you will have <span style="font-weight: bold; font-style: italic;">overloaded</span> equals instead of <span style="font-weight: bold; font-style: italic;">overriding</span>
+it. &nbsp;The errors that can occur when you do this are subtle.
+&nbsp;Your code will work correctly much of the time but fail some of
+the time. &nbsp;This is due to polymorphism and runtime binding of
+methods. &nbsp;The affect is that, depending on the type of the
+parameter being passed to equals,&nbsp;sometimes your equals method
+will execute and sometimes the one in Object (performing strict
+reference equality) will be execute which, you recall,&nbsp;performs
+reference equality not logical equality.<br>
+
+<br>
+
+The next issue is that any referent can be null. &nbsp;If you use a
+null reference you will get a NullPointerException - not good.
+&nbsp;So, before you can use the parameter passed to equals you must
+verify that it is not null and, if it is, return false. This makes
+sense since something (<span style="font-weight: bold; font-style: italic;">this</span>) cannot be equal to nothing (null).<br>
+
+<br>
+
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public boolean equals(Object other)</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;">{<br>
+
+&nbsp; &nbsp;if (other == null)<br>
+
+&nbsp; &nbsp;{<br>
+
+&nbsp; &nbsp; &nbsp; return false;<br>
+
+&nbsp; &nbsp;}<br>
+
+<br style="font-family: Courier New,Courier,monospace;">
+
+</span></small><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// More logic here to be discuss below...</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;">}</span></small><br>
+
+</div>
+
+<br>
+
+Once you determine that the reference is not null you need to check to see if one object (<span style="font-weight: bold; font-style: italic;">this</span>) is equal to the object passed in (<span style="font-weight: bold; font-style: italic;">other</span>). &nbsp;Notice that the data type of <span style="font-weight: bold; font-style: italic;">other</span>
+is Object - this means any kind of reference can be passed to your
+equals method. &nbsp;If you assume the type of the parameter is correct
+(the same type as the class where you are overriding the equals method)
+it will work as long as no other code passes in anything else - NOT A
+GOOD ASSUMPTION - since the consequences, if you are wrong, is a
+ClassCastException. &nbsp;You can count on your instructor to pass you
+things that are not expected intentionally and you can expect your
+peers in your later professional life to do it unintentionally with
+surprising frequency! &nbsp;The best way to handle the type issue is to
+make sure the two object (<span style="font-weight: bold; font-style: italic;">this</span> and <span style="font-weight: bold; font-style: italic;">other</span>) are instances of the same class as follows:<br>
+
+<br>
+
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public boolean equals(Object other)</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;">{</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;if (other == null)</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;{</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; return false;</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;}<br>
+
+<br>
+
+&nbsp; &nbsp;if (this.getClass() != other.getClass())<br>
+
+&nbsp; &nbsp;{<br>
+
+&nbsp; &nbsp; &nbsp; return false;<br>
+
+&nbsp; &nbsp;}<br>
+
+</span></small><small><span style="font-family: Courier New,Courier,monospace;"></span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// More logic here to be discuss below...</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;">}<br>
+
+</span></small><small><span style="font-family: Courier New,Courier,monospace;"></span></small></div>
+
+<small><span style="font-family: Courier New,Courier,monospace;"><br>
+
+</span></small>The getClass method (use above) is one of the methods of
+the Object class and is inherited by all classes from Object. &nbsp;It
+returns a reference to the Class class for the class-type of the
+reference it is called on. There is only one Class class reference for
+a particular Class - this is&nbsp;known as a <span style="font-weight: bold; font-style: italic;">singleton</span>.
+&nbsp;All instances of the same Class share the same Class class
+reference. &nbsp;If you call getClass on any two references of the same
+type you'll get the same Class class reference value. &nbsp;This is one
+of the rare instance were reference equality (or inequality) is what
+you want so you do not need to call the equals method of the Class
+class to compare them (you may, it will work, but it is slightly less
+efficient and demonstrates lack of understanding).<br>
+
+<br>
+
+Finally, after determining that the reference passed in (<span style="font-weight: bold; font-style: italic;">other</span>) is not null and is the same as <span style="font-weight: bold; font-style: italic;">this</span>,&nbsp;you
+typically check that all of the instance variables of each object are
+equal. &nbsp;This is not a strict requirement - just typical.
+&nbsp;When you write a class you decide what equality means and
+implement it as such. Remember that for primitive instance variable you
+may use the equality operators (== and !=) unless, of course, they are
+floats or doubles, in which case you have to decide what level of
+precision you want/need. &nbsp;For instance variables that are object
+references you must use the equals method of their classes.
+&nbsp;Arrays require you to loop through them and do the right thing or
+use methods of the Java Standard Library that implement loops and do
+the right thing. &nbsp;For example, lets assume a <span style="font-weight: bold; font-style: italic;">class called Simple</span> that has two instance variables, an<span style="font-weight: bold; font-style: italic;"> int </span><span style="font-weight: bold;"></span>called<span style="font-weight: bold; font-style: italic;"> x </span><span style="font-weight: bold;"></span>and<span style="font-weight: bold; font-style: italic;"> </span><span style="font-weight: bold;"></span>a <span style="font-weight: bold; font-style: italic;">String </span><span style="font-weight: bold;"></span>called<span style="font-weight: bold; font-style: italic;"> str</span>.
+&nbsp;Assuming that str could never be null (a class invariant you must
+maintain in the rest of the code belonging to the class) here is what a
+correct equals method might look like:<br>
+
+<br>
+
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public boolean equals(Object other)</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;">{</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;if (other == null)</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;{</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; return false;</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;}</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;if (this.getClass() != other.getClass())</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;{</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; return false;</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;}</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;if (this.x != ((Simple)other).x)</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;{</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; return false;</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;}</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;if (!this.str.equals(((Simple)other).str))</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;{</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; return false;</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;}</span></small><br>
+
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small><small><span style="font-family: Courier New,Courier,monospace;"></span></small><small><span style="font-family: Courier New,Courier,monospace;"></span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;return true;</span></small><br style="font-family: Courier New,Courier,monospace;">
+
+<small><span style="font-family: Courier New,Courier,monospace;">}</span></small><br>
+
+</div>
+
+<br>
+
+Notice that the use of <span style="font-weight: bold; font-style: italic;">this</span>
+in the example above in not necessary and included for clarity only.
+&nbsp;Also notice that there are many ways to write the code above that
+are logically equivalent . &nbsp;You may write your equals methods in
+any logically equivalent manner you wish.<br>
+
+<br>
+
+</div>
+
+<span style="font-weight: bold;">Inheritance and the equals Method...<br>
+
+<br>
+
+</span>
+<div style="margin-left: 40px;">When overriding the equals method in classes making use of inheritance it is important to keep the super class and sub-class as <span style="font-weight: bold; font-style: italic;">loosely coupled</span>
+as possible. &nbsp;Loosely coupled classes make as few assumptions
+about each other as possible making the code more maintainable over
+time. &nbsp;A secondary goal is to avoid duplication of code.
+&nbsp;Let's take a look at an example involving three classes, A, B,
+and C as follows:<br>
+<br>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public class A</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// Class implementation not shown</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">}</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<small><br style="font-family: Courier New,Courier,monospace;">
+</small>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public class B extends A</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// Class implementation not shown</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">}</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<small><br style="font-family: Courier New,Courier,monospace;">
+</small>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public class C extends B</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// Class implementation not shown</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">}</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<br>
+As you can see, class A is a sub-class of Object by implicit extension,
+B is a sub-class of A by explicit extension, and C is a sub-class of B
+by explicit extension. &nbsp;Now look at some code making use of some
+class C objects and checking to see if two objects are equal:<br>
+<br>
+<div style="margin-left: 40px;">C c1, c2;<br>
+c1 = getSomeRandomCObject();<br>
+c2 = getSomeRandomCObject();<br>
+<br>
+if (c1.equals(c2))<br>
+{<br>
+&nbsp; &nbsp;// Do something, anything, it is not germane to the discussion<br>
+}<br>
+<br>
+When class C overrides the equals method it must check that the object
+reference passes in is not null, that it is the same class (not a
+requirement, but typical), and that <span style="font-weight: bold; font-style: italic;">all</span> the instance data is equal - <span style="font-weight: bold; font-style: italic;">including</span>
+all superclass instance variables it inherited. &nbsp;Assuming all C's
+superclasses maintain strict encapsulation (private instance variables)
+this presents a problem: How do you access the private instance
+variables of your superclasses? &nbsp;One solution would be to use the
+accessor methods (get-methods) to obtain the data of the super classes
+- this is an example of tight coupling - a &nbsp;bad idea! &nbsp;First,
+this requires detailed knowledge of the super classes - the sub-class
+must know all instance data and all methods to access them. The
+downside of this approach is that it is more work and more likely to be
+wrong in the first place, and less likely to be maintained properly in
+the second place. &nbsp;Imagine someone else wrote class A and you are
+simply extending it. &nbsp;By calling the accessor methods of class A
+in class C's implementation of equals the Class C code is tightly
+coupled to Class A's implementation. &nbsp;Now imagine that the person
+that wrote class A makes changes - how likely are they to realize that
+class C may be affected by the changes? &nbsp;Even if they notice will
+they know how to modify Class C's implementation to work with the new
+class A? &nbsp;As you can see, even a relatively simple change to Class
+A that should be isolated has now become more complicated and error
+prone.<br>
+<br>
+How do you solve this issue? &nbsp;You reuse your superclass's
+implementation of equals when you override equals in your class as
+follows:<br>
+<br>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public class C extends B</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// Class implementation not shown except for equals<br>
+<br style="font-family: Courier New,Courier,monospace;">
+</span></small></div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;public boolean equals(Object other)</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; if (!super.equals(other))</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; {</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return false;</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; }</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<small><br style="font-family: Courier New,Courier,monospace;">
+</small>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; // Rest of equals method here, i.e., check all class C instance variables for equality</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;}<br>
+}<br>
+</span></small></div>
+<br>
+Notice the absence of the null-check and class-type check that was
+stressed earlier in this document. &nbsp;If you do them here your code
+will be logically correct but you will be duplicating logic, wasting
+CPU cycles, and contributing to global-warming - all unnecessary evils.
+&nbsp;To see why lets lets follow the flow-of-execution. &nbsp;The
+super.equals(other) call in the <span style="font-weight: bold; font-style: italic;">first line </span>of
+C's&nbsp;equals method calls its super class's implementation of
+equals, specifically class&nbsp;B's equals method, which should also
+call its super.equals in its first line as follows:<br>
+<br>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public class B extends A</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// Class implementation not shown except for equals<br>
+<br style="font-family: Courier New,Courier,monospace;">
+</span></small></div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;public boolean equals(Object other)</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; if (!super.equals(other))</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; {</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return false;</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; }</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<small><br style="font-family: Courier New,Courier,monospace;">
+</small>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; // Rest of equals method here, i.e., check all class B instance variables for equality</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;}</span></small><br>
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small></div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">}</span></small><br>
+</div>
+<br>
+This super.equals call in class B's equals method calls class A's equals method and class A's equals method looks like this:<br>
+<br>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">public class A</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;// Class implementation not shown except for equals<br>
+<br style="font-family: Courier New,Courier,monospace;">
+</span></small></div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;public boolean equals(Object other)</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;{</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; if (other == null)</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; {</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return false;</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; }<br>
+<br>
+&nbsp; &nbsp; &nbsp; if (this.getClass() != other.getClass())<br>
+&nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return false;<br>
+&nbsp; &nbsp; &nbsp; }<br style="font-family: Courier New,Courier,monospace;">
+</span></small></div>
+<small><br style="font-family: Courier New,Courier,monospace;">
+</small>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp; &nbsp; // Rest of equals method here, i.e., check all class A instance variables for equality</span></small><br style="font-family: Courier New,Courier,monospace;">
+</div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">&nbsp; &nbsp;}</span></small><br>
+<small><span style="font-family: Courier New,Courier,monospace;"></span></small></div>
+<div style="margin-left: 40px;"><small><span style="font-family: Courier New,Courier,monospace;">}<br>
+<br>
+</span></small></div>
+Remember that class A's super class is, implcitly, Object. &nbsp;Notice
+that A's equals does not call super.equals. &nbsp;This is because
+Object's equals does reference equality and the entire reason we are
+overriding equals is to get <span style="font-weight: bold; font-style: italic;">logical equality</span> instead of <span style="font-weight: bold; font-style: italic;">reference equality</span>.
+&nbsp;Also notice that if we do the null-check first in the
+most-super-class-prior-to-Object then none of its sub-classes needs to
+do it directly since it is done via the super.equals call and is done
+before the reference is used thereby avoiding any possibility of a
+NullPointerException. &nbsp;Likewise, the class-type check can be done
+in the most-super-class-prior-to-Object and reused by the sub-classes
+via the super.equals call. &nbsp;Now the classes are loosely coupled -
+meaning they can change their implementations without affecting the
+implementation of any sub-class or super class!<br>
+<br>
+</div>
+<br>
+</div>
+
+</body></html>
