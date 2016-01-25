@@ -108,7 +108,7 @@
       }
 
       foreach ($lines as $line) {
-         list($name, $link) = split(';', $line);
+         list($name, $link) = preg_split('/;/', $line);
          echo "<li><a href='" . $link . "'>" . $name . "</a></li>";
       }
    }
