@@ -15,7 +15,7 @@ import java.util.List;
  * Too lazy to do non-filled shapes, this will just fill them all.
  *
  * @author Eriq Augustine
- * @version 1.0.0
+ * @version 1.1.0
  * @since 2016-01-25
  */
 public class Draw {
@@ -198,8 +198,8 @@ public class Draw {
             rect.getPosition(),
             new Point(rect.getPosition().x + rect.getWidth(), rect.getPosition().y),
             new Point(rect.getPosition().x + rect.getWidth(),
-                      rect.getPosition().y + rect.getHeight()),
-            new Point(rect.getPosition().x, rect.getPosition().y + rect.getHeight())
+                      rect.getPosition().y - rect.getHeight()),
+            new Point(rect.getPosition().x, rect.getPosition().y - rect.getHeight())
          };
       }
 
