@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>CPE 102 Lab 5</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102 Lab 5 -
+      Inheritance</span><br>
+      <br>
+      <span style="font-weight: bold;">Goals:</span><br>
+      <ul>
+         <li>To be able to write classes that take advantage of
+            inheritance.
+         </li>
+         <li>To understand the mechanics and behaviors of classes
+            written with Inheritance.
+         </li>
+         <li>To learn how to correctly override the equals method in most
+            situations.
+         </li>
+         <li>To learn the vocabulary of Inheritance in general.</li>
+         <li>To learn the specific&nbsp;tools of Inheritance in Java.</li>
+      </ul>
+      <span style="font-weight: bold;">Orientation:</span><br>
+      <p style="margin-left: 26px;">You will write three classes
+         that can make use of Inheritance, an Animal class, a Person class, and
+         a Student class. There is a natural hierarchical relationship
+         between these classes, especially when we think of sets. &nbsp;The
+         Student class is the most specific class type as a Student is a Person
+         and a Person is an Animal but not all Animals are Persons and not all
+         Persons are Students. &nbsp;This lab explores how to represent such
+         relationships in an Object Oriented way and how to take best advantage
+         of the features of Inheritance when doing so.
+      </p>
+      <ol>
+      </ol>
+      <span style="font-weight: bold;">What To Do: </span><br>
+      <ol>
+         <li>Write a class called Animal that has a single private
+            instance variable of type int that represents the number of legs the
+            animal has. &nbsp;You should write a single constructor that takes
+            an int parameter used to initialize the instance variable. Override the
+            equals method (inherited from Object) so that it returns false if the
+            reference passed in is null, or is not the same type as this, or
+            doesn't have the same
+            number of legs as this, otherwise true. Override the toString method
+            inherited from Object so that it returns the message "I am an Animal
+            object with N legs" where N is replaced with the actual number of legs
+            the Animal object was constructed with.&nbsp; <span style="font-weight: bold; font-style: italic;">Make sure your instance
+            variable(s) are private and do not add any other methods.</span> Test
+            your Animal
+            class before moving on.
+         </li>
+         <li>
+            <p>Write a class called Person that extends Animal. Person
+               should have a single private instance variable of type String that
+               represents the name of the Person. Write a single consructor that takes
+               a String parameter used to initialize the instance variable AND an int
+               parameter representing the number of legs the person has. Use the
+               super() syntax to call the contructor of the super class Animal.
+               Override the equals
+               method (inherited from Animal that inherited it from Object) so that it
+               returns false if the reference passed in is null, or is not the same
+               type as
+               this, or doesn't have the same number of legs as this, or does not have
+               the same name as
+               this, otherwise true. Override the toString method inherited from
+               Animal that inherited it from Object so that it returns "I am an Animal
+               object with N legs and a Person object whose name is XXX", where N is
+               replaced with the correct number of legs for the Animal and XXX with
+               the correct
+               name for the Person. <span style="font-weight: bold; font-style: italic;">Make sure all instance
+               variable(s) private and do not
+               add any other methods.</span> Test your Person class before moving on.
+            </p>
+         </li>
+         <li>Write a class called Student that extends Person. Student
+            should have a single private instance variable of type double that
+            represents the GPA of the Student. Write a single constructor that
+            takes a double parameter used to initialize the instance variable AND a
+            String representing the student's name AND an int representing the
+            number of legs the student has. Use the super() syntax to call the
+            constructor of the super class Person. Override the equals
+            method (inherited from Person that inherited it from Animal that
+            inherited it from Object) so that it returns false if the reference
+            passed in is null, or is not the same type as this, or doesn't have the
+            same number of
+            legs as this, or does not have the same name as this, or does not have
+            the same gpa as this, otherwise
+            true. &nbsp;Override the toString method inherited from Person that
+            inherited it from Animal that inherited in from Object so that it
+            returns&nbsp;"I am an Animal
+            object with N legs and a Person object whose name is XXX and a Student
+            Object with a Z.Z gpa", where N is
+            replaced with the correct number of legs for the Animal and XXX with
+            the correct
+            name for the Person and Z.Z with the correct GPA for the Student (no
+            special formatting of the GPA is required for this lab). <span style="font-weight: bold; font-style: italic;">Make sure all instance
+            variable(s) private and do not
+            add any other methods.</span> Test your Student class before moving on.
+         </li>
+         <li>
+            <p>Test
+               and experiment with these classes until you feel you have a good sense
+               of how inheritance works and what benefits it can provide.
+               &nbsp;Discuss your views with your other students to see if your
+               insights agree with theirs. Ask for assistance from your instructor to
+               clarify any ambiguities or disagreements you encounter. 
+            </p>
+         </li>
+      </ol>
+      <p><em>Lab courtesy of Julie Workman.</em></p>
+   </body>
+</html>
