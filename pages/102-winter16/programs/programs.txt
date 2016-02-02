@@ -4,3 +4,4 @@ Program 01c;programs/01/c/program-01c.html
 Program 02a;programs/02/a/program-02a.html
 Program 02b;programs/02/b/program-02b.html
 Program 03;programs/03/program-03.html
+Program 04;programs/04/program-04.html
