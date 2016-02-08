@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>CPE 102 Program 5</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102&nbsp;Program 5
+      - Dictionary,
+      File I/O, Sorting and Searching</span><span style="font-weight: bold;"></span><br>
+      <br style="font-weight: bold;">
+      <span style="font-weight: bold;"></span><span style="font-weight: bold;">Ground
+      Rules</span><br>
+      <p style="margin-left: 22px;">No
+         collaboration is allowed on this program assignment. Your program must
+         be an individual and original effort. Except for any situations
+         explicitly identified in this assignment, if any, you may only receive
+         help from your instructor or the <a href="https://www.csc.calpoly.edu/current/free-tutoring/">tutors</a>
+         provided by the Computer Science Department. See the <a href="../../misc/syllabus.html">Syllabus</a>
+         for the significant consequences for disallowed collaboration and/or
+         plagiarism.
+      </p>
+      <span style="font-weight: bold;"></span><br>
+      <span style="font-weight: bold;">Due Date and Submission
+      Instructions<span style="text-decoration: underline;"></span></span><br>
+      <p style="margin-left: 22px;">Submit the following file(s) on one of
+         the <a href="../../misc/CSLServers.html">CSL servers</a>
+         using <a href="../../misc/howToUseHandin.html">handin</a>
+         as
+         follows:
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;
+         <span style="font-weight: bold;">File(s):</span> Dictionary.java DictionaryException.java<br>
+      </p>
+      <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">
+         touser:</span> eaugusti<br>
+      </p>
+      <p style="margin-left: 22px;"><span style="font-size: 12pt;"><b>&nbsp;&nbsp;&nbsp; assignment/subdirectory</b><b>:</b> eaugusti</span></p>
+      <span style="font-weight: bold;">
+      <br>
+      </span><span style="font-weight: bold;">Testing
+      With the Provided Test Driver<br>
+      </span>
+      <ol>
+         <li>You should develop and use your own tests prior to using
+            the provided test driver.
+         </li>
+         <li>
+            <p>Do not use the provided test driver until your solution is
+               complete and you believe it is correct.
+            </p>
+         </li>
+         <li>
+            <p>Using the <span style="font-weight: bold; font-style: italic;">save-as
+               feature of your browser (or wget/curl if you are a cool kid), <span style="text-decoration: underline;">not</span>
+               cut-and-paste,</span> save <a href="P5TestDriver.java">P5TestDriver.java</a>
+               (to be published on the due date) in the same directory as all of
+               the source files (.java files). &nbsp;You will also need to
+               download
+               the <a href="dictionaries.zip">dictionaries.zip</a>
+               file and extract the files it contains into the same directory that
+               your solution's .class files are found. These dictionaries are used by
+               the test driver to test your solution. <span style="font-weight: bold; font-style: italic;">Note that
+               Unix and Windows
+               systems treat end-of-line in text files differently</span> and
+               that some
+               methods of transferring text files between systems and some text editors
+               will modify the end-of-line characters. If you are developing your
+               solution on Windows be sure to transfer the dictionaries.zip file to
+               your Windows system, extract it there, and <span style="font-weight: bold; font-style: italic;">do not modify
+               the files</span>. You
+               may view the files with a text editor <span style="font-weight: bold; font-style: italic;">but do not
+               save any changes</span>.
+            </p>
+         </li>
+         <li>
+            <p>Compile the P5TestDriver.java, all of your source files
+               (.java
+               files) and run
+               P5TestDriver (see <a href="../../misc/howToCompileAndRunFromCommandLine.html">How
+               to Compile and Run From the Command Line</a>,
+               as necessary). Remember that your code will be graded on one of the CSL servers so, to
+               avoid unpleasant grading surprises, be sure to test on one of the CSL servers - at least
+               once just before handing it in!
+            </p>
+         </li>
+      </ol>
+      <span style="font-weight: bold;">
+      </span><span style="font-weight: bold;">Objectives</span><br>
+      <ol>
+         <li>To gain experience reading and writing files.</li>
+         <li>
+            <p>To learn how to write your own application-specific
+               exception.
+            </p>
+         </li>
+         <li>
+            <p>To implement and understand an O(N<sup>2</sup>)
+               sorting algorithm.
+            </p>
+         </li>
+         <li>
+            <p>To implement and understand the Binary Search algorithm.</p>
+         </li>
+         <li>To implement the Iterable&lt;E&gt; interface in the
+            Dictionary
+            class (among other things, allows someone to use the Java for-each
+            statement with a Dictionary object).<br>
+         </li>
+      </ol>
+      <span style="font-weight: bold;"><br>
+      Orientation</span><br>
+      <p style="margin-left: 21px;">You will
+         be implementing a class that represents a dictionary (words only, no
+         definitions) (also, not a python dict). When constructed the class will read the words
+         from a text file that may be ordered or
+         unordered. You will
+         store the words
+         in a java.util.ArrayList&lt;String&gt; and, only if
+         necessary, sort the list using a method and sorting-algorithm
+         that you will write. To
+         facilitate fast word look-up you will also write a method that
+         implements the Binary Search algorithm on the list of words. The class
+         will also
+         be able to write its contents to a text file (in order). Additionally,
+         several methods of the class will throw a DictionaryException (an
+         exception that you will write) if and when&nbsp; certain specific
+         problems occur.<span style="font-weight: bold;"></span>
+      </p>
+      <span style="font-weight: bold;"><br>
+      Details of the Text Files</span><br>
+      <p style="margin-left: 21px; width: 1000px;">The
+         text files, found in <a href="dictionaries.zip">dictionaries.zip</a>, contain one word per line. This means each word is separated
+         by the newline character '\n'. Don't forget that you can actually read
+         these files with a text editor but <span style="font-weight: bold; font-style: italic;">be sure you
+         do not inadvertently modify them!</span> Here are the details of
+         the provided text file:
+      </p>
+      <table style="text-align: left; margin-left: 47px; width: 788px;" border="1" cellpadding="2" cellspacing="2">
+         <tbody>
+            <tr>
+               <td style="text-align: center; font-weight: bold; width: 229px;">File
+                  Name
+               </td>
+               <td style="text-align: center; font-weight: bold; width: 89px;">Ordered?</td>
+               <td style="text-align: center; font-weight: bold; width: 140px;">First
+                  Word
+               </td>
+               <td style="text-align: center; font-weight: bold; width: 139px;">Last
+                  Word
+               </td>
+               <td style="text-align: center; font-weight: bold; width: 137px;">Word
+                  Count
+               </td>
+            </tr>
+            <tr>
+               <td style="text-align: center; width: 229px;">partialRandomDict.txt</td>
+               <td style="text-align: center; width: 89px;">No</td>
+               <td style="text-align: center; width: 140px;">MOTHERLY</td>
+               <td style="text-align: center; width: 139px;">BEECHWOOD</td>
+               <td style="text-align: center; width: 137px;">1234</td>
+            </tr>
+            <tr>
+               <td style="vertical-align: top; text-align: center;">fullOrderedDict.txt<br></td>
+               <td style="vertical-align: top; text-align: center;">Yes<br></td>
+               <td style="vertical-align: top; text-align: center;">AAH<br></td>
+               <td style="vertical-align: top; text-align: center;">ZYZZYVAS<br></td>
+               <td style="vertical-align: top; text-align: center;">178689</td>
+            </tr>
+         </tbody>
+      </table>
+      <br>
+      <span style="font-weight: bold;"><br>
+      Specification</span><br>
+      <ol>
+         <li>
+            <p>Your source code must meet the <a href="../../misc/codingStyle.html">Programming Guidelines</a>.</p>
+         </li>
+         <li>Your solution must pass all tests of&nbsp;the provided
+            test driver (link and instruction provided below) when compiled and run
+            one of the CSL servers.<br>
+         </li>
+         <li>
+            <p>Do
+               not suppress any compiler warnings. If you do, your submission may be
+               rejected for grading or your grade marked down at your instructor's
+               discretion.
+            </p>
+         </li>
+         <li>
+            <p>You may implement any private methods you wish to make
+               your implementation easier and/or better.
+            </p>
+         </li>
+         <li>
+            <p>Implement an exception called <span style="font-weight: bold; font-style: italic;">DictionaryException</span>
+               (to be used by the Dictionary class, below). This exception <span style="font-weight: bold; font-style: italic;">must:</span>
+            </p>
+         </li>
+         <ol>
+            <li>Be a <span style="font-weight: bold; font-style: italic;"><span style="text-decoration: underline;">checked</span></span>
+               exception.
+            </li>
+            <li>Have no explicit instance variables.</li>
+            <li>Two constructors, a default constructor and one that
+               accepts a
+               String parameter representing a message. These constructors must
+               correctly make use of the super class of this exception.
+            </li>
+            <li>Must not have any other methods.<br></li>
+         </ol>
+         <li>
+            <p>Implement a class called <span style="font-weight: bold; font-style: italic;">Dictionary</span>
+               to <a href="docs/Dictionary.html">this specification</a>.
+               Be sure to notice which methods throw a DictionaryException and when
+               (see the detailed javadoc descriptions for the methods). You must write
+               your code accordingly. Also notice that this specification says that
+               the class implements the Iterable interface (a generic interface
+               specified in the Java Standard Library). This interface specifies the
+               iterator() method you see in the specification for the Dictionary
+               class. You should carefully read the ArrayList Java Standard Library
+               documentation to see it there is any support in that class that could
+               make this task easier for you! <span style="font-weight: bold; font-style: italic;">Be sure to
+               read the remaining specifications</span> for important information
+               before you begin coding!<br>
+            </p>
+         </li>
+         <li>The Dictionary class may only have one instance variable,
+            specifically one of type java.util.ArrayList&lt;String&gt;.
+         </li>
+         <li>
+            <p>You must implement your own sorting logic and&nbsp;may
+               not use any sorting capabilities from the Java Standard Library. An O(N<sup>2</sup>)
+               sorting algorithm is sufficient for this assignment and I strongly suggest that you use
+               a <a href="http://en.wikipedia.org/wiki/Insertion_sort">Insertion
+               Sort</a> or&nbsp;<a href="http://en.wikipedia.org/wiki/Selection_sort">Selection
+               Sort</a>
+               algorithm as examples are widely available and they are relatively easy
+               to implement. Note that your sorting code might be a good candidate to
+               implement as a private method or methods.
+               <strong>DO NOT</strong> just cut-and-paste code you find from the internet (<em>&lt;cough&gt;</em> stackoverflow <em>&lt;\cough&gt;</em>).
+               You will be required to have strong knowledge of at least one of these sorting algorithms.
+            </p>
+         </li>
+         <li>You must implement your own&nbsp;<a href="http://en.wikipedia.org/wiki/Binary_search">Binary
+            Search</a> logic and may
+            not use any searching capabilities from the Java Standard Library. The
+            O(log N) performance of a Binary Search is required for the <span style="font-weight: bold; font-style: italic;">lookUp</span>
+            method of the Dictionary class.
+            <strong>DO NOT</strong> just cut-and-paste code you find from the internet (<em>&lt;cough&gt;</em> stackoverflow <em>&lt;\cough&gt;</em>).
+            You will be required to have strong knowledge of this searching algorithm.
+         </li>
+      </ol>
+
+      <em>Program courtesy of Kurt Mammen.</em>
+   </body>
+</html>

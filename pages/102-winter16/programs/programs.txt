@@ -5,3 +5,4 @@ Program 02a;programs/02/a/program-02a.html
 Program 02b;programs/02/b/program-02b.html
 Program 03;programs/03/program-03.html
 Program 04;programs/04/program-04.html
+Program 05;programs/05/program-05.html
