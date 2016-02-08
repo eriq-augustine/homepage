@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>CPE 102 Lab 06</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102 Lab 6 - Exceptions</span><br>
+      <br>
+      <span style="font-weight: bold;">Goals:</span><br>
+      <ul>
+         <li>To become familiar with handling exceptions in Java
+            using&nbsp;try-catch-finally.
+         </li>
+         <li>To practice writing your own exceptions in Java.</li>
+         <li>To learn the difference between checked and unchecked
+            exceptions and how to work with them.
+         </li>
+      </ul>
+      <span style="font-weight: bold;">Orientation:</span><br>
+      <p style="margin-left: 26px;">You are going to write some
+         bad code - code that always throws certain exceptions. By explicitly
+         writing code that results in certain exceptions I'm hoping you will
+         better understand how to find such errors with you don't intend them to
+         happen. Next you will write a few methods that call those methods -
+         this is just to deepen the call-stack so you can see what specific
+         information is being reported to you when an exception occurs. Once
+         that is all ready you will call your methods and make sure the really
+         are bad and throw the expected exceptions. Then you will write try
+         catch blocks to catch the various exceptions and notice that by
+         handling them notice that your code does not terminate until you want
+         it too.
+      </p>
+      <p style="margin-left: 26px;">You will write a checked and unchecked
+         exception of your own, add some&nbsp;additional methods to
+         explicitly throw them and a catch-block to handle them.<br>
+      </p>
+      <ol>
+      </ol>
+      <span style="font-weight: bold;">What To Do: </span><br>
+      <ol>
+         <li>Write a class (name of your choice) that implements three
+            methods (also names of your choice). Write one method that has some bad
+            code
+            that always results in a NullPointerException. I know that you could
+            just throw one, <span style="font-weight: bold;">but I <span style="font-style: italic; text-decoration: underline;">really</span>
+            want you to write code that results in one</span>
+            whenever the method is called. To do so you must use a reference that
+            is null - many ways to do that - be creative - should be easy! Write a
+            second method with <span style="font-weight: bold; font-style: italic;">bad
+            code that always results in a
+            ClassCastException</span>.
+            Write a third method with some <span style="font-weight: bold; font-style: italic;">bad code that always
+            throws <span style="text-decoration: underline;">Array</span>IndexOutOfBoundsException</span>.
+         </li>
+         <li>
+            <p>Write another method (in the same class as the methods
+               resulting in exceptions and specified in the prior step) that has an <span style="font-weight: bold; font-style: italic;">int</span> parameter.
+               If the
+               parameter is 1, call one of the three methods that throws. If the
+               parameter is 2, call the second one, and if the parameter is 3 call the
+               third one. This is just to add depth to the <span style="font-style: italic;">call stack</span>. <br>
+            </p>
+         </li>
+         <li>
+            <p>In a separate class (name of your choice), write a
+               main
+               that
+               calls the method you just wrote in the prior step. Write the code so
+               that it prompts the user for and int value (1, 2, or 3) and then call
+               the method you wrote in the prior step. This will allow you to run the
+               program and cause different exceptions to occur. Make sure the program
+               throw each of the three specified exceptions before moving on to the
+               next step.
+            </p>
+         </li>
+         <li>
+            <p>In
+               your main method, add a try block with three catch blocks, one for
+               each
+               exception type that is being thrown by your three methods. Put the code
+               that prompts the user and calls the specified method in the try
+               block. In each
+               catch block print out a message indicating which exception was caught.
+               Now run your program notice how it behaves differently - it does not
+               terminate with an exception! This is because you have caught and
+               "handled" the exception by printing a message. We usually <span style="font-weight: bold; font-style: italic;">do <span style="text-decoration: underline;">not</span></span> handle exceptions
+               by printing a message but its a start!<br>
+            </p>
+         </li>
+         <li>
+            <p>Add a <span style="font-weight: bold; font-style: italic;">finally</span>
+               block to your try-catch and
+               have it print out a message. Run your program and notice when the <span style="font-style: italic;">finally</span> block executes. If you make
+               it to the try block then it <span style="font-weight: bold; font-style: italic; text-decoration: underline;">always</span>
+               executes - whether or not an exception occurs while executing the code
+               in the try block. To verify this add another case to your code in main <span style="font-style: italic;">inside</span>
+               the try block so that when the user enters a number other than 1, 2, or
+               3 it prints out a message saying something like "invalid choice" and <span style="font-weight: bold; font-style: italic;">does not call</span>
+               one of the methods that throws an exception. When you run your program
+               and enter an invalid number you should see the message printed by your
+               finally block.<br>
+            </p>
+         </li>
+         <li>
+            <p>
+               Write a <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception class and an <span style="font-weight: bold; font-style: italic;">unchecked</span>
+               exception class (names
+               of your choice). In the class with methods that throw the
+               NullPointerException, ClassCastException, and
+               ArrayIndexOutOfBoundsExeption add two more methods, one that throws
+               your <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception and one that throws your <span style="font-weight: bold; font-style: italic;">unchecked</span>
+               exception. Since there is no "bad code" that will result
+               in the exceptions you wrote simply throw them explicitly. <span style="font-weight: bold; font-style: italic;">Notice</span> that the
+               compiler treats your <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception differently than your <span style="font-style: italic; font-weight: bold;">unchecked</span>
+               exception! Recall from lecture that you will have to uses the <span style="font-weight: bold; font-style: italic;">throw<span style="text-decoration: underline;">s</span></span> statement to
+               declare that your method throws (does not catch) the <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception. <br>
+            </p>
+         </li>
+         <li>
+            <p>In the method that accepts an int parameter and calls the
+               different methods that throw the various exceptions add calls the new
+               methods that throw your <span style="font-weight: bold; font-style: italic;">checked</span> and <span style="font-weight: bold; font-style: italic;">unchecked</span>
+               exceptions and compile. Again, notice that the compiler treats your <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception differently! Recall from lecture that every method that calls
+               a method that may throw a checked exception must decide whether it can
+               catch and handle/fix the problem or not. If it can fix the problem it
+               should catch it and fix the problem, otherwise it should not catch it.
+               But, to compile, it will need to tell the compiler that it, too, may
+               throw a <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception. You will need to use the <span style="font-weight: bold; font-style: italic;">throw<span style="text-decoration: underline;">s</span></span> statement to
+               declare that your method throws (does not catch) the <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception.
+            </p>
+         </li>
+         <li>
+            <p>Try compiling the class with the main. <span style="font-weight: bold; font-style: italic;">Notice</span> that it,
+               too, will not compile because it now calls a method that might throw a <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception. <span style="font-weight: bold; font-style: italic;">Notice</span>,
+               too, that the compiler does not complain about your unchecked exception
+               - <span style="font-weight: bold; font-style: italic;">this is the
+               important difference</span> between <span style="font-weight: bold; font-style: italic;">checked</span> and <span style="font-weight: bold; font-style: italic;">unchecked</span>
+               exceptions. You <span style="font-weight: bold; font-style: italic;">could</span> add a throws clause to main to resolve
+               the compiler error. <span style="font-weight: bold; font-style: italic;">Instead</span><span style="font-weight: bold;"></span>, this time, add a catch block for the <span style="font-weight: bold; font-style: italic;">checked</span>
+               exception.<span style="font-weight: bold; font-style: italic;"></span> <span style="font-weight: bold; font-style: italic;">Notice</span>
+               that this also resolves the compiler error! This is because you have caught the
+               exception and, presumably, fixed it. This means it is longer an exception
+               that could be thrown by main. For the sake of consistency and
+               completeness add a catch block for the <span style="font-weight: bold; font-style: italic;">unchecked</span>
+               exception too. <span style="font-weight: bold; font-style: italic;"></span>
+            </p>
+         </li>
+      </ol>
+      <p><em>Lab courtesy of Kurt Mammen.</em></p>
+   </body>
+</html>
