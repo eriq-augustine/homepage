@@ -6,3 +6,5 @@ Program 02b;programs/02/b/program-02b.html
 Program 03;programs/03/program-03.html
 Program 04;programs/04/program-04.html
 Program 05;programs/05/program-05.html
+Program 06a;programs/06/a/program-06a.html
+Program 06b;programs/06/b/program-06b.html
