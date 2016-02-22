@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <title>CPE 102 Lab 7</title>
+   </head>
+   <body>
+      <span style="font-weight: bold;">CPE 102 Lab 7 - Sorting and Searching</span>
+      <br>
+      <span style="font-weight: bold;">Goals:</span>
+      <br>
+      <ul>
+         <li>To become familiar with the Selection Sort algorithm.</li>
+         <li>To become familiar with the Binary Search algorithm.</li>
+         <li>To implement the Selection Sort and Binary Search algorithms so that they work on an ArrayList&lt;String&gt;.</li>
+         <li>To write some code that you will need in Program 5 but in a simpler environment.
+            <br>
+         </li>
+      </ul>
+      <span style="font-weight: bold;"><br>
+      Orientation:</span>
+      <br>
+      <p style="margin-left: 26px;">In this lab you will write two classes, one will sort an ArrayList&lt;String&gt; and the other will search an ordered ArrayList&lt;String&gt; using a Binary Search.
+         <br>
+      </p>
+      <ol> </ol>
+      <span style="font-weight: bold;">What To Do: </span>
+      <br>
+      <ol>
+         <li>Below you will find a class called SelectionSorter (similar to one found in our text on page 629 in the thrid edition, page 597 in the fourth edition). Change the instance variable from an int array to an ArrayList&lt;String&gt; and then make all the necessary code changes to support this modification. Among other things, you will need to use the compareTo method of the String class instead of the relational operators that are used to compare primitive integers in the provided code. Be sure to test your solution to make sure it is working. You need to write a driver that sorts the file in <a href="randomWords.zip">randomWords.zip</a> or create your own input for testing, which ever you prefer. <span style="font-weight: bold; font-style: italic;">Note that as long as
+            you make a <span style="text-decoration: underline;">shallow copy</span> of the ArrayList</span> in SelectionSorter's constructor you'll be able to access the reordered version through the reference you passed to the constructor. I suggest writing a test driver with a method that verifies the ArrayList is correctly ordered after calling sort - you can use the <span style="font-style: italic;">compareTo</span> method of the String class to verify the ordering.
+         </li>
+      </ol>
+      <span style="font-family: Courier New,Courier,monospace;"><small>&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; public class SelectionSorter<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private int[] a;<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;public
+      SelectionSorter(int[] array)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;{<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; this.a =
+      array;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;}<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;public void sort()<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;{<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; for (int i =
+      0; i &lt; a.length - 1; i++)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp;int minPos = minimumPosition(i);<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp;swap(minPos, i);<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; }<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; }<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private int
+      minimumPosition(int from)</small><small><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int minPos =
+      from;<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      for (int i = from + 1; i &lt; a.length; i++)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      if (a[i] &lt; a[minPos])<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minPos = i;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; }<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      return minPos;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; }<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private void
+      swap(int i, int j)<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      int temp = a[i];<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a[i] = a[j];<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; a[j] =
+      temp;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } // End of class</small><br>
+      </span>
+      <ol start="2">
+         <li>
+            <p>Below you will find a class called BinarySearcher (similar to one found in our text on page 652 in the third edition, page 617 in the fourth edition). Change the instance variable form an int array to an ArrayList&lt;String&gt; and then make all the necessary code changes to support this modification. Among other things, you will need to use the compareTo method of the String class instead of the relational operators that are used to compare primitive integers in the proviede code. You your code from part one to make a driver that will search through the random words in part 1. You <span style="font-weight: bold; font-style: italic; text-decoration: underline;">must</span> use an <span style="font-weight: bold; font-style: italic;">ordered</span> list for the binary search algoritm to work.
+               <br>
+            </p>
+         </li>
+      </ol>
+      <span style="font-family: Courier New,Courier,monospace;"></span><small><span style="font-family: Courier New,Courier,monospace;"><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; public class BinarySearcher</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; {</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; private int[] a;</span><br style="font-family: Courier New,Courier,monospace;">
+      <br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public BinarySearcher(int[] array)</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; {</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.a = array;</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br style="font-family: Courier New,Courier,monospace;">
+      <br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public int search(int value)</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; {</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int lo = 0;</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int hi =
+      a.length - 1;</span><br style="font-family: Courier New,Courier,monospace;">
+      <br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while (lo
+      &lt;= hi)</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; int mid = (lo + hi) / 2;</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; if (value &lt; a[mid])</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; {</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; hi = mid - 1;</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (value
+      &gt; a[mid])</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; lo = mid + 1;</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return mid;</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; }</span><br style="font-family: Courier New,Courier,monospace;">
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><span style="font-family: Courier New,Courier,monospace;"><br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; return -1;</span><span style="font-family: Courier New,Courier,monospace;"><br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span><br>
+      <span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; } // End of class</span><br>
+      </span></small><small style="font-weight: bold;"><span style="font-family: Courier New,Courier,monospace;"></span></small>
+      <p><em>Lab courtesy of Kurt Mammen.</em></p>
+   </body>
+</html>
