@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+
+   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+   <title>CPE 102 Program 6a</title>
+</head>
+
+<body><span style="font-weight: bold;">CPE 102&nbsp;Program 6a - Tests for
+the BasicLinkedList class</span>
+   <br>
+
+   <br style="font-weight: bold;">
+
+   <span style="font-weight: bold;"></span><span style="font-weight: bold;">Ground
+Rules</span>
+   <br>
+
+   <p style="margin-left: 22px;">No collaboration is allowed on this program assignment. Your program must be an individual and original effort. Except for any situations explicitly identified in this assignment, if any, you may only receive help from your instructor or the <a href="https://www.csc.calpoly.edu/current/free-tutoring/">tutors</a> provided by the Computer Science Department. See the <a href="../../../misc/syllabus.html">Syllabus</a> for the significant consequences for disallowed collaboration and/or plagiarism.
+   </p>
+
+   <span style="font-weight: bold;">Due Date and Submission
+Instructions<span style="text-decoration: underline;"></span></span>
+   <br>
+
+   <p style="margin-left: 22px;">Submit the following file(s) on one of the <a href="../../../misc/CSLServers.html">CSL servers</a> using <a href="../../../misc/howToUseHandin.html">handin</a> as follows:
+   </p>
+
+   <p style="margin-left: 22px;">&nbsp;&nbsp;&nbsp;
+      <span style="font-weight: bold;">File(s):</span> BasicLinkedListTest.java, BasicList.java, BasicListIterator.java, and a <span style="font-style: italic; font-weight: bold;">minimal</span> version of BasicLinkedList.java
+      <br>
+      <span style="font-weight: bold;">&nbsp;&nbsp;&nbsp; touser:</span> eaugusti
+      <br>
+      <span style="font-size: 12pt;"><b>&nbsp;&nbsp;&nbsp; assignment/subdirectory:</b> 102-program06a</span>
+   </p>
+
+   <span style="font-weight: bold;">
+</span><span style="font-weight: bold;">Objectives</span>
+   <br>
+
+   <ol>
+
+      <li>More practice applying the TDD process (<a href="http://en.wikipedia.org/wiki/Test-driven_development">Test
+Driven Development</a>).</li>
+   </ol>
+
+   <span style="font-weight: bold;">Orientation</span>
+   <br>
+
+   <p style="margin-left: 21px;">You will be practicing the TDD process by developing SUnit tests for a class that represents a simple link-based <span style="font-style: italic;">list</span> ADT (abstract data type). If, after reading he specifications, you are unsure how a method should behave you should try it using the Java Standard Library LinkedList class - your BasicLinkedList is expected to behave in exactly the same way.
+      <br>
+   </p>
+
+   <span style="font-weight: bold;">
+Specification</span>
+   <br>
+
+   <ol>
+
+      <li>
+         <p>Your source code must meet the <a href="../../../misc/codingStyle.html">Programming
+Guidelines</a>.</p>
+      </li>
+      <li>Read about <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test
+Driven Development</a> (TDD), as necessary, to reorient yourself to the process you are about to embark on.
+         <br>
+      </li>
+      <li>
+
+         <p>Write a <span style="font-weight: bold; font-style: italic;">mimimal</span> implementation of<span style="font-style: italic;"> </span>class and interfaces specified in the <a href="../b/program-06b.html">Program 6b</a> assignment.
+            <br>
+         </p>
+         <ul>
+            <li>
+               <p>Recall that a minimal implementation allows you to develop and compile tests for a class's methods before attempting to write them correctly. The process of developinig the tests requires that you to understand what the methods are supposed to do before you write them - always good information to have! With the mimimal implementation you can compile and run your tests to verify that they do, in fact, report errors for methods that are known to be incorrect. Recall that a minimally implemented class has <span style="font-weight: bold; font-style: italic;">no instance variables</span> and <span style="font-weight: bold; font-style: italic;">no logic</span>except for the return statements necessary to satisfy the compiler. Where possible, choose return values that are always wrong (would <span style="font-style: italic;">never</span> be returned by a correct version of the method) so that tests checking for correct behavior will always fail. When no <span style="font-style: italic;">always-wrong</span> value is available then choose something clearly recognizable and remember to <span style="font-style: italic;">not</span> write tests expecting that value to be returned as the correct result.</p>
+            </li>
+            <li>
+               <p>When writing the minimal implementation of methods that return a generic type you should return null. When calling SUnit.assertEqualsObject to test the returned value <span style="font-weight: bold; font-style: italic;">be sure</span> to pass it as the <span style="font-weight: bold; font-style: italic;">actual</span> parameter - <span style="font-weight: bold; font-style: italic; text-decoration: underline;">not</span> the <span style="font-weight: bold; font-style: italic;">expected</span> parameter or you will get a NullPointerException while running your test driver - definitely not good form!</p>
+            </li>
+            <li>The interfaces will, by necessity, need to be complete because there is no useful <span style="font-style: italic;">minimum</span> implementation of an interface - they are, by design, minimal already!
+               <br>
+            </li>
+         </ul>
+      </li>
+   </ol>
+   <ol>
+
+   </ol>
+
+   <ol start="4">
+
+      <li>
+         <p>In a class called <span style="font-style: italic;"><span style="font-weight: bold;">BasicLinkedList</span></span><span style="font-weight: bold; font-style: italic;">Test</span> write <span style="font-style: italic;">SUnit</span> tests (the class you wrote in
+            <a href="../../01/a/program-01a.html">Program 1a</a>) for each of the public methods of the <span style="font-style: italic;">BasicLinkedList</span> class <span style="font-weight: bold; font-style: italic;">including</span> the constructors and iterators.
+            <br>
+
+         </p>
+      </li>
+      <ol>
+         <li>Testing in any Object Oriented language has the special challenge that the instance variables of an object are often private. Private instance variables are inaccessable to code outside the class which means the testing code cannot access them directly.The testing code must, instead, use the public methods of the class to perform the testing. The best practice is to use the same small set of methods to verify the results of all tests. To that end, you are strongly encouraged to use the following methods to verify the behavior of methods that modify the list:
+            <br>
+         </li>
+      </ol>
+   </ol>
+
+   <ol>
+
+      <ol start="2">
+         <ol>
+            <li>add()
+               <br>
+            </li>
+            <li>get()</li>
+            <li>size()</li>
+         </ol>
+         <li>
+            <p>You <span style="font-style: italic;">must</span> use <a href="SampleTest.java">SampleTest.java</a> as the starting point for your test class. Use the <span style="font-weight: bold; font-style: italic;">save-as </span><span style="font-weight: bold;"></span>feature of your browser (or wget/curl if you are a cool kid),<span style="font-weight: bold; font-style: italic;"> <span style="text-decoration: underline;">not</span> cut-and-paste,
+               </span><span style="font-weight: bold;"></span> to obtain a copy of SampleTest.java<span style="font-weight: bold; font-style: italic;"><br>
+      </span>
+            </p>
+         </li>
+         <ol>
+            <li>You <span style="font-style: italic;">must</span> to rename SampleTest.java as BasicLinkedListTest.java</li>
+            <li>You <span style="font-style: italic;">must</span> change the name of the class from SampleTest to BasicLinkedListTest.</li>
+            <li><span style="font-style: italic;">Do not</span> write or use constructors in the test class - they will not be called when grading your tests.</li>
+            <li><span style="font-style: italic;">Do not</span> use any instance variables test class - they can not be accessed by the static test methods you will be writing.
+               <br>
+            </li>
+            <li><span style="font-style: italic;">Do not</span> modify the main of the test class - it will not be called when I grade your tests.
+               <br>
+            </li>
+            <li>You <span style="font-style: italic;">should</span> write separate test methods for each method of the class you are testing.</li>
+         </ol>
+         <li>
+            <p>At a minimum you <span style="font-style: italic;">must</span> write the following number of tests (you may write more). Think carefully about methods that change the contents of the list - you must verify that the list's state is correct after such calls.
+               <br>
+            </p>
+         </li>
+         <ol>
+            <li><span style="font-weight: bold;">NOTE: </span>When testing for expected exceptions you should use the following pattern so that you are credited for the test:<span style="font-weight: bold;"></span>
+            </li>
+         </ol>
+      </ol>
+   </ol>
+
+   <small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="font-weight: bold;"> &nbsp;&nbsp;&nbsp; try</span></span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; {</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; // Put
+your test code here...</span><br>
+<br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp; // Followed by this code...<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; // This code will
+only run if your test does not result in the expected<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; // exception being
+thrown. It's purpose is to updated your test counts.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+SUnit.fail();</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; }</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; catch(ExpectedExceptionTypeHere ref)</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; {</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp; </span></small><small><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">// This will run if the expected exception is through during the test in<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; // the try-block
+above and will update your test counts correctly.</span></small>
+   <br>
+   <small><span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; SUnit.assertTrue(true);</span><br style="font-family: Courier New,Courier,monospace; font-weight: bold;">
+<span style="font-family: Courier New,Courier,monospace; font-weight: bold;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; }</span></small>
+   <br>
+
+   <ol>
+
+      <ol start="2">
+         <ol start="2">
+            <li><span style="font-weight: bold;">BasicLinkedList()</span>: 1 test (1 call to an SUnit method to verify the size of the list).</li>
+            <li><span style="font-weight: bold;">add(int index, E element)</span>: 5 tests (11 calls to SUnit, 2 for exceptions and 9 for successful adds (calls to size and gets for each element after each add)).
+               <br>
+            </li>
+            <li><span style="font-weight: bold;">add(E element)</span>: 3 tests (9 calls to SUnit (size and gets for each element after each add)).
+            </li>
+            <li><span style="font-weight: bold;">basicListIterator()</span>:</li>
+            <ol>
+               <li><span style="font-weight: bold;">hasNext()</span>: 3 tests (3 calls to SUnit (empty list, non-empty list, and the end of non-empty list).
+                  <br>
+               </li>
+               <li><span style="font-weight: bold;">next()</span>: 5 tests (5 calls to SUnit; 2 for exceptions (beginning of empty list and the end of a non-empty list) and 3 for successfull calls).
+                  <br>
+               </li>
+               <li><span style="font-weight: bold;">remove()</span>: 1 test (1 call to SUnit for exception).
+                  <br>
+               </li>
+               <li><span style="font-weight: bold;">hasPrevious()</span>: 3 tests (3 calls to SUnit (empty list, non-empty list, and the beginning of non-empty list).
+                  <br>
+               </li>
+               <li><span style="font-weight: bold;">previous()</span>: 5 test ( 5 calls to SUnit; 2 for exceptions (beginning of empty list and the beginning of non-empty list) and 3 for successfull calls).</li>
+            </ol>
+            <li><span style="font-weight: bold;">clear()</span>: 2 tests (2 calls to SUnit, the size in two different scenarios).
+               <br>
+            </li>
+            <li><span style="font-weight: bold;">contains(E element)</span>: 2 tests (2 calls to SUnit, a true and a false case).
+               <br>
+            </li>
+            <li><span style="font-weight: bold;">get(int index)</span>: 3 tests (5 calls to SUnit, 2 for exceptions, 3 for successful gets (beginning, middle, and end).
+               <br>
+            </li>
+            <li><span style="font-weight: bold;">indexOf(E element)</span>: 2 tests (2 calls to SUnit, 1 for an exception, 1 for a successful find).</li>
+            <li><span style="font-weight: bold;">iterator()</span>:</li>
+            <ol>
+               <li><span style="font-weight: bold;">hasNext()</span>: 3 tests (3 calls to SUnit (empty list, non-empty list, and the end of non-empty list).
+                  <br>
+               </li>
+               <li><span style="font-weight: bold;">next()</span>: 5 tests (5 calls to SUnit; 2 for exceptions (beginning of empty list and the end of a non-empty list) and 3 for successfull calls).
+                  <br>
+               </li>
+               <li><span style="font-weight: bold;">remove()</span>: 1 test (1 call to SUnit for exception).</li>
+            </ol>
+            <li><span style="font-weight: bold;">remove(int index)</span>: 5 tests (8 calls to SUnit, 2 for exceptions, 6 for successful removes (get and size) at 3 well thoughtout locations).
+               <br>
+            </li>
+            <li><span style="font-weight: bold;">set(int index, E element)</span>: 5 tests (8 calls to SUnit, 2 for exceptions, 6 for successful sets (get and size) at 3 well thoughtout locations).
+               <br>
+            </li>
+            <li><span style="font-weight: bold;">size()</span>: 0 tests - behavior verified in both <span style="font-style: italic;">constructors</span>, both <span style="font-style: italic;">add</span> methods, the remove method, and the <span style="font-style: italic;">set</span> method.
+               <br>
+            </li>
+         </ol>
+      </ol>
+   </ol>
+
+   <span style="font-weight: bold;"></span>
+   <span style="font-weight: bold;">Grading<br>
+</span>
+   <ol>
+
+      <li>
+         <p><span style="font-weight: bold; font-style: italic;"> </span><span style="font-weight: bold; font-style: italic;">All</span><span style="font-weight: bold; font-style: italic;"> </span><span style="font-style: italic;">of your </span><span style="font-weight: bold; font-style: italic;">non-boolean</span> tests <span style="font-weight: bold; font-style: italic;">must report
+an error</span> when compiled and run with a minimal implementation of the BasicLinkedList class.</p>
+      </li>
+      <li>
+         <p><span style="font-weight: bold; font-style: italic;">Some</span> of your <span style="font-weight: bold; font-style: italic;"></span><span style="font-weight: bold; font-style: italic; text-decoration: underline;"></span>
+            <span style="font-style: italic;"><span style="font-weight: bold;">boolean</span>
+            </span>tests must report an error (<span style="font-weight: bold; font-style: italic;">all</span> of your true-tests <span style="font-weight: bold; font-style: italic;">or</span>
+            <span style="font-weight: bold; font-style: italic;">all</span> of your false-tests for a method depending on what the minimal implementation returns).</p>
+      </li>
+      <li>
+         <p><span style="font-weight: bold; font-style: italic;">All of your
+tests must not report</span> an error when compiled and run with a correct implementation of the BasicLinkedList class. You may not have a correct implementation when this assignment is due so develop them carefully. If you would like to see if your tests work with a correct implementation you could substitute BasicLinkedList and BasicListIterator with LinkedList and ListIterator from the Java Standard Library - <span style="font-weight: bold; font-style: italic;">just be sure to change
+you code back to using BasicLinkedList and BasicListIterator before
+handing it in!</span>
+            <br>
+         </p>
+      </li>
+   </ol>
+
+   <em>Program courtesy of Kurt Mammen.</em>
+
+</body>
+
+</html>

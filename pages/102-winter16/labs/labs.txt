@@ -5,3 +5,4 @@ Lab 03;labs/03/lab03.html
 Lab 04;labs/04/lab04.html
 Lab 05;labs/05/lab05.html
 Lab 06;labs/06/lab06.html
+Lab 07;labs/07/lab07.html
