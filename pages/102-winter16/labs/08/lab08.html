@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+   <title>CPE 102 Lab 08</title>
+</head>
+
+<body> <span style="font-weight: bold;">CPE 102 Lab 08 - Structural Recursion</span>
+   <br>
+   <br> <span style="font-weight: bold;"></span> <span style="font-weight: bold;">Goals</span>
+   <br>
+   <br>
+   <ul style="margin-top: 0in;" type="disc">
+      <li class="MsoNormal" style=""><span style="font-size: 12pt;">To
+gain experience developing recursive algorithms and recursive objects.</span> </li>
+   </ul>
+   <p class="MsoNormal"><b style=""><span style="font-size: 12pt;">Resources</span></b>
+   </p>
+   <ul style="margin-top: 0in;" type="disc">
+      <li class="MsoNormal" style=""><span style="font-size: 12pt;">Your
+text, your peers, your notes.</span> <span style="font-size: 10pt;"><o:p></o:p></span>
+      </li>
+   </ul>
+   <p class="MsoNormal"><b style=""><span style="font-size: 12pt;">Orientation</span></b>
+   </p>
+   <p style="margin-left: 40px;" class="MsoNormal"><span style="font-size: 12pt;">
+You will implement a system of classes to represent a <span style="font-weight: bold; font-style: italic;">TotemPole</span><span style="font-weight: bold;"> </span>for the fictional Gashunonga Tribe.&nbsp; A <span style="font-weight: bold;"><span style="font-style: italic;">TotemPole</span> </span>is compromised of different animial heads (<span style="font-weight: bold;">Bear</span>, <span style="font-weight: bold;">Snake</span>, and <span style="font-weight: bold;">Eagle</span>).&nbsp; Every <span style="font-weight: bold;"><span style="font-style: italic;">TotemPole</span> </span>has an <span style="font-weight: bold;">Eagle </span>at the top.&nbsp; <span style="font-weight: bold;">Eagles </span>can only be at the top of the pole.&nbsp; Each animal head adds a different amount of power to the <span style="font-weight: bold; font-style: italic;">TotemPole</span>.&nbsp; <span style="font-weight: bold;">Bears </span>are the most sacred to the Gashunongan people and add 5 power points to the <span style="font-weight: bold; font-style: italic;">TotemPole</span>.&nbsp; <span style="font-weight: bold;">Snakes </span>add 3 power points.&nbsp; <span style="font-weight: bold;">Eagles </span>add 2 power points.&nbsp; Since <span style="font-weight: bold;">Bears </span>are the most sacred, a Gashunongan Chief's <span style="font-weight: bold;"><span style="font-style: italic;">TotemPole</span> </span>must have at least 3 <span style="font-weight: bold;">Bears </span>in a row at some place in the <span style="font-weight: bold; font-style: italic;">TotemPole</span>.
+      <br> <span style="font-size: 10pt;"></span><span style="font-size: 10pt;"><o:p></o:p></span></span>
+   </p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<img src="totem.jpg" alt="Totem Pole" height="242" width="242">
+   <p class="MsoNormal"><b><span style="font-size: 12pt;">Specification <o:p></o:p></span></b>
+   </p>
+   <p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 12pt;">
+Develop the following interface and classes:<br>
+</span>
+   </p>
+   <p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 12pt;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Develop
+an interface called <span style="font-weight: bold; font-style: italic;">TotemPole</span><span style="font-style: italic;">.&nbsp; </span>A <span style="font-weight: bold; font-style: italic;">TotemPole </span>has the following methods:
+      <br> <span style="font-family: courier new,courier,monospace; font-size: 11pt;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">int </span>power();&nbsp; // the total power of the pole</span>
+      <br style="font-family: courier new,courier,monospace; font-size: 11pt;"> <span style="font-family: courier new,courier,monospace; font-size: 11pt;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">int </span>height(); // the number of heads in the pole</span>
+      <br style="font-family: courier new,courier,monospace; font-size: 11pt;"> <span style="font-family: courier new,courier,monospace; font-size: 11pt;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">boolean </span>chiefPole(<span style="font-weight: bold;">int </span>bearCount);&nbsp; // is this pole worthy of a chief?</span>
+      <br> <span style="font-family: courier new,courier,monospace; font-size: 11pt;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; // bearCount is how many bears encountered in
+a row so far</span>
+      <br> </span>
+   </p>
+   <p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 12pt;"><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Develop the class <span style="font-weight: bold;">Bear </span>that implements the <span style="font-weight: bold; font-style: italic;">TotemPole </span>interface.&nbsp; <span style="font-weight: bold;">Bears </span>have the following constructor:
+      <br> <span style="font-family: courier new,courier,monospace; font-size: 11pt;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp; <span style="font-weight: bold;">public </span>Bear(TotemPole rest);</span>
+      </span><span style="font-size: 10pt;"><br>
+</span> </p>
+   <p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 12pt;">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Develop the class <span style="font-weight: bold;">Snake </span>that implements the <span style="font-weight: bold; font-style: italic;">TotemPole </span>interface.&nbsp; <span style="font-weight: bold;">Snakes </span>have the following constructor:
+      <br> <span style="font-family: courier new,courier,monospace; font-size: 11pt;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp; <span style="font-weight: bold;">public </span>Snake(TotemPole rest);</span>
+      </span><span style="font-size: 10pt;"><br>
+</span> </p>
+   <p class="MsoNormal" style="margin-left: 0.25in;"><span style="font-size: 12pt;">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Develop the class <span style="font-weight: bold;">Eagle </span>that implements the <span style="font-weight: bold; font-style: italic;">TotemPole </span>interface.&nbsp; <span style="font-weight: bold;">Eagles </span>have the following constructor:
+      <br> <span style="font-family: courier new,courier,monospace; font-size: 11pt;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp; <span style="font-weight: bold;">public </span>Eagle();</span>
+      <br> </span>
+   </p> <span style="font-weight: bold;">Testing</span>
+   <br>
+   <br>
+   <div style="margin-left: 40px;">Test your solution using the <a href="TotemTest.java">TotemTest</a> class that I (Prof. Workman) have written for you.
+      <br> </div>
+   <p><em>Lab courtesy of Julie Workman.</em></p>
+</body>
+
+</html>
