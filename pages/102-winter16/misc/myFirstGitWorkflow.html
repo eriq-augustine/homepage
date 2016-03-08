@@ -1,0 +1,124 @@
+<html>
+   <head>
+      <title>My First Git Workflow</title>
+
+      <style>
+         .code,
+         .code p {
+            background-color: black;
+            color: #0E8400;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 18px;
+         }
+         .code {
+            padding: 10px;
+         }
+
+         .code p {
+            margin: 0;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>My First Git Workflow</h1>
+      <p>
+         This page is a basic introduction to using git for source control.
+         This is in no way a comprehensive guide.
+         There are many ways to do things, especially with git.
+         This is just one way that I chose for its simplicity.
+      </p>
+
+      <p>
+         Assumptions:
+         <ul>
+            <li>You are using master as your main branch.</li>
+            <li>Except for when you are starting a new repository, you are in the repository's directory.</li>
+         </ul>
+      </p>
+
+      <h2>Starting A New Repository</h2>
+      <p>
+         Make a new repository on your prefered hosting service.
+         I recommend <a href='https://github.com'>github</a>.
+         Some other great options:
+         <ul>
+            <li><a href='https://bitbucket.org/'>Bitbucket</a></li>
+            <li><a href='https://about.gitlab.com/'>GitLab</a></li>
+            <li><a href='https://www.assembla.com/git/'>Assembla</a></li>
+         </ul>
+      </p>
+
+      <p>
+         Once you create a repository, you need to get the repository's url.
+         It will look something like: <a href='https://github.com/eriq-augustine/bird-catcher.git'>https://github.com/eriq-augustine/bird-catcher.git</a>
+         Make sure you use a private repository for anything the other students should not be able to see (like most programs).
+      </p>
+
+      <p>Now you need to clone the repository:</p>
+      <div class='code'>
+         <p>git clone https://github.com/eriq-augustine/bird-catcher.git</p>
+      </div>
+
+      <h2>Basic Operations</h2>
+
+      <h3>Get Most Recent Changes</h3>
+      <div class='code'>
+         <p>git pull</p>
+      </div>
+
+      <h3>Commit Changes Locally</h3>
+      <div class='code'>
+         <p>git add &lt;changed files ...&gt;</p>
+         <p>git commit -m "Some commit message"</p>
+         <p>git commit -a -m "Some commit message"</p>
+      </div>
+
+      <h3>Push Changes to Remote</h3>
+      <div class='code'>
+         <p>git push</p>
+      </div>
+
+      <h3>Reset Most Recent (Non-Committed) Changes</h3>
+      <div class='code'>
+         <p>git reset --hard HEAD</p>
+      </div>
+
+      <h3>Discard Changes to Specific File</h3>
+      <div class='code'>
+         <p>git checkout HEAD someFile</p>
+      </div>
+
+      <h2>Branches</h2>
+
+      <h3>Create Branch</h3>
+      <div class='code'>
+         <p>git checkout -b newBranchName</p>
+      </div>
+
+      <h3>Switch Between Branches</h3>
+      <div class='code'>
+         <p>git checkout branchName</p>
+      </div>
+
+      <h3>Get Changes from Master</h3>
+      <div class='code'>
+         <p>git checkout branchName</p>
+         <p>git merge master</p>
+      </div>
+
+      <h3>Put Change into Master</h3>
+      <div class='code'>
+         <p>git checkout master</p>
+         <p>git merge branchName</p>
+      </div>
+
+      <h2>Most Common Workflow</h2>
+      <div class='code'>
+         <p>Do some work ...</p>
+         <p>git add &lt;files ...&gt;</p>
+         <p>git commit -m "Some useful commit message."</p>
+         <p>git push</p>
+      </div>
+   <body>
+</html>
