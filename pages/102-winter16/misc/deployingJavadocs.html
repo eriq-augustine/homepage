@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <title>Deploying Javadocs</title>
+
+      <style>
+         .code,
+         .code p {
+            background-color: black;
+            color: #0E8400;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 18px;
+         }
+         .code {
+            padding: 10px;
+         }
+
+         .code p {
+            margin: 0;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Deploying Javadoc to ~/www</h1>
+      <p>
+         To host javadocs in your www direcotry, you need to do three steps:
+         <ol>
+            <li>Generate the Javadocs</li>
+            <li>Copy the docs over to your www directory</li>
+            <li>Set the permissions on the www directory (755 for directories and 644 and files)</li>
+         </ol>
+      </p>
+
+      <p>
+         You already know how to do the first step using the <strong>javadoc</strong> command (I strongly suggest using the -d option to <strong>javadoc</strong>).
+         The second step can simply be accomplished using the <strong>cp</strong> command.
+      </p>
+
+      <p>
+         You can set the permissions by using the following commands:
+      </p>
+      <div class='code'>
+         <p>find ~/www -type d -exec chmod 775 {} \;</p>
+         <p>find ~/www -type f -exec chmod 664 {} \;</p>
+      </div>
+
+      <hr />
+
+      <h2>The Short Way</h2>
+      <p>
+         I wrote <a href='hostJavaDocs.sh'>a script</a> that you can use to do all three steps.
+         Just run this script in your project base directory.
+      </p>
+   <body>
+</html>
