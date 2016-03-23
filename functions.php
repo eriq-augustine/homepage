@@ -25,6 +25,11 @@
       return $metadata;
    }
 
+   // The old PHP on the CSL server doesn't support anonymous functions.
+   function sortMenuItems($a, $b) {
+      return ($a['display'] < $b['display']) ? -1 : 1;
+   }
+
    function parsePages($pageBasePath = 'pages') {
       global $baseDir;
 
@@ -61,11 +66,6 @@
       usort($menuItems, sortMenuItems);
 
       return $menuItems;
-   }
-
-   // The old PHP on the CSL server doesn't support anonymous functions.
-   function sortMenuItems($a, $b) {
-      return ($a['display'] < $b['display']) ? -1 : 1;
    }
 
    function ls($dir, $skip_dots = true, $only_dirs = false) {

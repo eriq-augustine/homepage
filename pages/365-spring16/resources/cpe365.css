@@ -1,0 +1,11 @@
+.dataset {
+   display: inline-block;
+   border: 1px dotted #2A2A2A;
+   vertical-align: top;
+   padding: 10px;
+   margin: 10px;
+}
+
+.dataset h3 {
+   margin-bottom: 2px;
+}
