@@ -25,7 +25,7 @@
          <p>Room: 14-302</p>
          <p>Office Hours: 14-240 -- R 10:30 - 1:30 (and usually after every class)</a>
          <p><a href='<?php echo pageLink('365-files/misc/365-syllabus.pdf'); ?>'>Syllabus</a></p>
-         <p>Database Server: csc-db0.calpoly.edu</a>
+         <p>Database Server: csc-db0</a>
          <p>Schedule:</p>
          <iframe width='775' height='300' frameborder='0' src="https://docs.google.com/spreadsheets/d/1T-PYKzu_7ksM-yRmNv4QqkDzPcrM8GT5-prJjhdyJP8/pubhtml?gid=1386980443&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
       </div>
