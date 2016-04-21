@@ -23,7 +23,7 @@
          <h3>Logistics</h3>
          <p>Class Time: TR 1:30 - 4:30</p>
          <p>Room: 14-302</p>
-         <p>Office Hours: 14-240 -- R 10:30 - 1:30 (and usually after every class)</a>
+         <p>Office Hours: 14-240 -- TR 12:00 - 13:30 (and usually after every class)</a>
          <p><a href='<?php echo pageLink('365-files/misc/365-syllabus.pdf'); ?>'>Syllabus</a></p>
          <p>Database Server: csc-db0</a>
          <p>Schedule:</p>
