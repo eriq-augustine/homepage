@@ -109,7 +109,7 @@ STUDENTS:
 
 
 WINE:
-   1 -- COUNT: 11
+   1 -- COUNT: 10
         Attributes: score, averagePrice, cheapest, mostExpensive, numWines, cases
 
    2 -- COUNT: 6
@@ -121,10 +121,7 @@ WINE:
    4 -- COUNT: 7
         Attributes: appellation, sales
 
-   5 -- COUNT: 7
-        Attributes: appellation, sales
-
-   6 -- COUNT: 5
+   5 -- COUNT: 5
         Attributes: county, bestScore
 
 
