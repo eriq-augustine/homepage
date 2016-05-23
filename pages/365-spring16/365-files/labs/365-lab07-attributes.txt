@@ -1,0 +1,145 @@
+BAKERY:
+   1 -- COUNT: 1
+        Attributes: firstname, lastname
+
+   2 -- COUNT: 1
+        Attributes: flavor, food
+
+   3 -- COUNT: 1
+        Attributes: flavor, food
+
+   4 -- COUNT: 1
+        Attributes: saledate
+
+   5 -- COUNT: 11
+        Attributes: firstName, lastName, numPurchase, moneySpent
+
+   6 -- COUNT: 24
+        Attributes: firstName, lastName, flavor, food, total
+
+   7 -- COUNT: 4
+        Attributes: lastName, firstName, saleDate
+
+
+CARS:
+   1 -- COUNT: 2
+        Attributes: make, year
+
+   2 -- COUNT: 1
+        Attributes: make, year
+
+   3 -- COUNT: 1
+        Attributes: maker, milage, num
+
+   4 -- COUNT: 15
+        Attributes: maker, year, milage, num
+
+   5 -- COUNT: 1
+        Attributes: make, year, name, mpg
+
+   6 -- COUNT: 1
+        Attributes: diff
+
+   7 -- COUNT: 5
+        Attributes: name, COUNT(*)
+
+
+CSU:
+   1 -- COUNT: 1
+        Attributes: campus, enrolled
+
+   2 -- COUNT: 1
+        Attributes: campus, degrees
+
+   3 -- COUNT: 1
+        Attributes: campus, totalEnrollment, enrollmentFTE, facultyFTE, facultyToStudent, studentToFaculty
+
+   4 -- COUNT: 1
+        Attributes: campus, maxEngPercentage
+
+   5 -- COUNT: 5
+        Attributes: year, campus
+
+   6 -- COUNT: 7
+        Attributes: year, campus, dpe
+
+   7 -- COUNT: 15
+        Attributes: campus, year, ratio
+
+
+INN:
+   1 -- COUNT: 1
+        Attributes: roomName, room, numReservations
+
+   2 -- COUNT: 1
+        Attributes: roomName, room, occupancy
+
+   3 -- COUNT: 1
+        Attributes: roomName, checkIn, checkOut, lastName, rate, total
+
+   4 -- COUNT: 10
+        Attributes: roomName, checkIn, checkOut, lastName, rate, total
+
+   5 -- COUNT: 1
+        Attributes: month, monthlyRevenue, numReservations
+
+   6 -- COUNT: 10
+        Attributes: roomName, room, status
+
+   7 -- COUNT: 10
+        Attributes: roomName, countMostExpensive
+
+
+MARATHON:
+   1 -- COUNT: 1
+        Attributes: state
+
+   2 -- COUNT: 7
+        Attributes: town
+
+   3 -- COUNT: 5
+        Attributes: firstName, lastName, town, state, place
+
+   4 -- COUNT: 3 (or 5)
+        Attributes: town
+
+STUDENTS:
+   1 -- COUNT: 2
+        Attributes: grade, num
+
+   2 -- COUNT: 1
+        Attributes: classroom, first, last, num
+
+   3 -- COUNT: 1
+        Attributes: largeClasses
+
+   4 -- COUNT: 4
+        Attributes: grade
+
+   5 -- COUNT: 2
+        Attributes: grade, grade, num
+
+
+WINE:
+   1 -- COUNT: 2
+        Attributes: grape, color, numAppellations
+
+   2 -- COUNT: 1
+        Attributes: grape
+
+   3 -- COUNT: 1
+        Attributes: grape
+
+   4 -- COUNT: 2
+        Attributes: appellation, highRanked
+
+   5 -- COUNT: 1
+        Attributes: vintage, winery, name, score, revenue
+
+   6 -- COUNT: 1
+        Attributes: dryCreek, carneros
+
+   7 -- COUNT: 2
+        Attributes: cases
+
+
