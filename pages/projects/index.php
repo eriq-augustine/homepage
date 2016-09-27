@@ -35,9 +35,10 @@
          <p>Check it out on github: <a href='https://github.com/eriq-augustine/sgb'>https://github.com/eriq-augustine/sgb</a>
 
       <h3>Complete</h3>
-      <a name="thesis"><h4>Master's Thesis</h4></a>
-         <p>My Master's thesis is a project for Netflix that involves Data Mining and Natural Language Processing. I cannot talk much more about it :(</p>
-         <p>I started this quarter (January 2011) and plan to finish next spring (2012).</p>
+      <a name="thesis"><h4>Master's Thesis: SPOONS</h4></a>
+         <p>The goal of the SPOONS (Swift Perceptions of Online Negative Situations) system is to use Twitter posts to determine when Netflix users are reporting a problem with any of the Netflix services.</p>
+         <p>I worked on this January 2011 through May 2013.</p>
+         <p>See the papers section for more details.</p>
       <a name="cplop"><h4>CPLOP</h4></a>
          <p>CPLOP (Cal Poly Library Of Pop) is a project that I am working on in conjunction with the Cal Poly Biology department. We are attempting to build a database of e.coli specimens. Doing so may help us figure out the source of contamination in various areas. This is the first database of its kind and hopefully will be made available to researchers worldwide.</p>
       <a name="pizza"><h4>Pizza Compiler</h4></a>
